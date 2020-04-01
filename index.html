@@ -1,0 +1,3242 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>蜂鸟API</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-1e815a84.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#5ea2e0cde2" class="toc-h1 toc-link" data-title="简介">简介</a>
+          </li>
+          <li>
+            <a href="#api" class="toc-h1 toc-link" data-title="API">API</a>
+          </li>
+          <li>
+            <a href="#a" class="toc-h1 toc-link" data-title="A股">A股</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#950b559860" class="toc-h2 toc-link" data-title="产品列表">产品列表</a>
+                  </li>
+                  <li>
+                    <a href="#2ab4fa4378" class="toc-h2 toc-link" data-title="实时报价">实时报价</a>
+                  </li>
+                  <li>
+                    <a href="#fdca4c5804" class="toc-h2 toc-link" data-title="日图历史">日图历史</a>
+                  </li>
+                  <li>
+                    <a href="#9d355d079e" class="toc-h2 toc-link" data-title="多产品单日历史">多产品单日历史</a>
+                  </li>
+                  <li>
+                    <a href="#dba7d7f4fb" class="toc-h2 toc-link" data-title="日内数据">日内数据</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#26b01652c5" class="toc-h1 toc-link" data-title="港股">港股</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#950b559860-2" class="toc-h2 toc-link" data-title="产品列表">产品列表</a>
+                  </li>
+                  <li>
+                    <a href="#2ab4fa4378-2" class="toc-h2 toc-link" data-title="实时报价">实时报价</a>
+                  </li>
+                  <li>
+                    <a href="#fdca4c5804-2" class="toc-h2 toc-link" data-title="日图历史">日图历史</a>
+                  </li>
+                  <li>
+                    <a href="#9d355d079e-2" class="toc-h2 toc-link" data-title="多产品单日历史">多产品单日历史</a>
+                  </li>
+                  <li>
+                    <a href="#dba7d7f4fb-2" class="toc-h2 toc-link" data-title="日内数据">日内数据</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e47bf30958" class="toc-h1 toc-link" data-title="美股">美股</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#950b559860-3" class="toc-h2 toc-link" data-title="产品列表">产品列表</a>
+                  </li>
+                  <li>
+                    <a href="#2ab4fa4378-3" class="toc-h2 toc-link" data-title="实时报价">实时报价</a>
+                  </li>
+                  <li>
+                    <a href="#fdca4c5804-3" class="toc-h2 toc-link" data-title="日图历史">日图历史</a>
+                  </li>
+                  <li>
+                    <a href="#9d355d079e-3" class="toc-h2 toc-link" data-title="多产品单日历史">多产品单日历史</a>
+                  </li>
+                  <li>
+                    <a href="#dba7d7f4fb-3" class="toc-h2 toc-link" data-title="日内数据">日内数据</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#c9bfb317ec" class="toc-h1 toc-link" data-title="期货">期货</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#950b559860-4" class="toc-h2 toc-link" data-title="产品列表">产品列表</a>
+                  </li>
+                  <li>
+                    <a href="#2ab4fa4378-4" class="toc-h2 toc-link" data-title="实时报价">实时报价</a>
+                  </li>
+                  <li>
+                    <a href="#fdca4c5804-4" class="toc-h2 toc-link" data-title="日图历史">日图历史</a>
+                  </li>
+                  <li>
+                    <a href="#9d355d079e-4" class="toc-h2 toc-link" data-title="多产品单日历史">多产品单日历史</a>
+                  </li>
+                  <li>
+                    <a href="#dba7d7f4fb-4" class="toc-h2 toc-link" data-title="日内数据">日内数据</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#websocket" class="toc-h1 toc-link" data-title="Websocket行情数据">Websocket行情数据</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#5ea2e0cde2-2" class="toc-h2 toc-link" data-title="简介">简介</a>
+                  </li>
+                  <li>
+                    <a href="#a-2" class="toc-h2 toc-link" data-title="A股实时数据">A股实时数据</a>
+                  </li>
+                  <li>
+                    <a href="#fac4bf406d" class="toc-h2 toc-link" data-title="港股实时数据">港股实时数据</a>
+                  </li>
+                  <li>
+                    <a href="#a57766f146" class="toc-h2 toc-link" data-title="美股实时数据">美股实时数据</a>
+                  </li>
+                  <li>
+                    <a href="#2869a7a75a" class="toc-h2 toc-link" data-title="国内期货实时数据">国内期货实时数据</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='http://www.trochil.com/'>蜂鸟首页</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='5ea2e0cde2'>简介</h1>
+<p>蜂鸟数据是轻量级金融终端，提供主流金融市场的实时报价和历史数据。我们提供高度统一和强大的REST API和Websocket API，让您轻松获取金融数据。</p>
+
+<p>登录<a href="http://www.trochil.com">蜂鸟数据</a>，注册成为我们的会员，即可免费使用API服务，每天可免费调用250次REST API，并试用7天Websocket，适用于所有接口和市场。</p>
+
+<p>覆盖市场和交易所：</p>
+
+<ul>
+<li>A股：上海证券交易所和深圳证券交易所的全部A股</li>
+<li>港股：香港证券交易所上市的股票(不包括牛熊证)</li>
+<li>美股：纽约证券交易所和纳斯达克交易所</li>
+<li>期货：郑州商品交易所，大量商品交易所，上海期货交易所，中国金融期货交易所</li>
+<li>数字货币：币安(Binance), Okex, 火币(Huobi), Coinbase, Poloniex, Bitfinex</li>
+<li>外汇：80多个货币对，包含新兴市场国家的汇率</li>
+</ul>
+
+<p><strong>数字货币和外汇接口会在4月份开放</strong></p>
+
+<p><strong>http请求base url:</strong></p>
+
+<p>api.trochil.com</p>
+<h1 id='api'>API</h1>
+<p>所有接口均要求认证，注册成为我们的用户后可以在个人主页找到API key，请求数据时传递您的API key作为参数，详情看代码实例。</p>
+<h1 id='a'>A股</h1><h2 id='950b559860'>产品列表</h2>
+<blockquote>
+<p>示例代码：查询A股产品列表</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/markets'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询A股产品列表</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583475638869</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'SH</span><span class="mi">600000</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'SH</span><span class="mi">600000</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'浦发银行'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'上海证券交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'SH</span><span class="mi">600004</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'SH</span><span class="mi">600004</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'白云机场'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'上海证券交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取上海证券交易所和深证证券交易所上市交易的全部A股。</p>
+<h3 id='http'>HTTP请求</h3>
+<p><code>GET v1/cnstock/markets</code></p>
+<h3 id='1f9ac54b15'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>dict</td>
+<td>对应A股的名称和隶属交易所信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h2 id='2ab4fa4378'>实时报价</h2>
+<blockquote>
+<p>示例代码：查询A股实时报价</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/quote'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'SZ300817,SZ300820'</span><span class="p">,</span>
+                            <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询A股实时报价</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583476018603</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="err">'</span><span class="p">{</span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SZ300817"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"双飞股份"</span><span class="p">,</span><span class="w"> </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.44"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.44"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bidQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"69.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ask"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.61"</span><span class="p">,</span><span class="w"> </span><span class="s2">"askQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1583476011000"</span><span class="p">}</span><span class="err">'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'</span><span class="p">{</span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SZ300820"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"英杰电气"</span><span class="p">,</span><span class="w"> </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"132.56"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"132.56"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bidQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9287.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ask"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"askQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1583475990000"</span><span class="p">}</span><span class="err">'</span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>查询沪深A股的实时报价(level1)，每次最多查询25个产品。上海证券交易所股票代码加前缀&#39;SH&#39;，深圳证券交易所股票代码加前缀&#39;SZ&#39;。</p>
+<h3 id='http-2'>HTTP请求</h3>
+<p><code>GET v1/cnstock/quote</code></p>
+<h3 id='1f9ac54b15-2'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码，同时获取多个股票以逗号分隔，如SZ300817,SZ300820</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-2'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应个股品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票代码</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>股票中文名称</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>String</td>
+<td>最优买价</td>
+</tr>
+<tr>
+<td>ask</td>
+<td>String</td>
+<td>最优卖价</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>bidQty</td>
+<td>String</td>
+<td>最优买价数量</td>
+</tr>
+<tr>
+<td>askQty</td>
+<td>String</td>
+<td>最优卖价数量</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>最新成交时间</td>
+</tr>
+</tbody></table>
+<h2 id='fdca4c5804'>日图历史</h2>
+<blockquote>
+<p>示例代码：查询A股日图历史</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/history'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'SH600012'</span><span class="p">,</span>
+                        <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-03-01'</span><span class="p">,</span>
+                        <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-03-04'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询A股日图历史</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583477561417</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-02</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.32</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.2</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.3</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">29389.0</span><span class="p">,</span><span class="w">
+         </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'SH</span><span class="mi">600012</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-03</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.34</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.39</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.3</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.34</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">36059.0</span><span class="p">,</span><span class="w">
+         </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'SH</span><span class="mi">600012</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-04</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.31</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.57</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.31</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">5.54</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">103134.0</span><span class="p">,</span><span class="w">
+         </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'SH</span><span class="mi">600012</span><span class="err">'</span><span class="p">}],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取沪深A股的日图历史数据。</p>
+<h3 id='http-3'>HTTP请求</h3>
+<p><code>GET v1/cnstock/history</code></p>
+<h3 id='1f9ac54b15-3'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码,如SH600012</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>False</td>
+<td>数据起始时间</td>
+<td>样本起始时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>False</td>
+<td>最近更新时间</td>
+<td>样本结束时间,如2019-09-09</td>
+</tr>
+<tr>
+<td>freq</td>
+<td>String</td>
+<td>False</td>
+<td>daily</td>
+<td>频率</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按时间戳排序，asc(升序), desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-3'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应个股品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-2'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票代码</td>
+</tr>
+</tbody></table>
+<h2 id='9d355d079e'>多产品单日历史</h2>
+<blockquote>
+<p>示例代码：查询A股多股票单日数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/history_one_day'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'SH600012,SH600015'</span><span class="p">,</span>
+                        <span class="s">'date'</span><span class="p">:</span> <span class="s">'2011-09-29'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询A股多股票单日数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583477976901</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2011-09-29</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">3.413</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">3.421</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">3.351</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">3.366</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">17783.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'SH</span><span class="mi">600012</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2011-09-29</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">4.144</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">4.254</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">4.139</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">4.207</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">195176.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'SH</span><span class="mi">600015</span><span class="err">'</span><span class="p">}],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>同时获取多个股票单天的K线数据，最多同时查询25个。</p>
+<h3 id='http-4'>HTTP请求</h3>
+<p><code>GET v1/cnstock/history_one_day</code></p>
+<h3 id='1f9ac54b15-4'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码,如SH600012,多个股票品种以逗号分隔,逗号之间不要有空格</td>
+</tr>
+<tr>
+<td>date</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>数据获取时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按股票代码的字符顺序排序，asc(升序)，desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-4'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应股票品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-3'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>个股品种代码</td>
+</tr>
+</tbody></table>
+<h2 id='dba7d7f4fb'>日内数据</h2>
+<blockquote>
+<p>示例代码：查询A股日内数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/intraday'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'SZ300817'</span><span class="p">,</span>
+                        <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'60'</span><span class="p">,</span>
+                        <span class="s">'range'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询A股日内数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583478112575</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">09</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">41.5</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">42.99</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">39.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">41.5</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">64686.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'SZ</span><span class="mi">300817</span><span class="err">'</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">41.5</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">41.5</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">40.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">40.36</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">8865.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'SZ</span><span class="mi">300817</span><span class="err">'</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">40.36</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">41.83</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">39.8</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">41.33</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">12049.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'SZ</span><span class="mi">300817</span><span class="err">'</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">14</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">41.33</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">41.62</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">40.04</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">40.2</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">16964.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'SZ</span><span class="mi">300817</span><span class="err">'</span><span class="p">}],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取沪深A股的日内K线，1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据。沪深A股暂时不提供1分钟历史数据。</p>
+<h3 id='http-5'>HTTP请求</h3>
+<p><code>GET v1/cnstock/intraday</code></p>
+<h3 id='1f9ac54b15-5'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码，如SZ300817</td>
+</tr>
+<tr>
+<td>timeframe</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>频率，5分钟为5，60分钟为60,目前仅支持5分钟和60分钟</td>
+</tr>
+<tr>
+<td>range</td>
+<td>int</td>
+<td>True</td>
+<td>7</td>
+<td>查询天数, 7代表7天, 范围1-30</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>String</td>
+<td>False</td>
+<td>当前时间</td>
+<td>请求的结束时间</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-5'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应股票品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-4'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>个股品种代码</td>
+</tr>
+</tbody></table>
+<h1 id='26b01652c5'>港股</h1><h2 id='950b559860-2'>产品列表</h2>
+<blockquote>
+<p>实例代码：查询港股产品列表:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/hkstock/markets'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回示例：查询港股产品列表:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583478480228</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'HK</span><span class="mi">00001</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">00001</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'长和'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'香港证券交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'HK</span><span class="mi">00002</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">00002</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'中电控股'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'香港证券交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取香港证券交易所上市的全部股票(不包含ETH和牛熊证)。</p>
+<h3 id='http-6'>HTTP请求</h3>
+<p><code>GET v1/hkstock/markets</code></p>
+<h3 id='1f9ac54b15-6'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-6'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>dict</td>
+<td>对应港股的名称和隶属交易所信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h2 id='2ab4fa4378-2'>实时报价</h2>
+<blockquote>
+<p>示例代码：查询港股实时报价</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/hkstock/quote'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'HK09938,HK09968'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>示例代码：查询港股实时报价</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583478603847</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="err">'</span><span class="p">{</span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HK09938"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"华和控股"</span><span class="p">,</span><span class="w"> </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.85"</span><span class="p">,</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1583476040000"</span><span class="p">}</span><span class="err">'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'</span><span class="p">{</span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HK09968"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"汇景控股"</span><span class="p">,</span><span class="w"> </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.94"</span><span class="p">,</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1583477955000"</span><span class="p">}</span><span class="err">'</span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>查询港股的实时报价，不包含bid/ask价格，每次最多查询25个产品。股票代码加前缀&#39;HK&#39;。</p>
+<h3 id='http-7'>HTTP请求</h3>
+<p><code>GET v1/hkstock/quote</code></p>
+<h3 id='1f9ac54b15-7'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码，同时获取多个股票以逗号分隔，如HK09938,HK09968</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-7'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应个股品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-5'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票代码</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>股票中文名称</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>最新成交时间</td>
+</tr>
+</tbody></table>
+<h2 id='fdca4c5804-2'>日图历史</h2>
+<blockquote>
+<p>示例代码：查询港股日图历史</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/hkstock/history'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'HK09968'</span><span class="p">,</span>
+                        <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">,</span>
+                        <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-02-04'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询港股日图历史</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583478838781</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-03</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.92</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.95</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.9</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.95</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">1780000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09968</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-04</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.94</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">2.12</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.94</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.97</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">2790000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09968</span><span class="err">'</span><span class="p">}],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取港股的日图历史数据。</p>
+<h3 id='http-8'>HTTP请求</h3>
+<p><code>GET v1/hkstock/history</code></p>
+<h3 id='1f9ac54b15-8'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码,如HK09968</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>False</td>
+<td>数据起始时间</td>
+<td>样本起始时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>False</td>
+<td>最近更新时间</td>
+<td>样本结束时间,如2019-09-09</td>
+</tr>
+<tr>
+<td>freq</td>
+<td>String</td>
+<td>False</td>
+<td>daily</td>
+<td>频率</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按时间戳排序，asc(升序), desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-8'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应个股品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-6'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票代码</td>
+</tr>
+</tbody></table>
+<h2 id='9d355d079e-2'>多产品单日历史</h2>
+<blockquote>
+<p>代码示例：查询港股多股票的单日数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/hkstock/history_one_day'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'HK09938,HK09968'</span><span class="p">,</span>
+                        <span class="s">'date'</span><span class="p">:</span> <span class="s">'2020-02-04'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>代码示例：查询港股多股票单日数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583479171828</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-04</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.69</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.69</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.66</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.67</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">680000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09938</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-04</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.94</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">2.12</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.94</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.97</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">2790000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09968</span><span class="err">'</span><span class="p">}],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>同时获取多个股票单天的K线数据，最多同时查询25个。</p>
+<h3 id='http-9'>HTTP请求</h3>
+<p><code>GET v1/hkstock/history_one_day</code></p>
+<h3 id='1f9ac54b15-9'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码,如HK09938,多个股票品种以逗号分隔,逗号之间不要有空格</td>
+</tr>
+<tr>
+<td>date</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>数据获取时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按股票代码的字符顺序排序，asc(升序)，desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-9'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应股票品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-7'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>个股品种代码</td>
+</tr>
+</tbody></table>
+<h2 id='dba7d7f4fb-2'>日内数据</h2>
+<blockquote>
+<p>代码示例：查询港股日内数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/hkstock/intraday'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'HK09938'</span><span class="p">,</span>
+                        <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'60'</span><span class="p">,</span>
+                        <span class="s">'range'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询港股日内数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583479317423</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-04</span><span class="w"> </span><span class="mi">15</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09938</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">09</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">85000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09938</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">85000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09938</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">11</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">85000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09938</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">10000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09938</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">10000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09938</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">115000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09938</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">15</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.81</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.83</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.83</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">425000.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'HK</span><span class="mi">09938</span><span class="err">'</span><span class="p">}],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取港股的日内K线，同时支持1分钟，5分钟和60分钟。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据。</p>
+<h3 id='http-10'>HTTP请求</h3>
+<p><code>GET v1/hkstock/intraday</code></p>
+<h3 id='1f9ac54b15-10'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码,如HK09938</td>
+</tr>
+<tr>
+<td>timeframe</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>频率，1分钟为1，5分钟为5，60分钟为60</td>
+</tr>
+<tr>
+<td>range</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,5分钟60分钟支持30日以内</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>String</td>
+<td>NA</td>
+<td>当前时间</td>
+<td>请求的结束时间</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-10'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应股票品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-8'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>港股品种代码</td>
+</tr>
+</tbody></table>
+<h1 id='e47bf30958'>美股</h1><h2 id='950b559860-3'>产品列表</h2>
+<blockquote>
+<p>代码示例：查询美股产品列表</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/markets'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询美股产品列表</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583480134214</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'AAPL'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'AAPL'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'苹果公司'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'纳斯达克交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'MSFT'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'MSFT'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'微软公司'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'纳斯达克交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取纽约证券交易所和纳斯达克交易所上市交易的全部股票。</p>
+<h3 id='http-11'>HTTP请求</h3>
+<p><code>GET v1/usstock/markets</code></p>
+<h3 id='1f9ac54b15-11'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-11'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>dict</td>
+<td>对应美股的名称和隶属交易所信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h2 id='2ab4fa4378-3'>实时报价</h2>
+<blockquote>
+<p>示例代码：查询美股实时报价</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/quote'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'BABA,JD'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询美股实时报价</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583478603847</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="err">'</span><span class="p">{</span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BABA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"阿里巴巴"</span><span class="p">,</span><span class="w"> </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"211.46"</span><span class="p">,</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1583476040000"</span><span class="p">}</span><span class="err">'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'</span><span class="p">{</span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JD"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"京东"</span><span class="p">,</span><span class="w"> </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44.62"</span><span class="p">,</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1583477955000"</span><span class="p">}</span><span class="err">'</span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>查询美股的实时报价(level1)，每次最多查询25个产品。</p>
+<h3 id='http-12'>HTTP请求</h3>
+<p><code>GET v1/usstock/quote</code></p>
+<h3 id='1f9ac54b15-12'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码，同时获取多个股票以逗号分隔，如AAPL,GOOG,MSFT</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-12'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应个股品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-9'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票代码</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>股票中文名称</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>实时价格时间</td>
+</tr>
+</tbody></table>
+<h2 id='fdca4c5804-3'>日图历史</h2>
+<blockquote>
+<p>代码示例：查询美股日图历史</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/history'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'BABA'</span><span class="p">,</span>
+                        <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">,</span>
+                        <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-02-05'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询美股日图历史</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583480946631</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-03</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">208.67</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">215.02</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">208.67</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">213.1</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">14131887.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-04</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">221.35</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">224.38</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">220.49</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">222.88</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">16695141.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-05</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">226.52</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">226.7</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">217.54</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">220.22</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">15766067.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">}],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取美股的日图历史数据。</p>
+<h3 id='http-13'>HTTP请求</h3>
+<p><code>GET v1/usstock/history</code></p>
+<h3 id='1f9ac54b15-13'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码,如BABA</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>False</td>
+<td>数据起始时间</td>
+<td>样本起始时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>False</td>
+<td>最近更新时间</td>
+<td>样本结束时间,如2019-09-09</td>
+</tr>
+<tr>
+<td>freq</td>
+<td>String</td>
+<td>False</td>
+<td>daily</td>
+<td>频率</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按时间戳排序，asc(升序), desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-13'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应个股的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-10'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票代码</td>
+</tr>
+</tbody></table>
+<h2 id='9d355d079e-3'>多产品单日历史</h2>
+<blockquote>
+<p>示例代码：查询美股多股票单日数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/history_one_day'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'BABA,JD'</span><span class="p">,</span>
+                        <span class="s">'date'</span><span class="p">:</span> <span class="s">'2020-02-04'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询美股多股票单日数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583481081616</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-04</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">221.35</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">224.38</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">220.49</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">222.88</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">16695141.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-04</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">40.31</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">41.28</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">40.07</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">40.35</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">16286551.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'JD'</span><span class="p">}],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>同时获取多个股票单天的K线数据，最多同时查询25个。</p>
+<h3 id='http-14'>HTTP请求</h3>
+<p><code>GET v1/usstock/history_one_day</code></p>
+<h3 id='1f9ac54b15-14'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码,如BABA,多个股票品种以逗号分隔,逗号之间不要有空格</td>
+</tr>
+<tr>
+<td>date</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>数据获取时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按股票代码的字符顺序排序，asc(升序)，desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-14'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应美股品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-11'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>美股品种代码</td>
+</tr>
+</tbody></table>
+<h2 id='dba7d7f4fb-3'>日内数据</h2>
+<blockquote>
+<p>代码示例：查询美股日内数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/intraday'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'BABA'</span><span class="p">,</span>
+                        <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'60'</span><span class="p">,</span>
+                        <span class="s">'range'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询美股日内数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1583481191233</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">09</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">210.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">212.29</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">209.14</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">211.47</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">3120157.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">211.4</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">215.15</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">211.08</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">214.23</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">2429986.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">11</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">214.23</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">215.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">213.01</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">213.45</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">1770316.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">213.41</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">213.55</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">211.16</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">212.21</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">1218989.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">212.21</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">212.42</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">210.52</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">210.84</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">1037356.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">210.84</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">211.56</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">209.95</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">210.38</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">1553312.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-05</span><span class="w"> </span><span class="mi">15</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">210.38</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">212.04</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">210.33</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">211.44</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">1477890.0</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BABA'</span><span class="p">}],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取美股的日内K线，支持1分钟，5分钟和60分钟K线。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据。</p>
+<h3 id='http-15'>HTTP请求</h3>
+<p><code>GET v1/usstock/intraday</code></p>
+<h3 id='1f9ac54b15-15'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股票代码,如BABA</td>
+</tr>
+<tr>
+<td>timeframe</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>频率，1分钟为1,5分钟为5，60分钟为60</td>
+</tr>
+<tr>
+<td>range</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,5分钟60分钟支持30日以内</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>String</td>
+<td>NA</td>
+<td>当前时间</td>
+<td>请求的结束时间</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-15'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应股票品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-12'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票品种代码</td>
+</tr>
+</tbody></table>
+<h1 id='c9bfb317ec'>期货</h1><h2 id='950b559860-4'>产品列表</h2>
+<blockquote>
+<p>示例代码：查询期货产品列表</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/markets'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>示例代码：查询期货产品列表</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1584587390538</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'IC</span><span class="mi">2004</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'IC</span><span class="mi">2004</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'中证</span><span class="mi">500</span><span class="err">指数</span><span class="mi">2004</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'中国金融期货交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'IC</span><span class="mi">2006</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'IC</span><span class="mi">2006</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'中证</span><span class="mi">500</span><span class="err">指数</span><span class="mi">2006</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'中国金融期货交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'IC</span><span class="mi">2009</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'IC</span><span class="mi">2009</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'中证</span><span class="mi">500</span><span class="err">指数</span><span class="mi">2009</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'中国金融期货交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'IC</span><span class="mi">0</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'IC</span><span class="mi">0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'中证</span><span class="mi">500</span><span class="err">指数连续'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'中国金融期货交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'IC</span><span class="mi">2003</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'IC</span><span class="mi">2003</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'中证</span><span class="mi">500</span><span class="err">指数</span><span class="mi">2003</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'中国金融期货交易所'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'IF</span><span class="mi">2004</span><span class="err">'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'IF</span><span class="mi">2004</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'沪深</span><span class="mi">300</span><span class="err">指数</span><span class="mi">2004</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'中国金融期货交易所'</span><span class="p">}},</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取国内四大期货交易所的全部期货品种，主力合约和可交易合约。</p>
+<h3 id='http-16'>HTTP请求</h3>
+<p><code>GET v1/cnfuture/markets</code></p>
+<h3 id='1f9ac54b15-16'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-16'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>dict</td>
+<td>对应合约品种的名称和隶属交易所信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h2 id='2ab4fa4378-4'>实时报价</h2>
+<blockquote>
+<p>示例代码：查询期货合约的实时报价</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/quote'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'V0,V2002'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>示例代码：查询期货合约的实时报价</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1579485232937</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="err">'symbol_cn'</span><span class="p">:</span><span class="w"> </span><span class="err">'PVC连续'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6480.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6510.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6470.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'preClose'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.0</span><span class="err">'</span><span class="p">,</span><span class="w">
+            </span><span class="err">'bid'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6495.0</span><span class="err">'</span><span class="p">,</span><span class="w">
+            </span><span class="err">'ask'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6500.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6495.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'settle'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'preSettle'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6475.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'bidQty'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">656.0</span><span class="err">'</span><span class="p">,</span><span class="w">
+            </span><span class="err">'askQty'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">873.0</span><span class="err">'</span><span class="p">,</span><span class="w">
+            </span><span class="err">'openInterest'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">201404.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">36733.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'PVC'</span><span class="p">,</span><span class="w"> </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020</span><span class="err">/</span><span class="mi">01</span><span class="err">/</span><span class="mi">20</span><span class="w"> </span><span class="mi">095351</span><span class="err">'</span><span class="p">,</span><span class="w">
+            </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'V</span><span class="mi">0</span><span class="err">'</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="err">'symbol_cn'</span><span class="p">:</span><span class="w"> </span><span class="err">'PVC</span><span class="mi">2002</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6435.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6435.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6280.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'preClose'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6370.0</span><span class="err">'</span><span class="p">,</span><span class="w">
+            </span><span class="err">'bid'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6285.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'ask'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6610.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6370.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'settle'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'preSettle'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">6455.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'bidQty'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">1.0</span><span class="err">'</span><span class="p">,</span><span class="w">
+            </span><span class="err">'askQty'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">1.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'openInterest'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">134.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">62.0</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'PVC'</span><span class="p">,</span><span class="w"> </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020</span><span class="err">/</span><span class="mi">01</span><span class="err">/</span><span class="mi">13</span><span class="w"> </span><span class="mi">150000</span><span class="err">'</span><span class="p">,</span><span class="w">
+            </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'V</span><span class="mi">2002</span><span class="err">'</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>查询期货合约的实时报价(level1)，郑商所，大商所，上期所返回实时行情；中金所行情延迟15分钟，不包含bid,ask数据。</p>
+<h3 id='http-17'>HTTP请求</h3>
+<p><code>GET v1/cnfuture/quote</code></p>
+<h3 id='1f9ac54b15-17'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>产品合约，同时获取多个合约以逗号分隔，如AU2006,AU2008</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-17'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应合约品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-13'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>标准合约名称</td>
+</tr>
+<tr>
+<td>symbol_cn</td>
+<td>String</td>
+<td>标准合约中文</td>
+</tr>
+<tr>
+<td>open</td>
+<td>String</td>
+<td>今日开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>String</td>
+<td>今日最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>String</td>
+<td>今日最低价</td>
+</tr>
+<tr>
+<td>preClose</td>
+<td>String</td>
+<td>前一日收盘价</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>String</td>
+<td>最优买价</td>
+</tr>
+<tr>
+<td>ask</td>
+<td>String</td>
+<td>最优卖价</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>settle</td>
+<td>String</td>
+<td>结算价</td>
+</tr>
+<tr>
+<td>preSettle</td>
+<td>String</td>
+<td>前一日结算价</td>
+</tr>
+<tr>
+<td>bidQty</td>
+<td>String</td>
+<td>最优买价数量</td>
+</tr>
+<tr>
+<td>askQty</td>
+<td>String</td>
+<td>最优卖价数量</td>
+</tr>
+<tr>
+<td>openInterest</td>
+<td>String</td>
+<td>持仓量</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>String</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>产品中文名</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>最新成交时间</td>
+</tr>
+</tbody></table>
+<h2 id='fdca4c5804-4'>日图历史</h2>
+<blockquote>
+<p>示例代码：查询期货合约日图历史</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/history'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'V0'</span><span class="p">,</span>
+                        <span class="s">'freq'</span><span class="p">:</span> <span class="s">'weekly'</span><span class="p">,</span>
+                        <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2019-11-12'</span><span class="p">,</span>
+                        <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-01-01'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询期货合约日图历史</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1579485233076</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6485.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6670.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6480.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6610.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">894842</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mf">349929.5</span><span class="p">,</span><span class="w">
+         </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-11-17</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6615.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6620.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6525.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6595.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">736518</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mf">367483.2</span><span class="p">,</span><span class="w">
+         </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-11-24</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6600.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6905.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6595.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6875.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">1835134</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mf">409573.2</span><span class="p">,</span><span class="w">
+         </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-12-01</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6880.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6930.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6660.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6715.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">1614508</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mf">348538.8</span><span class="p">,</span><span class="w">
+         </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-12-08</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6725.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6800.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6505.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6560.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">1181394</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mf">296074.4</span><span class="p">,</span><span class="w">
+         </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-12-15</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6555.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6630.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6525.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6605.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">980858</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mf">426604.8</span><span class="p">,</span><span class="w">
+         </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-12-22</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6605.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6610.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6465.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6505.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">898110</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mf">444499.2</span><span class="p">,</span><span class="w">
+         </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-12-29</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6505.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6545.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6465.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6525.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">382154</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mf">467070.0</span><span class="p">,</span><span class="w">
+         </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-05</span><span class="err">'</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取期货合约的日图历史数据。</p>
+<h3 id='http-18'>HTTP请求</h3>
+<p><code>GET v1/cnfuture/history</code></p>
+<h3 id='1f9ac54b15-18'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>产品合约,如AU2006</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>False</td>
+<td>数据起始时间</td>
+<td>样本起始时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>False</td>
+<td>最近更新时间</td>
+<td>样本结束时间,如2019-09-09</td>
+</tr>
+<tr>
+<td>freq</td>
+<td>String</td>
+<td>False</td>
+<td>daily</td>
+<td>频率</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按时间戳排序，asc(升序), desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-18'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应合约品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-14'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>合约代码</td>
+</tr>
+</tbody></table>
+<h2 id='9d355d079e-4'>多产品单日历史</h2>
+<blockquote>
+<p>示例代码：查询多份期货合约的单日数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/history_one_day'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'V0,V2002,V2003,V2004,V2005'</span><span class="p">,</span>
+                        <span class="s">'date'</span><span class="p">:</span> <span class="s">'2019-12-25'</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询多份期货合约的单日数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1579485233101</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-12-25</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6535.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6535.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6480.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6495.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">140420</span><span class="p">,</span><span class="w">
+         </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mi">443094</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'V</span><span class="mi">0</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-12-25</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6475.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6475.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6475.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6475.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+         </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mi">366</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'V</span><span class="mi">2002</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-12-25</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6535.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6535.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6480.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6495.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">140420</span><span class="p">,</span><span class="w">
+         </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mi">443094</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'V</span><span class="mi">2005</span><span class="err">'</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>同时获取多个期货合约单天的K线数据，最多同时查询25个。</p>
+<h3 id='http-19'>HTTP请求</h3>
+<p><code>GET v1/cnfuture/history_one_day</code></p>
+<h3 id='1f9ac54b15-19'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>期货合约,如AU2006,多个合约品种以逗号分隔</td>
+</tr>
+<tr>
+<td>date</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>数据获取时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按股票代码的字符顺序排序，asc(升序)，desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-19'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应合约品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-15'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>合约品种代码</td>
+</tr>
+</tbody></table>
+<h2 id='dba7d7f4fb-4'>日内数据</h2>
+<blockquote>
+<p>代码示例：查询期货日内数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/intraday'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'V0'</span><span class="p">,</span>
+                        <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'30'</span><span class="p">,</span>
+                        <span class="s">'range'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+                        <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
+                    <span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询期货日内数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1579485233129</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-17</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6470.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6475.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6470.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6470.0</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mi">206712</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'V</span><span class="mi">0</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-17</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6465.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6470.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6465.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6465.0</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mi">206077</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'V</span><span class="mi">0</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-17</span><span class="w"> </span><span class="mi">11</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">6470.0</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">6470.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">6465.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">6465.0</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+         </span><span class="err">'position'</span><span class="p">:</span><span class="w"> </span><span class="mi">205800</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'V</span><span class="mi">0</span><span class="err">'</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取国内期货合约的日内K线，支持5分钟和60分钟K线，最多返回过去30天的数据。</p>
+<h3 id='http-20'>HTTP请求</h3>
+<p><code>GET v1/cnfuture/intraday</code></p>
+<h3 id='1f9ac54b15-20'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>产品合约,如AU2006</td>
+</tr>
+<tr>
+<td>timeframe</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>频率，5分钟为5，60分钟为60</td>
+</tr>
+<tr>
+<td>range</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>查询天数, 7代表7天, 范围1-30</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>String</td>
+<td>NA</td>
+<td>当前时间</td>
+<td>请求的结束时间</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-20'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应合约品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-16'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>合约品种代码</td>
+</tr>
+</tbody></table>
+<h1 id='websocket'>Websocket行情数据</h1><h2 id='5ea2e0cde2-2'>简介</h2><h3 id='url'>接入url</h3>
+<p>websocket接入地址</p>
+
+<p>ws://stream.trochil.com/ws</p>
+<h3 id='65cd7614bc'>订阅主题</h3>
+<p>成功建立与Websocket服务器的连接后，需要进行apikey认证,发送如下消息认证apikey:</p>
+
+<p>{&#39;op&#39;: &#39;auth&#39;, &#39;apikey&#39;: your apiKey}</p>
+
+<p>apikey认证通过后Websocket客户端发送如下请求以订阅特定主题,支持以列表形式一次性发送多个主题：</p>
+
+<p>{&#39;op&#39;: &#39;sub&#39;, &#39;topic&#39;: topic to sub}</p>
+
+<p>成功订阅后，Websocket客户端将收到确认</p>
+
+<p>之后, 一旦所订阅的主题有更新，Websocket客户端将收到服务器推送的更新消息</p>
+<h3 id='b109d834a1'>取消订阅</h3>
+<p>取消订阅的格式如下,取消订阅支持以列表形式一次性取消订阅多个主题：</p>
+
+<p>{&#39;op&#39;: &#39;unsub&#39;, &#39;topic&#39;: topic to unsub}</p>
+
+<p>取消订阅成功后服务器发送确认信息</p>
+<h2 id='a-2'>A股实时数据</h2><h3 id='a94c7743c5'>主题订阅</h3>
+<p>地址 /cnstock
+一旦A股数据产生，Websocket服务器将通过此订阅主题接口推送至客户端</p>
+<h3 id='a-3'>A股实时数据更新字段列表</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票代码</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>股票中文名称</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>String</td>
+<td>最优买价</td>
+</tr>
+<tr>
+<td>ask</td>
+<td>String</td>
+<td>最优卖价</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>bidQty</td>
+<td>String</td>
+<td>最优买价数量</td>
+</tr>
+<tr>
+<td>askQty</td>
+<td>String</td>
+<td>最优卖价数量</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>最新成交时间</td>
+</tr>
+</tbody></table>
+<h2 id='fac4bf406d'>港股实时数据</h2><h3 id='a94c7743c5-2'>主题订阅</h3>
+<p>地址 /hkstock
+一旦港股数据产生，Websocket服务器将通过此订阅主题接口推送至客户端</p>
+<h3 id='adecfc4526'>港股实时数据更新字段列表</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票代码</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>股票中文名称</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>最新成交时间</td>
+</tr>
+</tbody></table>
+<h2 id='a57766f146'>美股实时数据</h2><h3 id='a94c7743c5-3'>主题订阅</h3>
+<p>地址 /usstock
+一旦美股数据产生，Websocket服务器将通过此订阅主题接口推送至客户端</p>
+<h3 id='e86ee65664'>美股实时数据更新字段列表</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>股票代码</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>股票中文名称</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>实时价格时间</td>
+</tr>
+</tbody></table>
+<h2 id='2869a7a75a'>国内期货实时数据</h2><h3 id='a94c7743c5-4'>主题订阅</h3>
+<p>地址 /cnfuture
+一旦期货数据产生，Websocket服务器将通过此订阅主题接口推送至客户端</p>
+<h3 id='8001842cd2'>期货实时数据更新字段列表</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>标准合约名称</td>
+</tr>
+<tr>
+<td>symbol_cn</td>
+<td>String</td>
+<td>标准合约中文</td>
+</tr>
+<tr>
+<td>open</td>
+<td>String</td>
+<td>今日开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>String</td>
+<td>今日最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>String</td>
+<td>今日最低价</td>
+</tr>
+<tr>
+<td>preClose</td>
+<td>String</td>
+<td>前一日收盘价</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>String</td>
+<td>最优买价</td>
+</tr>
+<tr>
+<td>ask</td>
+<td>String</td>
+<td>最优卖价</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>settle</td>
+<td>String</td>
+<td>结算价</td>
+</tr>
+<tr>
+<td>preSettle</td>
+<td>String</td>
+<td>前一日结算价</td>
+</tr>
+<tr>
+<td>bidQty</td>
+<td>String</td>
+<td>最优买价数量</td>
+</tr>
+<tr>
+<td>askQty</td>
+<td>String</td>
+<td>最优卖价数量</td>
+</tr>
+<tr>
+<td>openInterest</td>
+<td>String</td>
+<td>持仓量</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>String</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>产品中文名</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>最新成交时间</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The trochil API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>10002</td>
+<td>请求日线数据时传递的频率参数错误 -- freq not match daily</td>
+</tr>
+<tr>
+<td>10003</td>
+<td>数据返回的排序参数传递错误 -- sort not in [asc, desc]</td>
+</tr>
+<tr>
+<td>10004</td>
+<td>请求参数中的日线时间格式错误 -- time not format like xxxx-xx-xx</td>
+</tr>
+<tr>
+<td>10005</td>
+<td>请求日内数据时的时间参数格式错误 -- time not format like xxxx-xx-xx xx:xx:xx</td>
+</tr>
+<tr>
+<td>10006</td>
+<td>请求参数中的开始时间大于结束时间 -- start_date is greater than end_date</td>
+</tr>
+<tr>
+<td>10007</td>
+<td>请求需要传递品种代码symbol -- symbol is required</td>
+</tr>
+<tr>
+<td>10008</td>
+<td>请求没有传递时间频率 -- timeframe is required</td>
+</tr>
+<tr>
+<td>10009</td>
+<td>港股和美股请求频率只能是1分钟5分钟和60分钟 -- timeframe should in [1, 5, 60]</td>
+</tr>
+<tr>
+<td>10010</td>
+<td>请求需要传递date参数 -- date is required</td>
+</tr>
+<tr>
+<td>10011</td>
+<td>单次请求多个品种单日历史数据时不能超过数量上限 -- symbol should less than xx</td>
+</tr>
+<tr>
+<td>10012</td>
+<td>请求参数range应该传递正整数 -- range should be type int and &gt; 0</td>
+</tr>
+<tr>
+<td>10013</td>
+<td>非1分钟k线数据请求参数range过大或者过小 -- range should between xx and xx</td>
+</tr>
+<tr>
+<td>10014</td>
+<td>1分钟k线数据请求参数range过大或者过小 -- range should between xx and xx</td>
+</tr>
+<tr>
+<td>10015</td>
+<td>传递的symbol参数不存在 -- symbol is not exist</td>
+</tr>
+<tr>
+<td>10016</td>
+<td>请求没有传递apikey -- apikey is required</td>
+</tr>
+<tr>
+<td>10017</td>
+<td>请求传递的apikey错误 -- apikey is invalid</td>
+</tr>
+<tr>
+<td>10018</td>
+<td>发生了未知异常,请重试或者联系我们 -- An unexpected error has occurred. Please try again</td>
+</tr>
+<tr>
+<td>10019</td>
+<td>免费用户请求1分钟数据时间过长 -- free users can get up to xx days of data before today</td>
+</tr>
+<tr>
+<td>10020</td>
+<td>免费用户请求非1分钟数据时间过长 -- free users can get up to xx days of data before today</td>
+</tr>
+<tr>
+<td>10021</td>
+<td>免费用户没有请求市场类型权限 -- free users have no right to markets</td>
+</tr>
+<tr>
+<td>10022</td>
+<td>今日市场类型请求次数已达到上限 -- The number of markets requests for today has been exhausted</td>
+</tr>
+<tr>
+<td>10023</td>
+<td>今日日线级别数据请求次数已达到上限 -- The number of daily requests for today has been exhausted</td>
+</tr>
+<tr>
+<td>10024</td>
+<td>今日日内级别数据请求次数已达到上限 -- The number of day_inner requests for today has been exhausted</td>
+</tr>
+<tr>
+<td>10025</td>
+<td>免费用户当日总请求次数已达到上限 -- The number of requests for today has been exhausted</td>
+</tr>
+<tr>
+<td>10026</td>
+<td>单次请求实时数据超过限制 -- The number of quote symbols cannot be greater than xx</td>
+</tr>
+<tr>
+<td>10027</td>
+<td>A股和期货请求频率只能是5分钟或者60分钟 -- timeframe should in [5, 60]</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
