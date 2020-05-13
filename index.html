@@ -325,6 +325,20 @@
               </ul>
           </li>
           <li>
+            <a href="#3ffb439f4a" class="toc-h1 toc-link" data-title="经济数据接口">经济数据接口</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#e6355e0106" class="toc-h2 toc-link" data-title="简要说明">简要说明</a>
+                  </li>
+                  <li>
+                    <a href="#0490f22b48" class="toc-h2 toc-link" data-title="单个国家的所有指标">单个国家的所有指标</a>
+                  </li>
+                  <li>
+                    <a href="#7978de3df3" class="toc-h2 toc-link" data-title="获取单个指标">获取单个指标</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -3114,6 +3128,310 @@
 <td>timestamp</td>
 <td>String</td>
 <td>最新成交时间</td>
+</tr>
+</tbody></table>
+<h1 id='3ffb439f4a'>经济数据接口</h1><h2 id='e6355e0106'>简要说明</h2>
+<p>部分国家的宏观经济数据,包括日,月,季度,年份周期的各类经济指标</p>
+
+<p>经济数据接口base url: http://47.75.76.103:55551</p>
+<h2 id='0490f22b48'>单个国家的所有指标</h2>
+<blockquote>
+<p>示例代码：查询单个国家的所有指标</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://47.75.76.103:55551/v1/indicator/country'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'country'</span><span class="p">:</span> <span class="s">'美国'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询单个国家的所有指标</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'category'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">'国民收入与支出'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国'</span><span class="p">,</span><span class="w"> </span><span class="err">'series_code'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">548</span><span class="err">b</span><span class="mi">08363354</span><span class="err">c</span><span class="mi">0</span><span class="err">c</span><span class="mi">2</span><span class="err">d</span><span class="mi">9</span><span class="err">d</span><span class="mi">0540</span><span class="err">dcda</span><span class="mi">2173</span><span class="err">c'</span><span class="p">,</span><span class="w"> </span><span class="err">'series_name'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国实际GDP'</span><span class="p">,</span><span class="w">
+                 </span><span class="err">'unit'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">10</span><span class="err">亿美元(</span><span class="mi">2012</span><span class="err">年不变价格)'</span><span class="p">,</span><span class="w"> </span><span class="err">'freq'</span><span class="p">:</span><span class="w"> </span><span class="err">'Q'</span><span class="p">,</span><span class="w"> </span><span class="err">'sa'</span><span class="p">:</span><span class="w"> </span><span class="err">'季调年化'</span><span class="p">,</span><span class="w"> </span><span class="err">'source'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国经济分析局'</span><span class="p">,</span><span class="w"> </span><span class="err">'max_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">19221.97</span><span class="p">,</span><span class="w">
+                 </span><span class="err">'min_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">2023.452</span><span class="p">,</span><span class="w"> </span><span class="err">'last_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">18987.877</span><span class="p">,</span><span class="w"> </span><span class="err">'last_time'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-01</span><span class="w"> </span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国'</span><span class="p">,</span><span class="w"> </span><span class="err">'series_code'</span><span class="p">:</span><span class="w"> </span><span class="err">'e</span><span class="mi">4</span><span class="err">e</span><span class="mi">9</span><span class="err">d</span><span class="mi">188</span><span class="err">ae</span><span class="mi">428</span><span class="err">e</span><span class="mi">0855</span><span class="err">c</span><span class="mi">359</span><span class="err">c</span><span class="mi">46419</span><span class="err">edc</span><span class="mi">1</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'series_name'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国联邦政府债务：总公共债务'</span><span class="p">,</span><span class="w">
+                 </span><span class="err">'unit'</span><span class="p">:</span><span class="w"> </span><span class="err">'百万美元'</span><span class="p">,</span><span class="w"> </span><span class="err">'freq'</span><span class="p">:</span><span class="w"> </span><span class="err">'Q'</span><span class="p">,</span><span class="w"> </span><span class="err">'sa'</span><span class="p">:</span><span class="w"> </span><span class="err">'非季调'</span><span class="p">,</span><span class="w"> </span><span class="err">'source'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国财政部'</span><span class="p">,</span><span class="w"> </span><span class="err">'max_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">23201380.0</span><span class="p">,</span><span class="w">
+                 </span><span class="err">'min_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">316097.0</span><span class="p">,</span><span class="w"> </span><span class="err">'last_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">23201380.0</span><span class="p">,</span><span class="w"> </span><span class="err">'last_time'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-10-01</span><span class="w"> </span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">}</span><span class="err">...</span><span class="p">],</span><span class="w">
+            </span><span class="err">'就业与劳动力市场'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国'</span><span class="p">,</span><span class="w"> </span><span class="err">'series_code'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">6512</span><span class="err">b</span><span class="mi">2</span><span class="err">ecd</span><span class="mi">8</span><span class="err">f</span><span class="mi">003</span><span class="err">e</span><span class="mi">5</span><span class="err">ae</span><span class="mi">0349519</span><span class="err">e</span><span class="mi">0</span><span class="err">e</span><span class="mi">8752</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'series_name'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国非农就业人数'</span><span class="p">,</span><span class="w">
+                 </span><span class="err">'unit'</span><span class="p">:</span><span class="w"> </span><span class="err">'千人'</span><span class="p">,</span><span class="w"> </span><span class="err">'freq'</span><span class="p">:</span><span class="w"> </span><span class="err">'M'</span><span class="p">,</span><span class="w"> </span><span class="err">'sa'</span><span class="p">:</span><span class="w"> </span><span class="err">'季调'</span><span class="p">,</span><span class="w"> </span><span class="err">'source'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国劳工统计局'</span><span class="p">,</span><span class="w"> </span><span class="err">'max_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">152442.0</span><span class="p">,</span><span class="w"> </span><span class="err">'min_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">38507.0</span><span class="p">,</span><span class="w">
+                 </span><span class="err">'last_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">131072.0</span><span class="p">,</span><span class="w"> </span><span class="err">'last_time'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-04-01</span><span class="w"> </span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国'</span><span class="p">,</span><span class="w"> </span><span class="err">'series_code'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">66934455</span><span class="err">e</span><span class="mi">0239</span><span class="err">fda</span><span class="mi">92</span><span class="err">e</span><span class="mi">205</span><span class="err">b</span><span class="mi">25</span><span class="err">b</span><span class="mi">5</span><span class="err">d</span><span class="mi">4</span><span class="err">ad</span><span class="mi">5</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'series_name'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国非农商业部门单位劳动力成本'</span><span class="p">,</span><span class="w">
+                 </span><span class="err">'unit'</span><span class="p">:</span><span class="w"> </span><span class="err">'指数（</span><span class="mi">2012</span><span class="err">=</span><span class="mi">100</span><span class="err">）'</span><span class="p">,</span><span class="w"> </span><span class="err">'freq'</span><span class="p">:</span><span class="w"> </span><span class="err">'Q'</span><span class="p">,</span><span class="w"> </span><span class="err">'sa'</span><span class="p">:</span><span class="w"> </span><span class="err">'季调'</span><span class="p">,</span><span class="w"> </span><span class="err">'source'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国劳工统计局'</span><span class="p">,</span><span class="w"> </span><span class="err">'max_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">112.96</span><span class="p">,</span><span class="w">
+                 </span><span class="err">'min_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">15.965</span><span class="p">,</span><span class="w"> </span><span class="err">'last_value'</span><span class="p">:</span><span class="w"> </span><span class="mf">112.96</span><span class="p">,</span><span class="w"> </span><span class="err">'last_time'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-01</span><span class="w"> </span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">}</span><span class="err">...</span><span class="p">],</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取单个国家的所有指标。</p>
+<h3 id='http-21'>HTTP请求</h3>
+<p><code>GET /v1/indicator/country</code></p>
+<h3 id='1f9ac54b15-21'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>国家名称如美国</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-21'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>dict</td>
+<td>对应国家的所有经济指标信息</td>
+</tr>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>请求结果对应的状态码</td>
+</tr>
+</tbody></table>
+<h3 id='data-17'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category</td>
+<td>String</td>
+<td>经济指标目录</td>
+</tr>
+<tr>
+<td>country</td>
+<td>String</td>
+<td>国家名称</td>
+</tr>
+<tr>
+<td>series_code</td>
+<td>String</td>
+<td>由series_name经过算法加密而成的唯一标识码</td>
+</tr>
+<tr>
+<td>series_name</td>
+<td>String</td>
+<td>指标名称</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>String</td>
+<td>指标衡量计数单位</td>
+</tr>
+<tr>
+<td>freq</td>
+<td>String</td>
+<td>指标衡量时间单位</td>
+</tr>
+<tr>
+<td>sa</td>
+<td>String</td>
+<td>指标衡量时间单位中文</td>
+</tr>
+<tr>
+<td>source</td>
+<td>String</td>
+<td>指标数据来源</td>
+</tr>
+<tr>
+<td>max_value</td>
+<td>Float</td>
+<td>统计内指标最大值</td>
+</tr>
+<tr>
+<td>min_value</td>
+<td>Float</td>
+<td>统计内指标最小值</td>
+</tr>
+<tr>
+<td>last_value</td>
+<td>Float</td>
+<td>指标最新值</td>
+</tr>
+<tr>
+<td>last_time</td>
+<td>String</td>
+<td>指标最新时间</td>
+</tr>
+</tbody></table>
+<h2 id='7978de3df3'>获取单个指标</h2>
+<blockquote>
+<p>示例代码：查询单个指标</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://47.75.76.103:55551/v1/indicator/single'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'series_code'</span><span class="p">:</span> <span class="s">'548b08363354c0c2d9d0540dcda2173c'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询单个指标</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'category'</span><span class="p">:</span><span class="w"> </span><span class="err">'国民收入与支出'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'series_code'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">548</span><span class="err">b</span><span class="mi">08363354</span><span class="err">c</span><span class="mi">0</span><span class="err">c</span><span class="mi">2</span><span class="err">d</span><span class="mi">9</span><span class="err">d</span><span class="mi">0540</span><span class="err">dcda</span><span class="mi">2173</span><span class="err">c'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'series_name'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国实际GDP'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'unit'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">10</span><span class="err">亿美元(</span><span class="mi">2012</span><span class="err">年不变价格)'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'freq'</span><span class="p">:</span><span class="w"> </span><span class="err">'Q'</span><span class="p">,</span><span class="w"> </span><span class="err">'sa'</span><span class="p">:</span><span class="w"> </span><span class="err">'季调年化'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'source'</span><span class="p">:</span><span class="w"> </span><span class="err">'美国经济分析局'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'values'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="err">'date'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">1947-01-01</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'value'</span><span class="p">:</span><span class="w"> </span><span class="mf">2033.061</span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="err">'date'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">1947-04-01</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'value'</span><span class="p">:</span><span class="w"> </span><span class="mf">2027.639</span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="err">'date'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">1947-07-01</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'value'</span><span class="p">:</span><span class="w"> </span><span class="mf">2023.452</span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="err">'date'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">1947-10-01</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'value'</span><span class="p">:</span><span class="w"> </span><span class="mf">2055.103</span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+            </span><span class="p">{</span><span class="err">'date'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-10-01</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'value'</span><span class="p">:</span><span class="w"> </span><span class="mf">19221.97</span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="err">'date'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-01</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'value'</span><span class="p">:</span><span class="w"> </span><span class="mf">18987.877</span><span class="p">}],</span><span class="w">
+        </span><span class="err">'transform'</span><span class="p">:</span><span class="w"> </span><span class="err">'lin'</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取某个国家的单个指标。</p>
+<h3 id='http-22'>HTTP请求</h3>
+<p><code>GET /v1/indicator/single</code></p>
+<h3 id='1f9ac54b15-22'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>series_code</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>指标名称对应的唯一代码</td>
+</tr>
+<tr>
+<td>freq</td>
+<td>String</td>
+<td>NO</td>
+<td>原始数据的频率</td>
+<td>指标对应的时间频率,freq与公布数据的频率不一致时采用重取样的方式生成,可用频率为D, W, M, Q，A</td>
+</tr>
+<tr>
+<td>transform</td>
+<td>String</td>
+<td>NO</td>
+<td>原始数据值</td>
+<td>计算方式,可用计算方式为lin-原始值,chg-环比增长,ch1-同比增长,pch-环比增长率,pc1-同比增长率,pca-复合年增长率,cch-连续复合增长率,cca-连续复合年增长率,log-自然对数</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>NO</td>
+<td>原始数据的最开始的时间</td>
+<td>开始日期</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>TNO</td>
+<td>当前日期</td>
+<td>结束日期</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-22'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>dict</td>
+<td>对应国家的所有经济指标信息</td>
+</tr>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>请求结果对应的状态码</td>
+</tr>
+</tbody></table>
+<h3 id='data-18'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country</td>
+<td>String</td>
+<td>国家名称</td>
+</tr>
+<tr>
+<td>category</td>
+<td>String</td>
+<td>经济指标目录</td>
+</tr>
+<tr>
+<td>series_code</td>
+<td>Float</td>
+<td>由series_name经过算法加密而成的唯一标识码</td>
+</tr>
+<tr>
+<td>series_name</td>
+<td>Float</td>
+<td>指标名称</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>Float</td>
+<td>指标衡量计数单位</td>
+</tr>
+<tr>
+<td>freq</td>
+<td>Float</td>
+<td>指标衡量时间单位</td>
+</tr>
+<tr>
+<td>source</td>
+<td>String</td>
+<td>指标数据来源</td>
+</tr>
+<tr>
+<td>values</td>
+<td>list</td>
+<td>请求时间内对应时间的指标数据</td>
+</tr>
+<tr>
+<td>transform</td>
+<td>String</td>
+<td>指标计算方式</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
