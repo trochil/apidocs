@@ -3230,7 +3230,7 @@
 <tr>
 <td>series_code</td>
 <td>String</td>
-<td>由series_name经过算法加密而成的唯一标识码</td>
+<td>由指标名称经过算法加密而成的唯一标识码</td>
 </tr>
 <tr>
 <td>series_name</td>
@@ -3335,28 +3335,28 @@
 <tr>
 <td>freq</td>
 <td>String</td>
-<td>NO</td>
+<td>No</td>
 <td>原始数据的频率</td>
 <td>指标对应的时间频率,freq与公布数据的频率不一致时采用重取样的方式生成,可用频率为D, W, M, Q，A</td>
 </tr>
 <tr>
 <td>transform</td>
 <td>String</td>
-<td>NO</td>
+<td>No</td>
 <td>原始数据值</td>
 <td>计算方式,可用计算方式为lin-原始值,chg-环比增长,ch1-同比增长,pch-环比增长率,pc1-同比增长率,pca-复合年增长率,cch-连续复合增长率,cca-连续复合年增长率,log-自然对数</td>
 </tr>
 <tr>
 <td>start_date</td>
 <td>String</td>
-<td>NO</td>
+<td>No</td>
 <td>原始数据的最开始的时间</td>
 <td>开始日期</td>
 </tr>
 <tr>
 <td>end_date</td>
 <td>String</td>
-<td>TNO</td>
+<td>No</td>
 <td>当前日期</td>
 <td>结束日期</td>
 </tr>
@@ -3400,22 +3400,22 @@
 </tr>
 <tr>
 <td>series_code</td>
-<td>Float</td>
+<td>String</td>
 <td>由series_name经过算法加密而成的唯一标识码</td>
 </tr>
 <tr>
 <td>series_name</td>
-<td>Float</td>
+<td>String</td>
 <td>指标名称</td>
 </tr>
 <tr>
 <td>unit</td>
-<td>Float</td>
+<td>String</td>
 <td>指标衡量计数单位</td>
 </tr>
 <tr>
 <td>freq</td>
-<td>Float</td>
+<td>String</td>
 <td>指标衡量时间单位</td>
 </tr>
 <tr>
@@ -3546,6 +3546,26 @@
 <tr>
 <td>10027</td>
 <td>A股和期货请求频率只能是5分钟或者60分钟 -- timeframe should in [5, 60]</td>
+</tr>
+<tr>
+<td>20010</td>
+<td>需要传递country参数 -- parameter country is required</td>
+</tr>
+<tr>
+<td>20011</td>
+<td>传递的国家名称有误或者该国家尚无技术指标数据 -- There is no data for this field</td>
+</tr>
+<tr>
+<td>20012</td>
+<td>需要传递series_code参数 -- parameter series_code is required</td>
+</tr>
+<tr>
+<td>20013</td>
+<td>传递的series_code参数不存在或者该指标名称尚无数据 -- There is no data for this field</td>
+</tr>
+<tr>
+<td>20014</td>
+<td>传递的transform参数不存在 -- parameter transform xx is not exist</td>
 </tr>
 </tbody></table>
 
