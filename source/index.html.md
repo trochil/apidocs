@@ -1403,3 +1403,159 @@ openInterest | String | 持仓量
 volume | String | 成交量
 name | String | 产品中文名
 timestamp | String | 最新成交时间
+
+# 经济数据接口
+
+## 简要说明
+
+部分国家的宏观经济数据,包括日,月,季度,年份周期的各类经济指标
+
+经济数据接口base url: http://47.75.76.103:55551
+
+## 单个国家的所有指标
+
+> 示例代码：查询单个国家的所有指标
+
+```python
+import requests
+
+info = requests.get('http://47.75.76.103:55551/v1/indicator/country', params={'country': '美国'})
+```
+
+> 返回结果：查询单个国家的所有指标
+
+```json
+{
+    'code': 200,
+    'data': {
+        'country': '美国',
+        'category': {
+            '国民收入与支出': [
+                {'country': '美国', 'series_code': '548b08363354c0c2d9d0540dcda2173c', 'series_name': '美国实际GDP',
+                 'unit': '10亿美元(2012年不变价格)', 'freq': 'Q', 'sa': '季调年化', 'source': '美国经济分析局', 'max_value': 19221.97,
+                 'min_value': 2023.452, 'last_value': 18987.877, 'last_time': '2020-01-01 00:00:00'},
+                {'country': '美国', 'series_code': 'e4e9d188ae428e0855c359c46419edc1', 'series_name': '美国联邦政府债务：总公共债务',
+                 'unit': '百万美元', 'freq': 'Q', 'sa': '非季调', 'source': '美国财政部', 'max_value': 23201380.0,
+                 'min_value': 316097.0, 'last_value': 23201380.0, 'last_time': '2019-10-01 00:00:00'}...],
+            '就业与劳动力市场': [
+                {'country': '美国', 'series_code': '6512b2ecd8f003e5ae0349519e0e8752', 'series_name': '美国非农就业人数',
+                 'unit': '千人', 'freq': 'M', 'sa': '季调', 'source': '美国劳工统计局', 'max_value': 152442.0, 'min_value': 38507.0,
+                 'last_value': 131072.0, 'last_time': '2020-04-01 00:00:00'},
+                {'country': '美国', 'series_code': '66934455e0239fda92e205b25b5d4ad5', 'series_name': '美国非农商业部门单位劳动力成本',
+                 'unit': '指数（2012=100）', 'freq': 'Q', 'sa': '季调', 'source': '美国劳工统计局', 'max_value': 112.96,
+                 'min_value': 15.965, 'last_value': 112.96, 'last_time': '2020-01-01 00:00:00'}...],
+        }
+        ...
+    }
+}
+```
+
+获取单个国家的所有指标。
+
+### HTTP请求
+
+`GET /v1/indicator/country`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+country | String | True | NA | 国家名称如美国
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+data | dict | 对应国家的所有经济指标信息
+code | int | 请求结果对应的状态码
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+category | String | 经济指标目录
+country | String | 国家名称
+series_code | String | 由series_name经过算法加密而成的唯一标识码
+series_name | String | 指标名称
+unit | String | 指标衡量计数单位
+freq | String | 指标衡量时间单位
+sa | String | 指标衡量时间单位中文
+source | String | 指标数据来源
+max_value | Float | 统计内指标最大值
+min_value | Float | 统计内指标最小值
+last_value | Float | 指标最新值
+last_time | String | 指标最新时间
+
+## 获取单个指标
+
+> 示例代码：查询单个指标
+
+```python
+import requests
+
+info = requests.get('http://47.75.76.103:55551/v1/indicator/single',
+                    params={'series_code': '548b08363354c0c2d9d0540dcda2173c'})
+```
+
+> 返回结果：查询单个指标
+
+```json
+{
+    'code': 200,
+    'data': {
+        'country': '美国',
+        'category': '国民收入与支出',
+        'series_code': '548b08363354c0c2d9d0540dcda2173c',
+        'series_name': '美国实际GDP',
+        'unit': '10亿美元(2012年不变价格)',
+        'freq': 'Q', 'sa': '季调年化',
+        'source': '美国经济分析局',
+        'values': [
+            {'date': '1947-01-01', 'value': 2033.061},
+            {'date': '1947-04-01', 'value': 2027.639},
+            {'date': '1947-07-01', 'value': 2023.452},
+            {'date': '1947-10-01', 'value': 2055.103},
+            ...
+            {'date': '2019-10-01', 'value': 19221.97},
+            {'date': '2020-01-01', 'value': 18987.877}],
+        'transform': 'lin'
+    }
+}
+```
+
+获取某个国家的单个指标。
+
+### HTTP请求
+
+`GET /v1/indicator/single`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+series_code | String | True | NA | 指标名称对应的唯一代码
+freq | String | NO | 原始数据的频率 | 指标对应的时间频率,freq与公布数据的频率不一致时采用重取样的方式生成,可用频率为D, W, M, Q，A
+transform | String | NO | 原始数据值 | 计算方式,可用计算方式为lin-原始值,chg-环比增长,ch1-同比增长,pch-环比增长率,pc1-同比增长率,pca-复合年增长率,cch-连续复合增长率,cca-连续复合年增长率,log-自然对数
+start_date | String | NO | 原始数据的最开始的时间 | 开始日期
+end_date | String | TNO | 当前日期 | 结束日期
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+data | dict | 对应国家的所有经济指标信息
+code | int | 请求结果对应的状态码
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+country | String | 国家名称
+category | String | 经济指标目录
+series_code | Float | 由series_name经过算法加密而成的唯一标识码
+series_name | Float | 指标名称
+unit | Float | 指标衡量计数单位
+freq | Float | 指标衡量时间单位
+source | String | 指标数据来源
+values | list | 请求时间内对应时间的指标数据
+transform | String | 指标计算方式
