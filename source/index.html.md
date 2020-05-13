@@ -1535,9 +1535,9 @@ info = requests.get('http://47.75.76.103:55551/v1/indicator/single',
 参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
 --------- | ------- | ----------- | ----------- | -----------
 series_code | String | True | NA | 指标名称对应的唯一代码
-freq | String | No | 原始数据的频率 | 指标对应的时间频率,freq与公布数据的频率不一致时采用重取样的方式生成,可用频率为D, W, M, Q，A
-transform | String | No | 原始数据值 | 计算方式,可用计算方式为lin-原始值,chg-环比增长,ch1-同比增长,pch-环比增长率,pc1-同比增长率,pca-复合年增长率,cch-连续复合增长率,cca-连续复合年增长率,log-自然对数
-start_date | String | No | 原始数据的最开始的时间 | 开始日期
+freq | String | No | 原始频率 | 指标对应的时间频率,freq与公布数据的频率不一致时采用重取样的方式生成,可用频率为D, W, M, Q，A
+transform | String | No | lin | 计算方式,lin-原始值,chg-环比增长,ch1-同比增长,pch-环比增长率,pc1-同比增长率,pca-复合年增长率,cch-连续复合增长率,cca-连续复合年增长率,log-自然对数
+start_date | String | No | 最早时间 | 开始日期
 end_date | String | No | 当前日期 | 结束日期
 
 ### 响应数据
