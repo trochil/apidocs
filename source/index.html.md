@@ -1404,6 +1404,7 @@ volume | String | 成交量
 name | String | 产品中文名
 timestamp | String | 最新成交时间
 
+
 # 经济数据接口
 
 ## 简要说明
@@ -1475,7 +1476,7 @@ code | int | 请求结果对应的状态码
 --------- | ------- | -----------
 category | String | 经济指标目录
 country | String | 国家名称
-series_code | String | 由series_name经过算法加密而成的唯一标识码
+series_code | String | 由指标名称经过算法加密而成的唯一标识码
 series_name | String | 指标名称
 unit | String | 指标衡量计数单位
 freq | String | 指标衡量时间单位
@@ -1534,10 +1535,10 @@ info = requests.get('http://47.75.76.103:55551/v1/indicator/single',
 参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
 --------- | ------- | ----------- | ----------- | -----------
 series_code | String | True | NA | 指标名称对应的唯一代码
-freq | String | NO | 原始数据的频率 | 指标对应的时间频率,freq与公布数据的频率不一致时采用重取样的方式生成,可用频率为D, W, M, Q，A
-transform | String | NO | 原始数据值 | 计算方式,可用计算方式为lin-原始值,chg-环比增长,ch1-同比增长,pch-环比增长率,pc1-同比增长率,pca-复合年增长率,cch-连续复合增长率,cca-连续复合年增长率,log-自然对数
-start_date | String | NO | 原始数据的最开始的时间 | 开始日期
-end_date | String | TNO | 当前日期 | 结束日期
+freq | String | No | 原始数据的频率 | 指标对应的时间频率,freq与公布数据的频率不一致时采用重取样的方式生成,可用频率为D, W, M, Q，A
+transform | String | No | 原始数据值 | 计算方式,可用计算方式为lin-原始值,chg-环比增长,ch1-同比增长,pch-环比增长率,pc1-同比增长率,pca-复合年增长率,cch-连续复合增长率,cca-连续复合年增长率,log-自然对数
+start_date | String | No | 原始数据的最开始的时间 | 开始日期
+end_date | String | No | 当前日期 | 结束日期
 
 ### 响应数据
 
@@ -1552,10 +1553,10 @@ code | int | 请求结果对应的状态码
 --------- | ------- | -----------
 country | String | 国家名称
 category | String | 经济指标目录
-series_code | Float | 由series_name经过算法加密而成的唯一标识码
-series_name | Float | 指标名称
-unit | Float | 指标衡量计数单位
-freq | Float | 指标衡量时间单位
+series_code | String | 由series_name经过算法加密而成的唯一标识码
+series_name | String | 指标名称
+unit | String | 指标衡量计数单位
+freq | String | 指标衡量时间单位
 source | String | 指标数据来源
 values | list | 请求时间内对应时间的指标数据
 transform | String | 指标计算方式

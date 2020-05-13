@@ -31,3 +31,8 @@ Error Code | Meaning
 10025 | 免费用户当日总请求次数已达到上限 -- The number of requests for today has been exhausted
 10026 | 单次请求实时数据超过限制 -- The number of quote symbols cannot be greater than xx
 10027 | A股和期货请求频率只能是5分钟或者60分钟 -- timeframe should in [5, 60]
+20010 | 需要传递country参数 -- parameter country is required
+20011 | 传递的国家名称有误或者该国家尚无技术指标数据 -- There is no data for this field
+20012 | 需要传递series_code参数 -- parameter series_code is required
+20013 | 传递的series_code参数不存在或者该指标名称尚无数据 -- There is no data for this field
+20014 | 传递的transform参数不存在 -- parameter transform xx is not exist
