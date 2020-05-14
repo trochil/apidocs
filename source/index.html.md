@@ -1560,3 +1560,154 @@ freq | String | 指标衡量时间单位
 source | String | 指标数据来源
 values | list | 请求时间内对应时间的指标数据
 transform | String | 指标计算方式
+
+
+# 全市场快照
+
+## 简要说明
+
+支持获取美股,A股,港股,期货,数字货币,外汇市场内所有交易对的ticker价格快照数据
+
+经济数据接口base url: http://47.75.76.103:55552
+
+## 单个市场类型全部交易对价格快照
+
+> 示例代码：查询单个市场类型全部交易对价格快照
+
+```python
+import requests
+
+info = requests.get('http://localhost:55552/v1/snapshot/market', params={'market': 'usstock'})
+```
+
+> 返回结果：查询单个市场类型全部交易对价格快照
+
+```json
+{
+    'code': 200,
+    'data': [
+        {'name': 'SIFCO Industries, Inc.', 'symbol': 'SIF', 'last': 4.14, 'change': 1.94, 'percent_change': 87.97,
+         'pre_close': 2.2, 'open': 3.54, 'high': 5.5, 'low': 3.54, 'volume': 17573373.0, 'mktcap': 24255415.0,
+         'pe': -3.0218977, 'exchange': 'NYSE'},
+        {'name': 'Genius Brands International, Inc.', 'symbol': 'GNUS', 'last': 1.31, 'change': 0.58,
+         'percent_change': 79.85, 'pre_close': 0.73, 'open': 0.77, 'high': 1.41, 'low': 0.71, 'volume': 109526316.0,
+         'mktcap': 38765855.0, 'pe': -1.0396825, 'exchange': 'NASDAQ'},
+        {'name': 'United Natural Foods, Inc.', 'symbol': 'UNFI', 'last': 22.59, 'change': 7.08, 'percent_change': 45.65,
+         'pre_close': 15.51, 'open': 17.06, 'high': 23.38, 'low': 17.06, 'volume': 23196133.0, 'mktcap': 1211228008.0,
+         'pe': -3.58003175, 'exchange': 'NASDAQ'},
+        {'name': 'RumbleOn, Inc.', 'symbol': 'RMBL', 'last': 0.58, 'change': 0.17, 'percent_change': 42.09,
+         'pre_close': 0.41, 'open': 0.42, 'high': 0.61, 'low': 0.4, 'volume': 31087517.0, 'mktcap': 14173489.0,
+         'pe': -0.28571428, 'exchange': 'NASDAQ'}
+        ...
+    ]
+}
+```
+
+获取单个市场类型全部交易对价格快照信息。
+
+### HTTP请求
+
+`GET /v1/snapshot/marke`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+market | String | True | NA | 市场类型目前可选(usstock,hkstock,cnstock,crypto,futures,forex)
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+data | dict | 对应国家的所有经济指标信息
+code | int | 请求结果对应的状态码
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+name | String | 交易对名称
+symbol | String | 交易对简称
+last | String | 最新价
+change | String | 价格变动数
+percent_change | String | 价格变动比率
+pre_close | String | 前一个交易日收盘价
+open | String | 开盘价
+high | String | 最高价
+low | Float | 最低价
+volume | Float | 成交量
+mktcap | Float | 市值
+pe | String | 市盈率
+exchange | String | 交易所
+
+## 单个市场类型涨跌幅榜
+
+> 示例代码：查询单个市场类型涨跌幅榜单
+
+```python
+import requests
+
+info = requests.get('http://localhost:55552/v1/snapshot/top', params={'market': 'usstock', 'lenth': 10})
+```
+
+> 查询单个市场类型涨跌幅榜单
+
+```json
+{
+    'code': 200,
+    'data': [
+        {'name': 'SIFCO Industries, Inc.', 'symbol': 'SIF', 'last': 4.14, 'change': 1.94, 'percent_change': 87.97,
+         'pre_close': 2.2, 'open': 3.54, 'high': 5.5, 'low': 3.54, 'volume': 17573373.0, 'mktcap': 24255415.0,
+         'pe': -3.0218977, 'exchange': 'NYSE'},
+        {'name': 'Genius Brands International, Inc.', 'symbol': 'GNUS', 'last': 1.31, 'change': 0.58,
+         'percent_change': 79.85, 'pre_close': 0.73, 'open': 0.77, 'high': 1.41, 'low': 0.71, 'volume': 109526316.0,
+         'mktcap': 38765855.0, 'pe': -1.0396825, 'exchange': 'NASDAQ'},
+        {'name': 'United Natural Foods, Inc.', 'symbol': 'UNFI', 'last': 22.59, 'change': 7.08, 'percent_change': 45.65,
+         'pre_close': 15.51, 'open': 17.06, 'high': 23.38, 'low': 17.06, 'volume': 23196133.0, 'mktcap': 1211228008.0,
+         'pe': -3.58003175, 'exchange': 'NASDAQ'},
+        {'name': 'RumbleOn, Inc.', 'symbol': 'RMBL', 'last': 0.58, 'change': 0.17, 'percent_change': 42.09,
+         'pre_close': 0.41, 'open': 0.42, 'high': 0.61, 'low': 0.4, 'volume': 31087517.0, 'mktcap': 14173489.0,
+         'pe': -0.28571428, 'exchange': 'NASDAQ'}
+        ...
+    ]
+}
+```
+
+获取查询单个市场类型涨跌幅榜单信息。
+
+### HTTP请求
+
+`GET /v1/snapshot/top`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+market | String | True | NA | 市场类型目前可选(usstock,hkstock,cnstock,crypto,futures,forex)
+top | String | No | gainers | 涨跌幅排行榜,涨-gainers,跌-losers
+lenth | int | No | 全部数据 | 榜单前x名
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+data | dict | 对应国家的所有经济指标信息
+code | int | 请求结果对应的状态码
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+name | String | 交易对名称
+symbol | String | 交易对简称
+last | String | 最新价
+change | String | 价格变动数
+percent_change | String | 价格变动比率
+pre_close | String | 前一个交易日收盘价
+open | String | 开盘价
+high | String | 最高价
+low | Float | 最低价
+volume | Float | 成交量
+mktcap | Float | 市值
+pe | String | 市盈率
+exchange | String | 交易所
