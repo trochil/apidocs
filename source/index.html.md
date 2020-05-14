@@ -1411,7 +1411,7 @@ timestamp | String | 最新成交时间
 
 部分国家的宏观经济数据,包括日,月,季度,年份周期的各类经济指标
 
-经济数据接口base url: http://47.75.76.103:55551
+经济数据接口base url: api.trochil.com
 
 ## 单个国家的所有指标
 
@@ -1420,7 +1420,7 @@ timestamp | String | 最新成交时间
 ```python
 import requests
 
-info = requests.get('http://47.75.76.103:55551/v1/indicator/country', params={'country': '美国'})
+info = requests.get('http://api.trochil.com/v1/indicator/country', params={'country': '美国'})
 ```
 
 > 返回结果：查询单个国家的所有指标
@@ -1494,7 +1494,7 @@ last_time | String | 指标最新时间
 ```python
 import requests
 
-info = requests.get('http://47.75.76.103:55551/v1/indicator/single',
+info = requests.get('http://api.trochil.com/v1/indicator/single',
                     params={'series_code': '548b08363354c0c2d9d0540dcda2173c'})
 ```
 
@@ -1568,7 +1568,7 @@ transform | String | 指标计算方式
 
 支持获取美股,A股,港股,期货,数字货币,外汇市场内所有交易对的ticker价格快照数据
 
-经济数据接口base url: http://47.75.76.103:55552
+经济数据接口base url: api.trochil.com
 
 ## 单个市场类型全部交易对价格快照
 
@@ -1577,7 +1577,7 @@ transform | String | 指标计算方式
 ```python
 import requests
 
-info = requests.get('http://localhost:55552/v1/snapshot/market', params={'market': 'usstock'})
+info = requests.get('http://api.trochil.com/v1/snapshot/market', params={'market': 'usstock'})
 ```
 
 > 返回结果：查询单个市场类型全部交易对价格快照
@@ -1607,7 +1607,7 @@ info = requests.get('http://localhost:55552/v1/snapshot/market', params={'market
 
 ### HTTP请求
 
-`GET /v1/snapshot/marke`
+`GET /v1/snapshot/market`
 
 ### 请求参数
 
@@ -1647,7 +1647,7 @@ exchange | String | 交易所
 ```python
 import requests
 
-info = requests.get('http://localhost:55552/v1/snapshot/top', params={'market': 'usstock', 'lenth': 10})
+info = requests.get('http://api.trochil.com/v1/snapshot/top', params={'market': 'usstock', 'lenth': 10})
 ```
 
 > 查询单个市场类型涨跌幅榜单
