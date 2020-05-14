@@ -36,3 +36,10 @@ Error Code | Meaning
 20012 | 需要传递series_code参数 -- parameter series_code is required
 20013 | 传递的series_code参数不存在或者该指标名称尚无数据 -- There is no data for this field
 20014 | 传递的transform参数不存在 -- parameter transform xx is not exist
+30010 | 必须传递market参数 -- parameter market is required
+30011 | 不存在传递的market市场类型 -- There is no data for this field
+30012 | lenth参数的类型应该是正整数 -- lenth should bigger than 0
+30013 | lenth参数的类型错误 -- xxx is invalid, please send type int
+30014 | 排行参数错误, -- xxx is invalid send gainers or losers
+30015 | 传递的market参数没有对应的数据或者该参数不存在 -- There is no data for this field
+
