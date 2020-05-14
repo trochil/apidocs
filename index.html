@@ -3147,14 +3147,14 @@
 <h1 id='3ffb439f4a'>经济数据接口</h1><h2 id='e6355e0106'>简要说明</h2>
 <p>部分国家的宏观经济数据,包括日,月,季度,年份周期的各类经济指标</p>
 
-<p>经济数据接口base url: http://47.75.76.103:55551</p>
+<p>经济数据接口base url: api.trochil.com</p>
 <h2 id='0490f22b48'>单个国家的所有指标</h2>
 <blockquote>
 <p>示例代码：查询单个国家的所有指标</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://47.75.76.103:55551/v1/indicator/country'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'country'</span><span class="p">:</span> <span class="s">'美国'</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/indicator/country'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'country'</span><span class="p">:</span> <span class="s">'美国'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询单个国家的所有指标</p>
@@ -3298,7 +3298,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://47.75.76.103:55551/v1/indicator/single'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/indicator/single'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'series_code'</span><span class="p">:</span> <span class="s">'548b08363354c0c2d9d0540dcda2173c'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -3451,14 +3451,14 @@
 <h1 id='8da3bea822'>全市场快照</h1><h2 id='e6355e0106-2'>简要说明</h2>
 <p>支持获取美股,A股,港股,期货,数字货币,外汇市场内所有交易对的ticker价格快照数据</p>
 
-<p>经济数据接口base url: http://47.75.76.103:55552</p>
+<p>经济数据接口base url: api.trochil.com</p>
 <h2 id='1601719226'>单个市场类型全部交易对价格快照</h2>
 <blockquote>
 <p>示例代码：查询单个市场类型全部交易对价格快照</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://localhost:55552/v1/snapshot/market'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/snapshot/market'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询单个市场类型全部交易对价格快照</p>
@@ -3484,7 +3484,7 @@
 </span></code></pre>
 <p>获取单个市场类型全部交易对价格快照信息。</p>
 <h3 id='http-23'>HTTP请求</h3>
-<p><code>GET /v1/snapshot/marke</code></p>
+<p><code>GET /v1/snapshot/market</code></p>
 <h3 id='1f9ac54b15-23'>请求参数</h3>
 <table><thead>
 <tr>
@@ -3602,7 +3602,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://localhost:55552/v1/snapshot/top'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">,</span> <span class="s">'lenth'</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/snapshot/top'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">,</span> <span class="s">'lenth'</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>查询单个市场类型涨跌幅榜单</p>
