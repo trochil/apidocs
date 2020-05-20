@@ -353,6 +353,20 @@
               </ul>
           </li>
           <li>
+            <a href="#57be07fc59" class="toc-h1 toc-link" data-title="股指数据">股指数据</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#e6355e0106-3" class="toc-h2 toc-link" data-title="简要说明">简要说明</a>
+                  </li>
+                  <li>
+                    <a href="#1669ec607a" class="toc-h2 toc-link" data-title="全球股指实时数据">全球股指实时数据</a>
+                  </li>
+                  <li>
+                    <a href="#4debdfac16" class="toc-h2 toc-link" data-title="全球股指历史数据">全球股指历史数据</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -3433,6 +3447,11 @@
 <td>指标衡量时间单位</td>
 </tr>
 <tr>
+<td>sa</td>
+<td>String</td>
+<td>指标衡量时间单位中文</td>
+</tr>
+<tr>
 <td>source</td>
 <td>String</td>
 <td>指标数据来源</td>
@@ -3523,6 +3542,9 @@
 </tr>
 </tbody></table>
 <h3 id='data-19'>data说明</h3>
+<p>市场类型不同data中包含的字段有所差异,如没有一下字段则说明该市场类型没有该字段
+如期货市场没有pe,mktcap等字段</p>
+
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3681,6 +3703,9 @@
 </tr>
 </tbody></table>
 <h3 id='data-20'>data说明</h3>
+<p>市场类型不同data中包含的字段有所差异,如没有一下字段则说明该市场类型没有该字段
+如期货市场没有pe,mktcap等字段</p>
+
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3752,6 +3777,227 @@
 <td>exchange</td>
 <td>String</td>
 <td>交易所</td>
+</tr>
+</tbody></table>
+<h1 id='57be07fc59'>股指数据</h1><h2 id='e6355e0106-3'>简要说明</h2>
+<p>支持获取全球股指实时数据以及全球股指历史日线级别数据,全球股指历史数据分钟级别待扩展</p>
+
+<p>经济数据接口base url: api.trochil.com</p>
+<h2 id='1669ec607a'>全球股指实时数据</h2>
+<blockquote>
+<p>示例代码：查询全球股指实时价格快照</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/index/tickers'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询全球股指实时价格快照</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'中国'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'上证指数'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="mf">2891.36</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">2896.47</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">2883.6</span><span class="p">,</span><span class="w"> </span><span class="err">'change'</span><span class="p">:</span><span class="w"> </span><span class="mf">-7.22</span><span class="p">,</span><span class="w">
+         </span><span class="err">'percent_change'</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.25</span><span class="p">,</span><span class="w"> </span><span class="err">'time'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-20</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">40</span><span class="p">:</span><span class="mi">53</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'中国'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'深证成指'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="mf">10992.75</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">11056.98</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">10970.22</span><span class="p">,</span><span class="w"> </span><span class="err">'change'</span><span class="p">:</span><span class="w"> </span><span class="mf">-60.09</span><span class="p">,</span><span class="w">
+         </span><span class="err">'percent_change'</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.54</span><span class="p">,</span><span class="w"> </span><span class="err">'time'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-20</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">48</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'中国'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'富时中国A</span><span class="mi">50</span><span class="err">指数'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="mf">13491.66</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">13499.27</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">13417.79</span><span class="p">,</span><span class="w"> </span><span class="err">'change'</span><span class="p">:</span><span class="w"> </span><span class="mf">9.75</span><span class="p">,</span><span class="w">
+         </span><span class="err">'percent_change'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="p">,</span><span class="w"> </span><span class="err">'time'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-20</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">40</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'country'</span><span class="p">:</span><span class="w"> </span><span class="err">'越南'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'越南HNX</span><span class="mi">30</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="mf">212.41</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">213.64</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">208.73</span><span class="p">,</span><span class="w"> </span><span class="err">'change'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+         </span><span class="err">'percent_change'</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="err">'time'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-18</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取全球股指实时价格快照信息。</p>
+<h3 id='http-25'>HTTP请求</h3>
+<p><code>GET /v1/index/tickers</code></p>
+<h3 id='1f9ac54b15-25'>请求参数</h3>
+<p>无</p>
+<h3 id='2213f4c32f-25'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>dict</td>
+<td>对应国家的所有经济指标信息</td>
+</tr>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>请求结果对应的状态码</td>
+</tr>
+</tbody></table>
+<h3 id='data-21'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country</td>
+<td>String</td>
+<td>股指所属国家名称</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>股指名称</td>
+</tr>
+<tr>
+<td>last</td>
+<td>Float</td>
+<td>最新价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>change</td>
+<td>Float</td>
+<td>价格变动数</td>
+</tr>
+<tr>
+<td>percent_change</td>
+<td>Float</td>
+<td>价格变动比例</td>
+</tr>
+<tr>
+<td>time</td>
+<td>String</td>
+<td>时间</td>
+</tr>
+</tbody></table>
+<h2 id='4debdfac16'>全球股指历史数据</h2>
+<blockquote>
+<p>示例代码：查询全球股指历史数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/index/daily'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'nas100'</span><span class="p">,</span> <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-01-01'</span><span class="p">,</span> <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询全球股指历史数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-02</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8802.22</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8873.63</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8786.9</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8872.22</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">152650000.0</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-03</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8755.17</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8843.65</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8755.17</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8793.9</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">144750000.0</span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-01-31</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">9169.91</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">9170.22</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8961.59</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8991.51</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">217220000.0</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取全球股指历史数据。</p>
+<h3 id='http-26'>HTTP请求</h3>
+<p><code>GET /v1/index/daily</code></p>
+<h3 id='1f9ac54b15-26'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>股指代码,如nas100</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>False</td>
+<td>数据起始时间</td>
+<td>样本起始时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>False</td>
+<td>最近更新时间</td>
+<td>样本结束时间,如2019-09-09</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-26'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>dict</td>
+<td>对应国家的所有经济指标信息</td>
+</tr>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>请求结果对应的状态码</td>
+</tr>
+</tbody></table>
+<h3 id='data-22'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>交易量</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
