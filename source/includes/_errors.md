@@ -42,4 +42,7 @@ Error Code | Meaning
 30013 | lenth参数的类型错误 -- xxx is invalid, please send type int
 30014 | 排行参数错误, -- xxx is invalid send gainers or losers
 30015 | 传递的market参数没有对应的数据或者该参数不存在 -- There is no data for this field
-
+40010 | 读取数据异常 -- abnormal reading. Please try again
+40011 | 需要传递symbol参数 -- parameter symbols is required
+40012 | 时间参数格式错误 -- time not format like xxxx-xx-xx
+40013 | 开始时间不能大于结束时间 -- start_date is greater than end_date
