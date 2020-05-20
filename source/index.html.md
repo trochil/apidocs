@@ -1557,6 +1557,7 @@ series_code | String | 由series_name经过算法加密而成的唯一标识码
 series_name | String | 指标名称
 unit | String | 指标衡量计数单位
 freq | String | 指标衡量时间单位
+sa | String | 指标衡量时间单位中文
 source | String | 指标数据来源
 values | list | 请求时间内对应时间的指标数据
 transform | String | 指标计算方式
@@ -1623,6 +1624,9 @@ data | dict | 对应国家的所有经济指标信息
 code | int | 请求结果对应的状态码
 
 ### data说明
+
+市场类型不同data中包含的字段有所差异,如没有一下字段则说明该市场类型没有该字段
+如期货市场没有pe,mktcap等字段
 
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
@@ -1696,6 +1700,9 @@ code | int | 请求结果对应的状态码
 
 ### data说明
 
+市场类型不同data中包含的字段有所差异,如没有一下字段则说明该市场类型没有该字段
+如期货市场没有pe,mktcap等字段
+
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 name | String | 交易对名称
@@ -1711,3 +1718,132 @@ volume | Float | 成交量
 mktcap | Float | 市值
 pe | String | 市盈率
 exchange | String | 交易所
+
+
+# 股指数据
+
+## 简要说明
+
+支持获取全球股指实时数据以及全球股指历史日线级别数据,全球股指历史数据分钟级别待扩展
+
+经济数据接口base url: api.trochil.com
+
+## 全球股指实时数据
+
+> 示例代码：查询全球股指实时价格快照
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/index/tickers')
+```
+
+> 返回结果：查询全球股指实时价格快照
+
+```json
+{
+    'code': 200,
+    'data': [
+        {'country': '中国', 'name': '上证指数', 'last': 2891.36, 'high': 2896.47, 'low': 2883.6, 'change': -7.22,
+         'percent_change': -0.25, 'time': '2020-05-20 13:40:53'},
+        {'country': '中国', 'name': '深证成指', 'last': 10992.75, 'high': 11056.98, 'low': 10970.22, 'change': -60.09,
+         'percent_change': -0.54, 'time': '2020-05-20 13:10:48'},
+        {'country': '中国', 'name': '富时中国A50指数', 'last': 13491.66, 'high': 13499.27, 'low': 13417.79, 'change': 9.75,
+         'percent_change': 0.07, 'time': '2020-05-20 13:40:00'},
+        {'country': '越南', 'name': '越南HNX30', 'last': 212.41, 'high': 213.64, 'low': 208.73, 'change': 0.0,
+         'percent_change': 0.0, 'time': '2020-05-18 13:00:00'},
+        ...
+    ]
+}
+```
+
+获取全球股指实时价格快照信息。
+
+### HTTP请求
+
+`GET /v1/index/tickers`
+
+### 请求参数
+
+无
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+data | dict | 对应国家的所有经济指标信息
+code | int | 请求结果对应的状态码
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+country | String | 股指所属国家名称
+name | String | 股指名称
+last | Float | 最新价
+high | Float | 最高价
+low | Float | 最低价
+change | Float | 价格变动数
+percent_change | Float | 价格变动比例
+time | String | 时间
+
+## 全球股指历史数据
+
+> 示例代码：查询全球股指历史数据
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/index/daily',
+                    params={'symbol': 'nas100', 'start_date': '2020-01-01', 'end_date': '2020-02-01'})
+```
+
+> 返回结果：查询全球股指历史数据
+
+```json
+{
+    'code': 200,
+    'data': [
+        {'datetime': '2020-01-02', 'open': 8802.22, 'high': 8873.63, 'low': 8786.9, 'close': 8872.22,
+         'volume': 152650000.0},
+        {'datetime': '2020-01-03', 'open': 8755.17, 'high': 8843.65, 'low': 8755.17, 'close': 8793.9,
+         'volume': 144750000.0},
+        ...
+        {'datetime': '2020-01-31', 'open': 9169.91, 'high': 9170.22, 'low': 8961.59, 'close': 8991.51,
+         'volume': 217220000.0}
+    ]
+}
+```
+
+获取全球股指历史数据。
+
+### HTTP请求
+
+`GET /v1/index/daily`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+symbol | String | True | NA | 股指代码,如nas100
+start_date | String | False | 数据起始时间 | 样本起始时间,如2019-01-01
+end_date | String | False | 最近更新时间 | 样本结束时间,如2019-09-09
+
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+data | dict | 对应国家的所有经济指标信息
+code | int | 请求结果对应的状态码
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+datetime | String | k线时间
+open | Float | 开盘价
+high | Float | 最高价
+low | Float | 最低价
+close | Float | 收盘价
+volume | Float | 交易量
