@@ -95,7 +95,7 @@ status | String | 请求结果状态
 import requests
 
 info = requests.get('http://api.trochil.com/v1/cnstock/quote',
-                    params={'symbol': 'SZ300817,SZ300820',
+                    params={'symbol': 'SZ300564,SZ300820',
                             'apikey': 'your apikey'})
 ```
 
@@ -103,10 +103,10 @@ info = requests.get('http://api.trochil.com/v1/cnstock/quote',
 
 ```json
 {
-    'timestamp': 1583476018603,
+    'timestamp': 1590039680244,
     'data': [
-        '{"symbol": "SZ300817", "name": "双飞股份", "last": "38.44", "bid": "38.44", "bidQty": "69.0", "ask": "38.61", "askQty": "6.0", "timestamp": "1583476011000"}',
-        '{"symbol": "SZ300820", "name": "英杰电气", "last": "132.56", "bid": "132.56", "bidQty": "9287.0", "ask": "0.0", "askQty": "0.0", "timestamp": "1583475990000"}'],
+        '{"symbol": "SZ300564", "name": "筑博设计", "last": "27.35", "pre_close": "28.1", "open": "28.18", "volume": "1275300.0", "volume_lot": "12753.0", "volume_cny": "35290000.0", "bid1": "27.35", "bid1_qty": "3", "bid2": "27.34", "bid2_qty": "24", "bid3": "27.33", "bid3_qty": "47", "bid4": "27.32", "bid4_qty": "24", "bid5": "27.31", "bid5_qty": "63", "ask1": "27.36", "ask1_qty": "15", "ask2": "27.4", "ask2_qty": "2", "ask3": "27.43", "ask3_qty": "2", "ask4": "27.44", "ask4_qty": "12", "ask5": "27.47", "ask5_qty": "10", "change": "-0.75", "percent_change": "-2.67", "high": "28.36", "low": "27.3", "pe": "23.5", "pb": "2.66", "trade_market_value": "6.84", "total_market_value": "27.35", "datetime": "2020-05-21 13:41:18", "timestamp": "1590039678000"}',
+        '{"symbol": "SZ300820", "name": "英杰电气", "last": "82.4", "pre_close": "86.35", "open": "86.0", "volume": "1621700.0", "volume_lot": "16217.0", "volume_cny": "136290000.0", "bid1": "82.4", "bid1_qty": "23", "bid2": "82.39", "bid2_qty": "15", "bid3": "82.38", "bid3_qty": "2", "bid4": "82.32", "bid4_qty": "1", "bid5": "82.31", "bid5_qty": "5", "ask1": "82.43", "ask1_qty": "3", "ask2": "82.45", "ask2_qty": "3", "ask3": "82.49", "ask3_qty": "5", "ask4": "82.5", "ask4_qty": "27", "ask5": "82.51", "ask5_qty": "9", "change": "-3.95", "percent_change": "-4.57", "high": "86.49", "low": "82.11", "pe": "49.69", "pb": "5.18", "trade_market_value": "13.05", "total_market_value": "52.19", "datetime": "2020-05-21 13:41:15", "timestamp": "1590039675000"}'],
     'status': 'ok'
 }
 ```
@@ -138,12 +138,42 @@ status | String | 请求结果状态
 --------- | ------- | -----------
 symbol | String | 股票代码
 name | String | 股票中文名称
-bid | String | 最优买价
-ask | String | 最优卖价
 last | String | 最新成交价
-bidQty | String | 最优买价数量
-askQty | String | 最优卖价数量
-timestamp | String | 最新成交时间
+pre_close | String | 昨日收盘价
+open | String | 当日开盘价
+volume | String | 当日成交量(股)
+volume_lot | String | 当日成交量(手)
+volume_cny | String | 当日成交金额
+bid1 | String | 最新买一价格
+bid1_qty | String | 最新买一挂单量
+bid2 | String | 最新买二价格
+bid2_qty | String | 最新买二挂单量
+bid3 | String | 最新买三价格
+bid3_qty | String | 最新买三挂单量
+bid4 | String | 最新买四价格
+bid4_qty | String | 最新买四挂单量
+bid5 | String | 最新买五价格
+bid5_qty | String | 最新买五挂单量
+ask1 | String | 最新卖一价格
+ask1_qty | String | 最新卖一挂单量
+ask2 | String | 最新卖二价格
+ask2_qty | String | 最新卖二挂单量
+ask3 | String | 最新卖三价格
+ask3_qty | String | 最新卖三挂单量
+ask4 | String | 最新卖四价格
+ask4_qty | String | 最新卖四挂单量
+ask5 | String | 最新卖五价格
+ask5_qty | String | 最新卖五挂单量
+change | String | 涨跌数额
+percent_change | String | 涨跌百分比
+high | String | 当日最高价
+low | String | 当日最低价
+pe | String | 市盈率
+pb | String | 市净率
+trade_market_value | String | 流动市值
+total_market_value | String | 总市值
+datetime | String | 最新成交北京时间
+timestamp | String | 最新成交时间戳
 
 ## 日图历史
 
@@ -409,10 +439,10 @@ info = requests.get('http://api.trochil.com/v1/hkstock/quote',
 
 ```json
 {
-    'timestamp': 1583478603847,
+    'timestamp': 1590041611265,
     'data': [
-        '{"symbol": "HK09938", "name": "华和控股", "last": "0.85", "timestamp": "1583476040000"}',
-        '{"symbol": "HK09968", "name": "汇景控股", "last": "1.94", "timestamp": "1583477955000"}'],
+        '{"symbol": "HK09938", "name": "华和控股", "last": "0.245", "change": "0.012", "percent_change": "5.15", "high": "0.255", "low": "0.223", "open": "0.233", "pre_close": "0.233", "pe": "7.38", "52week_high": "2.79", "52week_low": "0.2", "volume": "11770000.0", "volume_hkd": "2876975.0", "datetime": "2020-05-21 14:10:07", "timestamp": "1590041407000"}',
+        '{"symbol": "HK09968", "name": "汇景控股", "last": "2.07", "change": "0.02", "percent_change": "0.98", "high": "2.09", "low": "2.03", "open": "2.03", "pre_close": "2.05", "pe": "16.11", "52week_high": "2.2", "52week_low": "1.73", "volume": "2040000.0", "volume_hkd": "4208520.0", "datetime": "2020-05-21 14:12:47", "timestamp": "1590041567000"}'],
     'status': 'ok'
 }
 ```
@@ -445,7 +475,19 @@ status | String | 请求结果状态
 symbol | String | 股票代码
 name | String | 股票中文名称
 last | String | 最新成交价
-timestamp | String | 最新成交时间
+change | String | 涨跌变动数额
+percent_change | String | 涨跌变动比率
+high | String | 当日最高价
+low | String | 当日最低价
+open | String | 当日开盘价
+pre_close | String | 昨日收盘价
+pe | String | 市盈率
+52week_high | String | 52周最高价
+52week_low | String | 52周最低价
+volume | String | 股票成交量
+volume_hkd | String | 成交金额
+datetime | String | 最新成交北京时间
+timestamp | String | 最新成交时间戳
 
 ## 日图历史
 
@@ -1004,7 +1046,7 @@ import requests
 
 info = requests.get('http://api.trochil.com/v1/cnfuture/quote',
                     params={
-                        'symbol': 'V0,V2002',
+                        'symbol': 'V0,V2007',
                         'apikey': 'your apikey'}
                     )
 ```
@@ -1013,23 +1055,11 @@ info = requests.get('http://api.trochil.com/v1/cnfuture/quote',
 
 ```json
 {
-    'timestamp': 1579485232937,
+    'timestamp': 1590042141600,
     'data': [
-        {
-            'symbol_cn': 'PVC连续', 'open': '6480.0', 'high': '6510.0', 'low': '6470.0', 'preClose': '0.0',
-            'bid': '6495.0',
-            'ask': '6500.0', 'last': '6495.0', 'settle': '0.0', 'preSettle': '6475.0', 'bidQty': '656.0',
-            'askQty': '873.0',
-            'openInterest': '201404.0', 'volume': '36733.0', 'name': 'PVC', 'datetime': '2020/01/20 095351',
-            'symbol': 'V0'
-        },
-        {
-            'symbol_cn': 'PVC2002', 'open': '6435.0', 'high': '6435.0', 'low': '6280.0', 'preClose': '6370.0',
-            'bid': '6285.0', 'ask': '6610.0', 'last': '6370.0', 'settle': '0.0', 'preSettle': '6455.0', 'bidQty': '1.0',
-            'askQty': '1.0', 'openInterest': '134.0', 'volume': '62.0', 'name': 'PVC', 'datetime': '2020/01/13 150000',
-            'symbol': 'V2002'
-        }
-    ]
+        '{"name": "PVC连续", "open": "5975.0", "high": "6040.0", "low": "5970.0", "pre_close": "0.0", "bid": "6010.0", "ask": "6015.0", "last": "6010.0", "settle": "0.0", "pre_settle": "5930.0", "bid_qty": "304.0", "ask_qty": "514.0", "open_interest": "210894.0", "volume": "135077.0", "datetime": "2020-05-21 14:22:20", "timestamp": "1590042140000", "symbol": "V0", "change": "80.0", "percent_change": "1.35"}',
+        '{"name": "PVC2007", "open": "5970.0", "high": "6055.0", "low": "5970.0", "pre_close": "0.0", "bid": "6035.0", "ask": "6040.0", "last": "6045.0", "settle": "0.0", "pre_settle": "5955.0", "bid_qty": "60.0", "ask_qty": "10.0", "open_interest": "2190.0", "volume": "2867.0", "datetime": "2020-05-21 14:20:35", "timestamp": "1590042035000", "symbol": "V2007", "change": "90.0", "percent_change": "1.51"}'],
+    'status': 'ok'
 }
 ```
 
@@ -1058,23 +1088,25 @@ status | String | 请求结果状态
 
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
-symbol | String | 标准合约名称
-symbol_cn | String | 标准合约中文
+name | String | 标准合约名称
 open | String | 今日开盘价
 high | String | 今日最高价
 low | String | 今日最低价
-preClose | String | 前一日收盘价
+pre_close | String | 前一日收盘价
 bid | String | 最优买价
 ask | String | 最优卖价
 last | String | 最新成交价
 settle | String | 结算价
-preSettle | String | 前一日结算价
-bidQty | String | 最优买价数量
-askQty | String | 最优卖价数量
-openInterest | String | 持仓量
+pre_settle | String | 前一日结算价
+bid_qty | String | 最优买价数量
+ask_qty | String | 最优卖价数量
+open_interest | String | 持仓量
 volume | String | 成交量
-name | String | 产品中文名
-timestamp | String | 最新成交时间
+datetime | String | 最新成交北京时间
+timestamp | String | 最新成交时间戳
+symbol | String | 合约代码
+change | String | 涨跌变动金额
+percent_change | String | 涨跌变动比率
 
 
 ## 日图历史
