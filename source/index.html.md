@@ -893,7 +893,7 @@ info = requests.get('http://api.trochil.com/v1/usstock/intraday',
 --------- | ------- | ----------- | ----------- | -----------
 symbol | String | True | NA | 股票代码,如BABA
 timeframe | int | True | NA | 频率，1分钟为1,5分钟为5，60分钟为60
-range | int | True | NA | 查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,5分钟60分钟支持30日以内
+range | int | True | NA | 查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,<br>5分钟60分钟支持30日以内
 endTime | String | NA | 当前时间 | 请求的结束时间
 apikey | String | True | NA | 用户申请的apikey
 
@@ -1299,7 +1299,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | list | 对应美股的名称和隶属交易所信息
+data | list | 对应数字货币的名称和隶属交易所信息
 status | String | 请求结果状态
 
 ### data说明
@@ -1349,7 +1349,7 @@ info = requests.get('http://api.trochil.com/v1/crypto/quote',
 
 参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
 --------- | ------- | ----------- | ----------- | -----------
-symbol | String | True | NA | 交易对代码，同时获取多个以逗号分隔，如binance.algousdt,binance.btcusdt<br>拼接格式为交易所名称.交易对,具体交易所支持哪些交易对请查询v1/crypto/markets接口
+symbol | String | True | NA | 交易对代码，同时获取多个以逗号分隔，如binance.algousdt,binance.btcusdt<br>拼接格式为交易所名称.交易对,具体交易所支持哪些交易对请<br>查询v1/crypto/markets接口
 apikey | String | True | NA | 用户申请的apikey
 
 ### 响应数据
@@ -1482,7 +1482,7 @@ info = requests.get('http://api.trochil.com/v1/crypto/history_one_day',
 
 参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
 --------- | ------- | ----------- | ----------- | -----------
-symbol | String | True | NA | 交易对代码,如binance.btcusdt,binance.ethusdt,多个交易对以逗号分隔,逗号之间不要有空格
+symbol | String | True | NA | 交易对代码,如binance.btcusdt,binance.ethusdt,多个交易对<br>以逗号分隔,逗号之间不要有空格
 date | String | True | NA | 数据获取时间,如2019-01-01
 sort | String | False | asc | 按交易对代码的字符顺序排序，asc(升序)，desc(降序)
 apikey | String | True | NA | 用户申请的apikey
@@ -1551,7 +1551,7 @@ info = requests.get('http://api.trochil.com/v1/crypto/intraday',
 --------- | ------- | ----------- | ----------- | -----------
 symbol | String | True | NA | 数字货币交易对代码,如binance.btcusdt
 timeframe | int | True | NA | 频率，1分钟为1,5分钟为5，60分钟为60
-range | int | True | NA | 查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,5分钟60分钟支持30日以内
+range | int | True | NA | 查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,<br>5分钟60分钟支持30日以内
 endTime | String | NA | 当前时间 | 请求的结束时间
 apikey | String | True | NA | 用户申请的apikey
 
@@ -1864,7 +1864,7 @@ info = requests.get('http://api.trochil.com/v1/forex/intraday',
 --------- | ------- | ----------- | ----------- | -----------
 symbol | String | True | NA | 外汇品种代码,如EURUSD
 timeframe | int | True | NA | 频率，1分钟为1,5分钟为5，60分钟为60
-range | int | True | NA | 查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,5分钟60分钟支持30日以内
+range | int | True | NA | 查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,<br>5分钟60分钟支持30日以内
 endTime | String | NA | 当前时间 | 请求的结束时间
 apikey | String | True | NA | 用户申请的apikey
 
