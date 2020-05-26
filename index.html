@@ -302,6 +302,46 @@
               </ul>
           </li>
           <li>
+            <a href="#02c951e3d7" class="toc-h1 toc-link" data-title="数字货币">数字货币</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#950b559860-5" class="toc-h2 toc-link" data-title="产品列表">产品列表</a>
+                  </li>
+                  <li>
+                    <a href="#2ab4fa4378-5" class="toc-h2 toc-link" data-title="实时报价">实时报价</a>
+                  </li>
+                  <li>
+                    <a href="#fdca4c5804-5" class="toc-h2 toc-link" data-title="日图历史">日图历史</a>
+                  </li>
+                  <li>
+                    <a href="#75a1ee36bf" class="toc-h2 toc-link" data-title="多交易对单日历史">多交易对单日历史</a>
+                  </li>
+                  <li>
+                    <a href="#dba7d7f4fb-4" class="toc-h2 toc-link" data-title="日内数据">日内数据</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#a590791811" class="toc-h1 toc-link" data-title="外汇">外汇</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#950b559860-6" class="toc-h2 toc-link" data-title="产品列表">产品列表</a>
+                  </li>
+                  <li>
+                    <a href="#2ab4fa4378-6" class="toc-h2 toc-link" data-title="实时报价">实时报价</a>
+                  </li>
+                  <li>
+                    <a href="#fdca4c5804-6" class="toc-h2 toc-link" data-title="日图历史">日图历史</a>
+                  </li>
+                  <li>
+                    <a href="#e86f3bc098" class="toc-h2 toc-link" data-title="多外汇品种单日历史">多外汇品种单日历史</a>
+                  </li>
+                  <li>
+                    <a href="#dba7d7f4fb-5" class="toc-h2 toc-link" data-title="日内数据">日内数据</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#websocket" class="toc-h1 toc-link" data-title="Websocket行情数据">Websocket行情数据</a>
               <ul class="toc-list-h2">
                   <li>
@@ -2980,6 +3020,1359 @@
 <td>合约品种代码</td>
 </tr>
 </tbody></table>
+<h1 id='02c951e3d7'>数字货币</h1><h2 id='950b559860-5'>产品列表</h2>
+<blockquote>
+<p>代码示例：查询数字货币产品列表</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/markets'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询数字货币产品列表</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590483547229</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'ETHBTC'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'BINANCE'</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'LTCBTC'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'BINANCE'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'XMRUSDT'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'OKEX'</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'XLMUSDT'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'OKEX'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'IOSTUSDT'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'OKEX'</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'THETAUSDT'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'OKEX'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'XLMBTC'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'HUOBI'</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'ONTBTC'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'HUOBI'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BSVBTC'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'HUOBI'</span><span class="p">},</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取部分主流交易所的大部分相对活跃的交易对信息。</p>
+<h3 id='http-20'>HTTP请求</h3>
+<p><code>GET v1/crypto/markets</code></p>
+<h3 id='1f9ac54b15-20'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-20'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应美股的名称和隶属交易所信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-16'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>交易对代码</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>交易对所支持的交易所</td>
+</tr>
+</tbody></table>
+<h2 id='2ab4fa4378-5'>实时报价</h2>
+<blockquote>
+<p>示例代码：查询数字货币实时报价</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/quote'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'binance.algousdt,binance.btcusdt'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询数字货币实时报价</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590483848552</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'BINANCE'</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'ALGOUSDT'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.2139</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'bid'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.2138</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'bid_qty'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">7632.55</span><span class="err">'</span><span class="p">,</span><span class="w">
+         </span><span class="err">'ask'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.2139</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'ask_qty'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.07</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.2057</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.2227</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.2011</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'pre_close'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.2057</span><span class="err">'</span><span class="p">,</span><span class="w">
+         </span><span class="err">'base_volume'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">18203022.48</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'quote_volume'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">3865933.615077</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'change'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.0082</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'percent_change'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">3.986</span><span class="err">'</span><span class="p">,</span><span class="w">
+         </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">1590483847475</span><span class="err">'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'BINANCE'</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'BTCUSDT'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">8958.55</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'bid'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">8958.54</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'bid_qty'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.116653</span><span class="err">'</span><span class="p">,</span><span class="w">
+         </span><span class="err">'ask'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">8958.55</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'ask_qty'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">0.556076</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">8831.27</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">9017.67</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">8668.29</span><span class="err">'</span><span class="p">,</span><span class="w">
+         </span><span class="err">'pre_close'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">8830.96</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'base_volume'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">60422.982544</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'quote_volume'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">535031205.9594333</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'change'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">127.28</span><span class="err">'</span><span class="p">,</span><span class="w">
+         </span><span class="err">'percent_change'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mf">1.441</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">1590483848139</span><span class="err">'</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>查询数字货币的实时报价(level1)，每次最多查询25个产品。</p>
+<h3 id='http-21'>HTTP请求</h3>
+<p><code>GET v1/crypto/quote</code></p>
+<h3 id='1f9ac54b15-21'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>交易对代码，同时获取多个以逗号分隔，如binance.algousdt,binance.btcusdt<br>拼接格式为交易所名称.交易对,具体交易所支持哪些交易对请查询v1/crypto/markets接口</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-21'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应数字货币品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-17'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>交易所名称</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>交易对代码</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>String</td>
+<td>最新最优买价</td>
+</tr>
+<tr>
+<td>bid_qty</td>
+<td>String</td>
+<td>最优买价对应的挂单量</td>
+</tr>
+<tr>
+<td>ask</td>
+<td>String</td>
+<td>最新最优卖价</td>
+</tr>
+<tr>
+<td>ask_qty</td>
+<td>String</td>
+<td>最优卖价对应的挂单量</td>
+</tr>
+<tr>
+<td>open</td>
+<td>String</td>
+<td>今日开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>String</td>
+<td>今日最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>String</td>
+<td>今日最低价</td>
+</tr>
+<tr>
+<td>pre_close</td>
+<td>String</td>
+<td>昨日收盘价</td>
+</tr>
+<tr>
+<td>base_volume</td>
+<td>String</td>
+<td>交易量基于交易币</td>
+</tr>
+<tr>
+<td>quote_volume</td>
+<td>String</td>
+<td>交易量基于基础币</td>
+</tr>
+<tr>
+<td>change</td>
+<td>String</td>
+<td>价格变动数额</td>
+</tr>
+<tr>
+<td>percent_change</td>
+<td>String</td>
+<td>价格变动百分比</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>最新交易发生时间</td>
+</tr>
+</tbody></table>
+<h2 id='fdca4c5804-5'>日图历史</h2>
+<blockquote>
+<p>代码示例：查询数字货币日图历史</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/history'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'binance.btcusdt'</span><span class="p">,</span> <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-03-01'</span><span class="p">,</span> <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-03-04'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询数字货币日图历史</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590484543499</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-01</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8523.61</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8750.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8411.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8531.88</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">43892.201779</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-02</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8530.3</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8965.75</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8498.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8915.24</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">60401.31773</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-03</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8911.18</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8919.65</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8651.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8760.07</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">55154.997282</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-04</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8760.07</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8848.29</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8660.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8750.87</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">38696.482578</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取数字货币的日图历史数据。</p>
+<h3 id='http-22'>HTTP请求</h3>
+<p><code>GET v1/crypto/history</code></p>
+<h3 id='1f9ac54b15-22'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>交易对代码如binance.btcusdt</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>False</td>
+<td>数据起始时间</td>
+<td>样本起始时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>False</td>
+<td>最近更新时间</td>
+<td>样本结束时间,如2019-09-09</td>
+</tr>
+<tr>
+<td>freq</td>
+<td>String</td>
+<td>False</td>
+<td>daily</td>
+<td>频率</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按时间戳排序，asc(升序), desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-22'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应数字货币的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-18'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>交易对代码</td>
+</tr>
+</tbody></table>
+<h2 id='75a1ee36bf'>多交易对单日历史</h2>
+<blockquote>
+<p>示例代码：查询数字货币多交易对单日数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/history_one_day'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'binance.btcusdt,binance.ethusdt'</span><span class="p">,</span> <span class="s">'date'</span><span class="p">:</span> <span class="s">'2019-09-29'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询数字货币多交易对单日数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590484797308</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-09-29</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8199.38</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8229.13</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">7890.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8043.82</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">31544.211388</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2019-09-29</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">173.5</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">174.5</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">164.12</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">169.24</span><span class="p">,</span><span class="w"> </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">410855.12176</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'ethusdt'</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>同时获取多个交易对单天的K线数据，最多同时查询25个。</p>
+<h3 id='http-23'>HTTP请求</h3>
+<p><code>GET v1/crypto/history_one_day</code></p>
+<h3 id='1f9ac54b15-23'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>交易对代码,如binance.btcusdt,binance.ethusdt,多个交易对以逗号分隔,逗号之间不要有空格</td>
+</tr>
+<tr>
+<td>date</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>数据获取时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按交易对代码的字符顺序排序，asc(升序)，desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-23'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应数字货币交易对的k线信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-19'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>数字货币交易对代码</td>
+</tr>
+</tbody></table>
+<h2 id='dba7d7f4fb-4'>日内数据</h2>
+<blockquote>
+<p>代码示例：查询数字货币日内数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/intraday'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'binance.btcusdt'</span><span class="p">,</span> <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'60'</span><span class="p">,</span> <span class="s">'range'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询数字货币日内数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590485108213</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-24</span><span class="w"> </span><span class="mi">18</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8947.84</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8982.14</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8890.41</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8941.99</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">2350.063354</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-24</span><span class="w"> </span><span class="mi">19</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8941.04</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">9040.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8937.0</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">9018.45</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">3038.765464</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-24</span><span class="w"> </span><span class="mi">20</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">9017.37</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">9040.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8983.05</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">9000.31</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">2110.613043</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-25</span><span class="w"> </span><span class="mi">22</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8899.42</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8923.57</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8865.1</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8903.3</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">1170.047882</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-25</span><span class="w"> </span><span class="mi">23</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">8903.24</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">8940.0</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">8889.9</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">8900.35</span><span class="p">,</span><span class="w">
+         </span><span class="err">'volume'</span><span class="p">:</span><span class="w"> </span><span class="mf">1495.507457</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'btcusdt'</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取数字货币的日内K线，支持1分钟，5分钟和60分钟K线。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据。</p>
+<h3 id='http-24'>HTTP请求</h3>
+<p><code>GET v1/crypto/intraday</code></p>
+<h3 id='1f9ac54b15-24'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>数字货币交易对代码,如binance.btcusdt</td>
+</tr>
+<tr>
+<td>timeframe</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>频率，1分钟为1,5分钟为5，60分钟为60</td>
+</tr>
+<tr>
+<td>range</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,5分钟60分钟支持30日以内</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>String</td>
+<td>NA</td>
+<td>当前时间</td>
+<td>请求的结束时间</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-24'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应交易对的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-20'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>交易对代码</td>
+</tr>
+</tbody></table>
+<h1 id='a590791811'>外汇</h1><h2 id='950b559860-6'>产品列表</h2>
+<blockquote>
+<p>代码示例：查询外汇产品列表</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/markets'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询外汇产品列表</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590487034346</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'EURUSD'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'EURUSD'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'欧元/美元'</span><span class="p">,</span><span class="w"> </span><span class="err">'market_type'</span><span class="p">:</span><span class="w"> </span><span class="err">'currency'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'OTC'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'GBPUSD'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'GBPUSD'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'英镑/美元'</span><span class="p">,</span><span class="w"> </span><span class="err">'market_type'</span><span class="p">:</span><span class="w"> </span><span class="err">'currency'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'OTC'</span><span class="p">},</span><span class="w">
+        </span><span class="err">'USDJPY'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'USDJPY'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'美元/日元'</span><span class="p">,</span><span class="w"> </span><span class="err">'market_type'</span><span class="p">:</span><span class="w"> </span><span class="err">'currency'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'OTC'</span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="err">'USDCAD'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="err">'USDCAD'</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'美元/加元'</span><span class="p">,</span><span class="w"> </span><span class="err">'market_type'</span><span class="p">:</span><span class="w"> </span><span class="err">'currency'</span><span class="p">,</span><span class="w"> </span><span class="err">'exchange'</span><span class="p">:</span><span class="w"> </span><span class="err">'OTC'</span><span class="p">},</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取外汇市场的交易对信息。</p>
+<h3 id='http-25'>HTTP请求</h3>
+<p><code>GET v1/forex/markets</code></p>
+<h3 id='1f9ac54b15-25'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-25'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应外汇的名称和隶属交易所信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-21'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>交易对代码</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>外汇中文名称</td>
+</tr>
+<tr>
+<td>market_type</td>
+<td>String</td>
+<td>产品类型</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>交易所</td>
+</tr>
+</tbody></table>
+<h2 id='2ab4fa4378-6'>实时报价</h2>
+<blockquote>
+<p>示例代码：查询外汇品种实时报价</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/quote'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'EURUSD,USDJPY,WTICOUSD'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询外汇品种实时报价</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590487416037</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">28.002</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">28.306</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">27.696</span><span class="p">,</span><span class="w"> </span><span class="err">'pre_close'</span><span class="p">:</span><span class="w"> </span><span class="mf">27.553</span><span class="p">,</span><span class="w"> </span><span class="err">'change'</span><span class="p">:</span><span class="w"> </span><span class="mf">-26.45692</span><span class="p">,</span><span class="w">
+         </span><span class="err">'percent_change'</span><span class="p">:</span><span class="w"> </span><span class="mf">-96.02</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'WTI原油/美元'</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'EURUSD'</span><span class="p">,</span><span class="w"> </span><span class="err">'bid'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09608</span><span class="p">,</span><span class="w"> </span><span class="err">'ask'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09615</span><span class="p">,</span><span class="w">
+         </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">1590487415000</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-26</span><span class="w"> </span><span class="mi">18</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">35</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09608</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09178</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09731</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0914</span><span class="p">,</span><span class="w"> </span><span class="err">'pre_close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.08947</span><span class="p">,</span><span class="w"> </span><span class="err">'change'</span><span class="p">:</span><span class="w"> </span><span class="mf">26.87553</span><span class="p">,</span><span class="w">
+         </span><span class="err">'percent_change'</span><span class="p">:</span><span class="w"> </span><span class="mf">2466.84</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'欧元/美元'</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'WTICOUSD'</span><span class="p">,</span><span class="w"> </span><span class="err">'bid'</span><span class="p">:</span><span class="w"> </span><span class="mf">27.946</span><span class="p">,</span><span class="w"> </span><span class="err">'ask'</span><span class="p">:</span><span class="w"> </span><span class="mf">27.976</span><span class="p">,</span><span class="w">
+         </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">1590487415507</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-26</span><span class="w"> </span><span class="mi">18</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">35</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="mf">27.965</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">107.824</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">107.896</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">107.64</span><span class="p">,</span><span class="w"> </span><span class="err">'pre_close'</span><span class="p">:</span><span class="w"> </span><span class="mf">107.724</span><span class="p">,</span><span class="w"> </span><span class="err">'change'</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.043</span><span class="p">,</span><span class="w">
+         </span><span class="err">'percent_change'</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.04</span><span class="p">,</span><span class="w"> </span><span class="err">'name'</span><span class="p">:</span><span class="w"> </span><span class="err">'美元/日元'</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'USDJPY'</span><span class="p">,</span><span class="w"> </span><span class="err">'bid'</span><span class="p">:</span><span class="w"> </span><span class="mf">107.68</span><span class="p">,</span><span class="w"> </span><span class="err">'ask'</span><span class="p">:</span><span class="w"> </span><span class="mf">107.681</span><span class="p">,</span><span class="w">
+         </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">1590487414000</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-26</span><span class="w"> </span><span class="mi">18</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">34</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'last'</span><span class="p">:</span><span class="w"> </span><span class="mf">107.681</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>查询外汇品种的实时报价(level1)，每次最多查询25个产品。</p>
+<h3 id='http-26'>HTTP请求</h3>
+<p><code>GET v1/forex/quote</code></p>
+<h3 id='1f9ac54b15-26'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>外汇品种代码，同时获取多个以逗号分隔，如EURUSD,USDJPY,WTICOUSD</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-26'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应外汇品种的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-22'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>open</td>
+<td>float</td>
+<td>今日开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>float</td>
+<td>今日最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>float</td>
+<td>今日最低价</td>
+</tr>
+<tr>
+<td>pre_close</td>
+<td>float</td>
+<td>昨日收盘价</td>
+</tr>
+<tr>
+<td>change</td>
+<td>float</td>
+<td>价格变动数额</td>
+</tr>
+<tr>
+<td>percent_change</td>
+<td>float</td>
+<td>价格变动百分比</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>外汇中文名称</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>外汇代码</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>float</td>
+<td>最新最优买价</td>
+</tr>
+<tr>
+<td>ask</td>
+<td>float</td>
+<td>最新最优卖价</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>最新交易发生时间</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>最新交易发生北京时间</td>
+</tr>
+<tr>
+<td>last</td>
+<td>float</td>
+<td>最新成交价</td>
+</tr>
+</tbody></table>
+<h2 id='fdca4c5804-6'>日图历史</h2>
+<blockquote>
+<p>代码示例：查询外汇日图历史</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/history'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'EURUSD'</span><span class="p">,</span> <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">,</span> <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-02-05'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询外汇日图历史</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590487835285</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-02</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10957</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10957</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10822</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10894</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'eurusd'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-03</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10893</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10893</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10361</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10626</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'eurusd'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-04</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10627</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10643</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1033</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10449</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'eurusd'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-02-05</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1045</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10481</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09939</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10006</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'eurusd'</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取外汇的日图历史数据。</p>
+<h3 id='http-27'>HTTP请求</h3>
+<p><code>GET v1/forex/history</code></p>
+<h3 id='1f9ac54b15-27'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>外汇代码如EURUSD</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>False</td>
+<td>数据起始时间</td>
+<td>样本起始时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>False</td>
+<td>最近更新时间</td>
+<td>样本结束时间,如2019-09-09</td>
+</tr>
+<tr>
+<td>freq</td>
+<td>String</td>
+<td>False</td>
+<td>daily</td>
+<td>频率</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按时间戳排序，asc(升序), desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-27'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应外汇的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-23'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>外汇代码</td>
+</tr>
+</tbody></table>
+<h2 id='e86f3bc098'>多外汇品种单日历史</h2>
+<blockquote>
+<p>示例代码：查询外汇多品种单日数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/history_one_day'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'EURUSD,USDJPY'</span><span class="p">,</span> <span class="s">'date'</span><span class="p">:</span> <span class="s">'2020-03-12'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询外汇多品种单日数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590488143772</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-12</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.12617</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.13338</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10551</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.11831</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'eurusd'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-03-12</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">104.54</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">106.11</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">103.091</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">104.679</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'usdjpy'</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>同时获取多个外汇品种单天的K线数据，最多同时查询25个。</p>
+<h3 id='http-28'>HTTP请求</h3>
+<p><code>GET v1/forex/history_one_day</code></p>
+<h3 id='1f9ac54b15-28'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>交易对代码,如EURUSD,USDJPY,多个交易对以逗号分隔,逗号之间不要有空格</td>
+</tr>
+<tr>
+<td>date</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>数据获取时间,如2019-01-01</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>False</td>
+<td>asc</td>
+<td>按交易对代码的字符顺序排序，asc(升序)，desc(降序)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-28'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应数字货币交易对的k线信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-24'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>外汇品种代码</td>
+</tr>
+</tbody></table>
+<h2 id='dba7d7f4fb-5'>日内数据</h2>
+<blockquote>
+<p>代码示例：查询外汇日内数据</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/intraday'</span><span class="p">,</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'EURUSD'</span><span class="p">,</span> <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'5'</span><span class="p">,</span> <span class="s">'range'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询外汇日内数据</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'timestamp'</span><span class="p">:</span><span class="w"> </span><span class="mi">1590488280601</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-24</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.08973</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.08973</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.08963</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.08973</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'eurusd'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-24</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.08982</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09005</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.08973</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.08973</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'eurusd'</span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-25</span><span class="w"> </span><span class="mi">23</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09001</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0901</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.08999</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09009</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'eurusd'</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">'datetime'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-05-25</span><span class="w"> </span><span class="mi">23</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">00</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'open'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09008</span><span class="p">,</span><span class="w"> </span><span class="err">'high'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09021</span><span class="p">,</span><span class="w"> </span><span class="err">'low'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09007</span><span class="p">,</span><span class="w"> </span><span class="err">'close'</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09019</span><span class="p">,</span><span class="w"> </span><span class="err">'symbol'</span><span class="p">:</span><span class="w"> </span><span class="err">'eurusd'</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取外汇的日内K线，支持1分钟，5分钟和60分钟K线。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据。</p>
+<h3 id='http-29'>HTTP请求</h3>
+<p><code>GET v1/forex/intraday</code></p>
+<h3 id='1f9ac54b15-29'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>外汇品种代码,如EURUSD</td>
+</tr>
+<tr>
+<td>timeframe</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>频率，1分钟为1,5分钟为5，60分钟为60</td>
+</tr>
+<tr>
+<td>range</td>
+<td>int</td>
+<td>True</td>
+<td>NA</td>
+<td>查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,5分钟60分钟支持30日以内</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>String</td>
+<td>NA</td>
+<td>当前时间</td>
+<td>请求的结束时间</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-29'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>timestamp</td>
+<td>int</td>
+<td>请求响应时间戳</td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应交易对的报价信息</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>请求结果状态</td>
+</tr>
+</tbody></table>
+<h3 id='data-25'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datetime</td>
+<td>String</td>
+<td>k线时间</td>
+</tr>
+<tr>
+<td>open</td>
+<td>Float</td>
+<td>开盘价</td>
+</tr>
+<tr>
+<td>high</td>
+<td>Float</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>Float</td>
+<td>最低价</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Float</td>
+<td>收盘价</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>Float</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>外汇品种代码</td>
+</tr>
+</tbody></table>
 <h1 id='websocket'>Websocket行情数据</h1><h2 id='5ea2e0cde2-2'>简介</h2><h3 id='url'>接入url</h3>
 <p>websocket接入地址</p>
 
@@ -3255,9 +4648,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>获取单个国家的所有指标。</p>
-<h3 id='http-20'>HTTP请求</h3>
+<h3 id='http-30'>HTTP请求</h3>
 <p><code>GET /v1/indicator/country</code></p>
-<h3 id='1f9ac54b15-20'>请求参数</h3>
+<h3 id='1f9ac54b15-30'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名称</th>
@@ -3275,7 +4668,7 @@
 <td>国家名称如美国</td>
 </tr>
 </tbody></table>
-<h3 id='2213f4c32f-20'>响应数据</h3>
+<h3 id='2213f4c32f-30'>响应数据</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3294,7 +4687,7 @@
 <td>请求结果对应的状态码</td>
 </tr>
 </tbody></table>
-<h3 id='data-16'>data说明</h3>
+<h3 id='data-26'>data说明</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3398,9 +4791,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>获取某个国家的单个指标。</p>
-<h3 id='http-21'>HTTP请求</h3>
+<h3 id='http-31'>HTTP请求</h3>
 <p><code>GET /v1/indicator/single</code></p>
-<h3 id='1f9ac54b15-21'>请求参数</h3>
+<h3 id='1f9ac54b15-31'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名称</th>
@@ -3446,7 +4839,7 @@
 <td>结束日期</td>
 </tr>
 </tbody></table>
-<h3 id='2213f4c32f-21'>响应数据</h3>
+<h3 id='2213f4c32f-31'>响应数据</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3465,7 +4858,7 @@
 <td>请求结果对应的状态码</td>
 </tr>
 </tbody></table>
-<h3 id='data-17'>data说明</h3>
+<h3 id='data-27'>data说明</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3559,9 +4952,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>获取单个市场类型全部交易对价格快照信息。</p>
-<h3 id='http-22'>HTTP请求</h3>
+<h3 id='http-32'>HTTP请求</h3>
 <p><code>GET /v1/snapshot/market</code></p>
-<h3 id='1f9ac54b15-22'>请求参数</h3>
+<h3 id='1f9ac54b15-32'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名称</th>
@@ -3579,7 +4972,7 @@
 <td>市场类型目前可选(usstock,hkstock,cnstock,crypto,futures,forex)</td>
 </tr>
 </tbody></table>
-<h3 id='2213f4c32f-22'>响应数据</h3>
+<h3 id='2213f4c32f-32'>响应数据</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3598,7 +4991,7 @@
 <td>请求结果对应的状态码</td>
 </tr>
 </tbody></table>
-<h3 id='data-18'>data说明</h3>
+<h3 id='data-28'>data说明</h3>
 <p>市场类型不同data中包含的字段有所差异,如没有某字段则说明该市场类型数据没有该字段
 如期货市场没有pe,mktcap等字段</p>
 
@@ -3706,9 +5099,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>获取查询单个市场类型涨跌幅榜单信息。</p>
-<h3 id='http-23'>HTTP请求</h3>
+<h3 id='http-33'>HTTP请求</h3>
 <p><code>GET /v1/snapshot/top</code></p>
-<h3 id='1f9ac54b15-23'>请求参数</h3>
+<h3 id='1f9ac54b15-33'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名称</th>
@@ -3740,7 +5133,7 @@
 <td>榜单前x名</td>
 </tr>
 </tbody></table>
-<h3 id='2213f4c32f-23'>响应数据</h3>
+<h3 id='2213f4c32f-33'>响应数据</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3759,7 +5152,7 @@
 <td>请求结果对应的状态码</td>
 </tr>
 </tbody></table>
-<h3 id='data-19'>data说明</h3>
+<h3 id='data-29'>data说明</h3>
 <p>市场类型不同data中包含的字段有所差异,如没有某字段则说明该市场类型数据没有该字段
 如期货市场没有pe,mktcap等字段</p>
 
@@ -3867,11 +5260,11 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>获取全球股指实时价格快照信息。</p>
-<h3 id='http-24'>HTTP请求</h3>
+<h3 id='http-34'>HTTP请求</h3>
 <p><code>GET /v1/index/tickers</code></p>
-<h3 id='1f9ac54b15-24'>请求参数</h3>
+<h3 id='1f9ac54b15-34'>请求参数</h3>
 <p>无</p>
-<h3 id='2213f4c32f-24'>响应数据</h3>
+<h3 id='2213f4c32f-34'>响应数据</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3890,7 +5283,7 @@
 <td>请求结果对应的状态码</td>
 </tr>
 </tbody></table>
-<h3 id='data-20'>data说明</h3>
+<h3 id='data-30'>data说明</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -3965,9 +5358,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>获取全球股指历史数据。</p>
-<h3 id='http-25'>HTTP请求</h3>
+<h3 id='http-35'>HTTP请求</h3>
 <p><code>GET /v1/index/daily</code></p>
-<h3 id='1f9ac54b15-25'>请求参数</h3>
+<h3 id='1f9ac54b15-35'>请求参数</h3>
 <table><thead>
 <tr>
 <th>参数名称</th>
@@ -3999,7 +5392,7 @@
 <td>样本结束时间,如2019-09-09</td>
 </tr>
 </tbody></table>
-<h3 id='2213f4c32f-25'>响应数据</h3>
+<h3 id='2213f4c32f-35'>响应数据</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -4018,7 +5411,7 @@
 <td>请求结果对应的状态码</td>
 </tr>
 </tbody></table>
-<h3 id='data-21'>data说明</h3>
+<h3 id='data-31'>data说明</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
