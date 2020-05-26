@@ -1253,6 +1253,642 @@ close | Float | 收盘价
 volume | Float | 成交量
 symbol | String | 合约品种代码
 
+
+# 数字货币
+
+## 产品列表
+
+> 代码示例：查询数字货币产品列表
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/crypto/markets', params={'apikey': 'your apikey'})
+```
+
+> 返回结果：查询数字货币产品列表
+
+```json
+{
+    'timestamp': 1590483547229,
+    'data': [
+        {'symbol': 'ETHBTC', 'exchange': 'BINANCE'}, {'symbol': 'LTCBTC', 'exchange': 'BINANCE'},
+        {'symbol': 'XMRUSDT', 'exchange': 'OKEX'}, {'symbol': 'XLMUSDT', 'exchange': 'OKEX'},
+        {'symbol': 'IOSTUSDT', 'exchange': 'OKEX'}, {'symbol': 'THETAUSDT', 'exchange': 'OKEX'},
+        {'symbol': 'XLMBTC', 'exchange': 'HUOBI'}, {'symbol': 'ONTBTC', 'exchange': 'HUOBI'},
+        {'symbol': 'BSVBTC', 'exchange': 'HUOBI'},...
+    ],
+    'status': 'ok'
+}
+```
+
+获取部分主流交易所的大部分相对活跃的交易对信息。
+
+### HTTP请求
+
+`GET v1/crypto/markets`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应美股的名称和隶属交易所信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+symbol | String | 交易对代码
+exchange | String | 交易对所支持的交易所
+
+## 实时报价
+
+> 示例代码：查询数字货币实时报价
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/crypto/quote',
+                    params={'symbol': 'binance.algousdt,binance.btcusdt', 'apikey': 'your apikey'})
+```
+
+> 返回结果：查询数字货币实时报价
+
+```json
+{
+    'timestamp': 1590483848552,
+    'data': [
+        {'exchange': 'BINANCE', 'symbol': 'ALGOUSDT', 'last': '0.2139', 'bid': '0.2138', 'bid_qty': '7632.55',
+         'ask': '0.2139', 'ask_qty': '0.07', 'open': '0.2057', 'high': '0.2227', 'low': '0.2011', 'pre_close': '0.2057',
+         'base_volume': '18203022.48', 'quote_volume': '3865933.615077', 'change': '0.0082', 'percent_change': '3.986',
+         'timestamp': '1590483847475'},
+        {'exchange': 'BINANCE', 'symbol': 'BTCUSDT', 'last': '8958.55', 'bid': '8958.54', 'bid_qty': '0.116653',
+         'ask': '8958.55', 'ask_qty': '0.556076', 'open': '8831.27', 'high': '9017.67', 'low': '8668.29',
+         'pre_close': '8830.96', 'base_volume': '60422.982544', 'quote_volume': '535031205.9594333', 'change': '127.28',
+         'percent_change': '1.441', 'timestamp': '1590483848139'}
+    ],
+    'status': 'ok'
+}
+```
+
+查询数字货币的实时报价(level1)，每次最多查询25个产品。
+
+### HTTP请求
+
+`GET v1/crypto/quote`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+symbol | String | True | NA | 交易对代码，同时获取多个以逗号分隔，如binance.algousdt,binance.btcusdt<br>拼接格式为交易所名称.交易对,具体交易所支持哪些交易对请查询v1/crypto/markets接口
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应数字货币品种的报价信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+exchange | String | 交易所名称
+symbol | String | 交易对代码
+last | String | 最新成交价
+bid | String | 最新最优买价
+bid_qty | String | 最优买价对应的挂单量
+ask | String | 最新最优卖价
+ask_qty | String | 最优卖价对应的挂单量
+open | String | 今日开盘价
+high | String | 今日最高价
+low | String | 今日最低价
+pre_close | String | 昨日收盘价
+base_volume | String | 交易量基于交易币
+quote_volume | String | 交易量基于基础币
+change | String | 价格变动数额
+percent_change | String | 价格变动百分比
+timestamp | String | 最新交易发生时间
+
+## 日图历史
+
+> 代码示例：查询数字货币日图历史
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/crypto/history',
+                    params={'symbol': 'binance.btcusdt', 'start_date': '2020-03-01', 'end_date': '2020-03-04', 'apikey': 'your apikey'})
+```
+
+> 返回结果：查询数字货币日图历史
+
+```json
+{
+    'timestamp': 1590484543499,
+    'data': [
+        {'datetime': '2020-03-01', 'open': 8523.61, 'high': 8750.0, 'low': 8411.0, 'close': 8531.88,
+         'volume': 43892.201779, 'symbol': 'btcusdt'},
+        {'datetime': '2020-03-02', 'open': 8530.3, 'high': 8965.75, 'low': 8498.0, 'close': 8915.24,
+         'volume': 60401.31773, 'symbol': 'btcusdt'},
+        {'datetime': '2020-03-03', 'open': 8911.18, 'high': 8919.65, 'low': 8651.0, 'close': 8760.07,
+         'volume': 55154.997282, 'symbol': 'btcusdt'},
+        {'datetime': '2020-03-04', 'open': 8760.07, 'high': 8848.29, 'low': 8660.0, 'close': 8750.87,
+         'volume': 38696.482578, 'symbol': 'btcusdt'}
+    ],
+    'status': 'ok'
+}
+```
+
+获取数字货币的日图历史数据。
+
+### HTTP请求
+
+`GET v1/crypto/history`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+symbol | String | True | NA | 交易对代码如binance.btcusdt
+start_date | String | False | 数据起始时间 | 样本起始时间,如2019-01-01
+end_date | String | False | 最近更新时间 | 样本结束时间,如2019-09-09
+freq | String | False | daily | 频率
+sort | String | False | asc | 按时间戳排序，asc(升序), desc(降序)
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应数字货币的报价信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+datetime | String | k线时间
+open | Float | 开盘价
+high | Float | 最高价
+low | Float | 最低价
+close | Float | 收盘价
+volume | Float | 成交量
+symbol | String | 交易对代码
+
+## 多交易对单日历史
+
+> 示例代码：查询数字货币多交易对单日数据
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/crypto/history_one_day',
+                    params={'symbol': 'binance.btcusdt,binance.ethusdt', 'date': '2019-09-29', 'apikey': 'your apikey'})
+```
+
+> 返回结果：查询数字货币多交易对单日数据
+
+```json
+{
+    'timestamp': 1590484797308,
+    'data': [
+        {'datetime': '2019-09-29', 'open': 8199.38, 'high': 8229.13, 'low': 7890.0, 'close': 8043.82, 'volume': 31544.211388, 'symbol': 'btcusdt'},
+        {'datetime': '2019-09-29', 'open': 173.5, 'high': 174.5, 'low': 164.12, 'close': 169.24, 'volume': 410855.12176, 'symbol': 'ethusdt'}
+    ],
+    'status': 'ok'
+}
+```
+
+同时获取多个交易对单天的K线数据，最多同时查询25个。
+
+### HTTP请求
+
+`GET v1/crypto/history_one_day`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+symbol | String | True | NA | 交易对代码,如binance.btcusdt,binance.ethusdt,多个交易对以逗号分隔,逗号之间不要有空格
+date | String | True | NA | 数据获取时间,如2019-01-01
+sort | String | False | asc | 按交易对代码的字符顺序排序，asc(升序)，desc(降序)
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应数字货币交易对的k线信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+datetime | String | k线时间
+open | Float | 开盘价
+high | Float | 最高价
+low | Float | 最低价
+close | Float | 收盘价
+volume | Float | 成交量
+symbol | String | 数字货币交易对代码
+
+## 日内数据
+
+> 代码示例：查询数字货币日内数据
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/crypto/intraday',
+                    params={'symbol': 'binance.btcusdt', 'timeframe': '60', 'range': 2, 'apikey': 'your apikey'})
+```
+
+> 返回结果：查询数字货币日内数据
+
+```json
+{
+    'timestamp': 1590485108213,
+    'data': [
+        {'datetime': '2020-05-24 18:00:00', 'open': 8947.84, 'high': 8982.14, 'low': 8890.41, 'close': 8941.99,
+         'volume': 2350.063354, 'symbol': 'btcusdt'},
+        {'datetime': '2020-05-24 19:00:00', 'open': 8941.04, 'high': 9040.0, 'low': 8937.0, 'close': 9018.45,
+         'volume': 3038.765464, 'symbol': 'btcusdt'},
+        {'datetime': '2020-05-24 20:00:00', 'open': 9017.37, 'high': 9040.0, 'low': 8983.05, 'close': 9000.31,
+         'volume': 2110.613043, 'symbol': 'btcusdt'},
+        {'datetime': '2020-05-25 22:00:00', 'open': 8899.42, 'high': 8923.57, 'low': 8865.1, 'close': 8903.3,
+         'volume': 1170.047882, 'symbol': 'btcusdt'},
+        {'datetime': '2020-05-25 23:00:00', 'open': 8903.24, 'high': 8940.0, 'low': 8889.9, 'close': 8900.35,
+         'volume': 1495.507457, 'symbol': 'btcusdt'}
+    ],
+    'status': 'ok'
+}
+```
+
+获取数字货币的日内K线，支持1分钟，5分钟和60分钟K线。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据。
+
+### HTTP请求
+
+`GET v1/crypto/intraday`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+symbol | String | True | NA | 数字货币交易对代码,如binance.btcusdt
+timeframe | int | True | NA | 频率，1分钟为1,5分钟为5，60分钟为60
+range | int | True | NA | 查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,5分钟60分钟支持30日以内
+endTime | String | NA | 当前时间 | 请求的结束时间
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应交易对的报价信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+datetime | String | k线时间
+open | Float | 开盘价
+high | Float | 最高价
+low | Float | 最低价
+close | Float | 收盘价
+volume | Float | 成交量
+symbol | String | 交易对代码
+
+
+# 外汇
+
+## 产品列表
+
+> 代码示例：查询外汇产品列表
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/forex/markets', params={'apikey': 'your apikey'})
+```
+
+> 返回结果：查询外汇产品列表
+
+```json
+{
+    'timestamp': 1590487034346,
+    'data': {
+        'EURUSD': {'code': 'EURUSD', 'name': '欧元/美元', 'market_type': 'currency', 'exchange': 'OTC'},
+        'GBPUSD': {'code': 'GBPUSD', 'name': '英镑/美元', 'market_type': 'currency', 'exchange': 'OTC'},
+        'USDJPY': {'code': 'USDJPY', 'name': '美元/日元', 'market_type': 'currency', 'exchange': 'OTC'},
+        ...
+        'USDCAD': {'code': 'USDCAD', 'name': '美元/加元', 'market_type': 'currency', 'exchange': 'OTC'},
+    },
+    'status': 'ok'
+}
+```
+
+获取外汇市场的交易对信息。
+
+### HTTP请求
+
+`GET v1/forex/markets`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应外汇的名称和隶属交易所信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+code | String | 交易对代码
+name | String | 外汇中文名称
+market_type | String | 产品类型
+exchange | String | 交易所
+
+## 实时报价
+
+> 示例代码：查询外汇品种实时报价
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/forex/quote',
+                    params={'symbol': 'EURUSD,USDJPY,WTICOUSD', 'apikey': 'your apikey'})
+```
+
+> 返回结果：查询外汇品种实时报价
+
+```json
+{
+    'timestamp': 1590487416037,
+    'data': [
+        {'open': 28.002, 'high': 28.306, 'low': 27.696, 'pre_close': 27.553, 'change': -26.45692,
+         'percent_change': -96.02, 'name': 'WTI原油/美元', 'symbol': 'EURUSD', 'bid': 1.09608, 'ask': 1.09615,
+         'timestamp': '1590487415000', 'datetime': '2020-05-26 18:03:35', 'last': 1.09608},
+        {'open': 1.09178, 'high': 1.09731, 'low': 1.0914, 'pre_close': 1.08947, 'change': 26.87553,
+         'percent_change': 2466.84, 'name': '欧元/美元', 'symbol': 'WTICOUSD', 'bid': 27.946, 'ask': 27.976,
+         'timestamp': '1590487415507', 'datetime': '2020-05-26 18:03:35', 'last': 27.965},
+        {'open': 107.824, 'high': 107.896, 'low': 107.64, 'pre_close': 107.724, 'change': -0.043,
+         'percent_change': -0.04, 'name': '美元/日元', 'symbol': 'USDJPY', 'bid': 107.68, 'ask': 107.681,
+         'timestamp': '1590487414000', 'datetime': '2020-05-26 18:03:34', 'last': 107.681}
+    ],
+    'status': 'ok'
+}
+```
+
+查询外汇品种的实时报价(level1)，每次最多查询25个产品。
+
+### HTTP请求
+
+`GET v1/forex/quote`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+symbol | String | True | NA | 外汇品种代码，同时获取多个以逗号分隔，如EURUSD,USDJPY,WTICOUSD
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应外汇品种的报价信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+open | float | 今日开盘价
+high | float | 今日最高价
+low | float | 今日最低价
+pre_close | float | 昨日收盘价
+change | float | 价格变动数额
+percent_change | float | 价格变动百分比
+name | String | 外汇中文名称
+symbol | String | 外汇代码
+bid | float | 最新最优买价
+ask | float | 最新最优卖价
+timestamp | String | 最新交易发生时间
+datetime | String | 最新交易发生北京时间
+last | float | 最新成交价
+
+## 日图历史
+
+> 代码示例：查询外汇日图历史
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/forex/history',
+                    params={'symbol': 'EURUSD', 'start_date': '2020-02-01', 'end_date': '2020-02-05', 'apikey': 'your apikey'})
+```
+
+> 返回结果：查询外汇日图历史
+
+```json
+{
+    'timestamp': 1590487835285,
+    'data': [
+        {'datetime': '2020-02-02', 'open': 1.10957, 'high': 1.10957, 'low': 1.10822, 'close': 1.10894, 'symbol': 'eurusd'},
+        {'datetime': '2020-02-03', 'open': 1.10893, 'high': 1.10893, 'low': 1.10361, 'close': 1.10626, 'symbol': 'eurusd'},
+        {'datetime': '2020-02-04', 'open': 1.10627, 'high': 1.10643, 'low': 1.1033, 'close': 1.10449, 'symbol': 'eurusd'},
+        {'datetime': '2020-02-05', 'open': 1.1045, 'high': 1.10481, 'low': 1.09939, 'close': 1.10006, 'symbol': 'eurusd'}
+    ],
+    'status': 'ok'
+}
+```
+
+获取外汇的日图历史数据。
+
+### HTTP请求
+
+`GET v1/forex/history`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+symbol | String | True | NA | 外汇代码如EURUSD
+start_date | String | False | 数据起始时间 | 样本起始时间,如2019-01-01
+end_date | String | False | 最近更新时间 | 样本结束时间,如2019-09-09
+freq | String | False | daily | 频率
+sort | String | False | asc | 按时间戳排序，asc(升序), desc(降序)
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应外汇的报价信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+datetime | String | k线时间
+open | Float | 开盘价
+high | Float | 最高价
+low | Float | 最低价
+close | Float | 收盘价
+volume | Float | 成交量
+symbol | String | 外汇代码
+
+## 多外汇品种单日历史
+
+> 示例代码：查询外汇多品种单日数据
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/forex/history_one_day',
+                    params={'symbol': 'EURUSD,USDJPY', 'date': '2020-03-12', 'apikey': 'your apikey'})
+```
+
+> 返回结果：查询外汇多品种单日数据
+
+```json
+{
+    'timestamp': 1590488143772,
+    'data': [
+        {'datetime': '2020-03-12', 'open': 1.12617, 'high': 1.13338, 'low': 1.10551, 'close': 1.11831, 'symbol': 'eurusd'},
+        {'datetime': '2020-03-12', 'open': 104.54, 'high': 106.11, 'low': 103.091, 'close': 104.679, 'symbol': 'usdjpy'}
+    ],
+    'status': 'ok'
+}
+```
+
+同时获取多个外汇品种单天的K线数据，最多同时查询25个。
+
+### HTTP请求
+
+`GET v1/forex/history_one_day`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+symbol | String | True | NA | 交易对代码,如EURUSD,USDJPY,多个交易对以逗号分隔,逗号之间不要有空格
+date | String | True | NA | 数据获取时间,如2019-01-01
+sort | String | False | asc | 按交易对代码的字符顺序排序，asc(升序)，desc(降序)
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应数字货币交易对的k线信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+datetime | String | k线时间
+open | Float | 开盘价
+high | Float | 最高价
+low | Float | 最低价
+close | Float | 收盘价
+volume | Float | 成交量
+symbol | String | 外汇品种代码
+
+## 日内数据
+
+> 代码示例：查询外汇日内数据
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.com/v1/forex/intraday',
+                    params={'symbol': 'EURUSD', 'timeframe': '5', 'range': 2, 'apikey': 'your apikey'})
+```
+
+> 返回结果：查询外汇日内数据
+
+```json
+{
+    'timestamp': 1590488280601,
+    'data': [
+        {'datetime': '2020-05-24 21:00:00', 'open': 1.08973, 'high': 1.08973, 'low': 1.08963, 'close': 1.08973, 'symbol': 'eurusd'},
+        {'datetime': '2020-05-24 21:05:00', 'open': 1.08982, 'high': 1.09005, 'low': 1.08973, 'close': 1.08973, 'symbol': 'eurusd'},
+        ...
+        {'datetime': '2020-05-25 23:50:00', 'open': 1.09001, 'high': 1.0901, 'low': 1.08999, 'close': 1.09009, 'symbol': 'eurusd'},
+        {'datetime': '2020-05-25 23:55:00', 'open': 1.09008, 'high': 1.09021, 'low': 1.09007, 'close': 1.09019, 'symbol': 'eurusd'}
+    ],
+    'status': 'ok'
+}
+```
+
+获取外汇的日内K线，支持1分钟，5分钟和60分钟K线。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据。
+
+### HTTP请求
+
+`GET v1/forex/intraday`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+symbol | String | True | NA | 外汇品种代码,如EURUSD
+timeframe | int | True | NA | 频率，1分钟为1,5分钟为5，60分钟为60
+range | int | True | NA | 查询天数, 7代表7天, 范围1-30,1分钟仅支持7日以内,5分钟60分钟支持30日以内
+endTime | String | NA | 当前时间 | 请求的结束时间
+apikey | String | True | NA | 用户申请的apikey
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+timestamp | int | 请求响应时间戳
+data | list | 对应交易对的报价信息
+status | String | 请求结果状态
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+datetime | String | k线时间
+open | Float | 开盘价
+high | Float | 最高价
+low | Float | 最低价
+close | Float | 收盘价
+volume | Float | 成交量
+symbol | String | 外汇品种代码
+
+
 # Websocket行情数据
 
 ## 简介
