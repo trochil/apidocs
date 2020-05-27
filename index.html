@@ -430,8 +430,6 @@
 <li>外汇：80多个货币对，包含新兴市场国家的汇率</li>
 </ul>
 
-<p><strong>数字货币和外汇接口会在4月份开放</strong></p>
-
 <p><strong>http请求base url:</strong></p>
 
 <p>api.trochil.cn</p>
@@ -3380,7 +3378,7 @@
     </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>获取数字货币的日图历史数据。</p>
+<p>获取数字货币的日图历史数据,目前仅支持binance交易所对应交易对</p>
 <h3 id='http-22'>HTTP请求</h3>
 <p><code>GET v1/crypto/history</code></p>
 <h3 id='1f9ac54b15-22'>请求参数</h3>
@@ -3525,7 +3523,7 @@
     </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>同时获取多个交易对单天的K线数据，最多同时查询25个。</p>
+<p>同时获取多个交易对单天的K线数据，最多同时查询25个,目前仅支持binance交易所对应交易对</p>
 <h3 id='http-23'>HTTP请求</h3>
 <p><code>GET v1/crypto/history_one_day</code></p>
 <h3 id='1f9ac54b15-23'>请求参数</h3>
@@ -3664,7 +3662,7 @@
     </span><span class="err">'status'</span><span class="p">:</span><span class="w"> </span><span class="err">'ok'</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>获取数字货币的日内K线，支持1分钟，5分钟和60分钟K线。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据。</p>
+<p>获取数字货币的日内K线，支持1分钟，5分钟和60分钟K线。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据,目前仅支持binance交易所对应交易对</p>
 <h3 id='http-24'>HTTP请求</h3>
 <p><code>GET v1/crypto/intraday</code></p>
 <h3 id='1f9ac54b15-24'>请求参数</h3>
@@ -4169,11 +4167,6 @@
 <td>收盘价</td>
 </tr>
 <tr>
-<td>volume</td>
-<td>Float</td>
-<td>成交量</td>
-</tr>
-<tr>
 <td>symbol</td>
 <td>String</td>
 <td>外汇代码</td>
@@ -4298,11 +4291,6 @@
 <td>close</td>
 <td>Float</td>
 <td>收盘价</td>
-</tr>
-<tr>
-<td>volume</td>
-<td>Float</td>
-<td>成交量</td>
 </tr>
 <tr>
 <td>symbol</td>
@@ -4439,11 +4427,6 @@
 <td>close</td>
 <td>Float</td>
 <td>收盘价</td>
-</tr>
-<tr>
-<td>volume</td>
-<td>Float</td>
-<td>成交量</td>
 </tr>
 <tr>
 <td>symbol</td>
