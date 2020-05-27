@@ -32,7 +32,7 @@ search: true
 
 **http请求base url:**
 
-api.trochil.com
+api.trochil.cn
 
 # API
 
@@ -48,7 +48,7 @@ api.trochil.com
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnstock/markets',
+info = requests.get('http://api.trochil.cn/v1/cnstock/markets',
                     params={'apikey': 'your apikey'})
 ```
 
@@ -94,7 +94,7 @@ status | String | 请求结果状态
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnstock/quote',
+info = requests.get('http://api.trochil.cn/v1/cnstock/quote',
                     params={'symbol': 'SZ300564,SZ300820',
                             'apikey': 'your apikey'})
 ```
@@ -182,7 +182,7 @@ timestamp | String | 最新成交时间戳
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnstock/history',
+info = requests.get('http://api.trochil.cn/v1/cnstock/history',
                     params={
                         'symbol': 'SH600012',
                         'start_date': '2020-03-01',
@@ -251,7 +251,7 @@ symbol | String | 股票代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnstock/history_one_day',
+info = requests.get('http://api.trochil.cn/v1/cnstock/history_one_day',
                     params={
                         'symbol': 'SH600012,SH600015',
                         'date': '2011-09-29',
@@ -313,7 +313,7 @@ symbol | String | 个股品种代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnstock/intraday',
+info = requests.get('http://api.trochil.cn/v1/cnstock/intraday',
                     params={
                         'symbol': 'SZ300817',
                         'timeframe': '60',
@@ -383,7 +383,7 @@ symbol | String | 个股品种代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/hkstock/markets',
+info = requests.get('http://api.trochil.cn/v1/hkstock/markets',
                     params={'apikey': 'your apikey'})
 ```
 
@@ -428,7 +428,7 @@ status | String | 请求结果状态
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/hkstock/quote',
+info = requests.get('http://api.trochil.cn/v1/hkstock/quote',
                     params={
                         'symbol': 'HK09938,HK09968',
                         'apikey': 'your apikey'}
@@ -496,7 +496,7 @@ timestamp | String | 最新成交时间戳
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/hkstock/history',
+info = requests.get('http://api.trochil.cn/v1/hkstock/history',
                     params={
                         'symbol': 'HK09968',
                         'start_date': '2020-02-01',
@@ -561,7 +561,7 @@ symbol | String | 股票代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/hkstock/history_one_day',
+info = requests.get('http://api.trochil.cn/v1/hkstock/history_one_day',
                     params={
                         'symbol': 'HK09938,HK09968',
                         'date': '2020-02-04',
@@ -626,7 +626,7 @@ symbol | String | 个股品种代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/usstock/markets',
+info = requests.get('http://api.trochil.cn/v1/usstock/markets',
                     params={'apikey': 'your apikey'})
 ```
 
@@ -671,7 +671,7 @@ status | String | 请求结果状态
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/usstock/quote',
+info = requests.get('http://api.trochil.cn/v1/usstock/quote',
                     params={'symbol': 'AAPL,BABA,BF.B', 'apikey': 'your apikey'})
 ```
 
@@ -749,7 +749,7 @@ exchange | String | 交易所
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/usstock/history',
+info = requests.get('http://api.trochil.cn/v1/usstock/history',
                     params={
                         'symbol': 'BABA',
                         'start_date': '2020-02-01',
@@ -815,7 +815,7 @@ symbol | String | 股票代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/usstock/history_one_day',
+info = requests.get('http://api.trochil.cn/v1/usstock/history_one_day',
                     params={
                         'symbol': 'BABA,JD',
                         'date': '2020-02-04',
@@ -877,7 +877,7 @@ symbol | String | 美股品种代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/usstock/intraday',
+info = requests.get('http://api.trochil.cn/v1/usstock/intraday',
                     params={
                         'symbol': 'BABA',
                         'timeframe': '60',
@@ -949,7 +949,7 @@ symbol | String | 股票品种代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnfuture/markets',
+info = requests.get('http://api.trochil.cn/v1/cnfuture/markets',
                     params={'apikey': 'your apikey'})
 ```
 
@@ -996,7 +996,7 @@ status | String | 请求结果状态
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnfuture/quote',
+info = requests.get('http://api.trochil.cn/v1/cnfuture/quote',
                     params={
                         'symbol': 'V0,V2007',
                         'apikey': 'your apikey'}
@@ -1068,7 +1068,7 @@ percent_change | String | 涨跌变动比率
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnfuture/history',
+info = requests.get('http://api.trochil.cn/v1/cnfuture/history',
                     params={
                         'symbol': 'V0',
                         'freq': 'weekly',
@@ -1148,7 +1148,7 @@ symbol | String | 合约代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnfuture/history_one_day',
+info = requests.get('http://api.trochil.cn/v1/cnfuture/history_one_day',
                     params={
                         'symbol': 'V0,V2002,V2003,V2004,V2005',
                         'date': '2019-12-25',
@@ -1214,7 +1214,7 @@ symbol | String | 合约品种代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/cnfuture/intraday',
+info = requests.get('http://api.trochil.cn/v1/cnfuture/intraday',
                     params={
                         'symbol': 'V0',
                         'timeframe': '30',
@@ -1285,7 +1285,7 @@ symbol | String | 合约品种代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/crypto/markets', params={'apikey': 'your apikey'})
+info = requests.get('http://api.trochil.cn/v1/crypto/markets', params={'apikey': 'your apikey'})
 ```
 
 > 返回结果：查询数字货币产品列表
@@ -1338,7 +1338,7 @@ exchange | String | 交易对所支持的交易所
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/crypto/quote',
+info = requests.get('http://api.trochil.cn/v1/crypto/quote',
                     params={'symbol': 'binance.algousdt,binance.btcusdt', 'apikey': 'your apikey'})
 ```
 
@@ -1410,7 +1410,7 @@ timestamp | String | 最新交易发生时间
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/crypto/history',
+info = requests.get('http://api.trochil.cn/v1/crypto/history',
                     params={'symbol': 'binance.btcusdt', 'start_date': '2020-03-01', 'end_date': '2020-03-04', 'apikey': 'your apikey'})
 ```
 
@@ -1477,7 +1477,7 @@ symbol | String | 交易对代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/crypto/history_one_day',
+info = requests.get('http://api.trochil.cn/v1/crypto/history_one_day',
                     params={'symbol': 'binance.btcusdt,binance.ethusdt', 'date': '2019-09-29', 'apikey': 'your apikey'})
 ```
 
@@ -1536,7 +1536,7 @@ symbol | String | 数字货币交易对代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/crypto/intraday',
+info = requests.get('http://api.trochil.cn/v1/crypto/intraday',
                     params={'symbol': 'binance.btcusdt', 'timeframe': '60', 'range': 2, 'apikey': 'your apikey'})
 ```
 
@@ -1607,7 +1607,7 @@ symbol | String | 交易对代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/forex/markets', params={'apikey': 'your apikey'})
+info = requests.get('http://api.trochil.cn/v1/forex/markets', params={'apikey': 'your apikey'})
 ```
 
 > 返回结果：查询外汇产品列表
@@ -1662,7 +1662,7 @@ exchange | String | 交易所
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/forex/quote',
+info = requests.get('http://api.trochil.cn/v1/forex/quote',
                     params={'symbol': 'EURUSD,USDJPY,WTICOUSD', 'apikey': 'your apikey'})
 ```
 
@@ -1732,7 +1732,7 @@ last | float | 最新成交价
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/forex/history',
+info = requests.get('http://api.trochil.cn/v1/forex/history',
                     params={'symbol': 'EURUSD', 'start_date': '2020-02-01', 'end_date': '2020-02-05', 'apikey': 'your apikey'})
 ```
 
@@ -1795,7 +1795,7 @@ symbol | String | 外汇代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/forex/history_one_day',
+info = requests.get('http://api.trochil.cn/v1/forex/history_one_day',
                     params={'symbol': 'EURUSD,USDJPY', 'date': '2020-03-12', 'apikey': 'your apikey'})
 ```
 
@@ -1854,7 +1854,7 @@ symbol | String | 外汇品种代码
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/forex/intraday',
+info = requests.get('http://api.trochil.cn/v1/forex/intraday',
                     params={'symbol': 'EURUSD', 'timeframe': '5', 'range': 2, 'apikey': 'your apikey'})
 ```
 
@@ -1919,7 +1919,7 @@ symbol | String | 外汇品种代码
 
 websocket接入地址
 
-ws://stream.trochil.com/ws 后拼接市场类型,如A股为ws://stream.trochil.com/ws/cnstock
+ws://stream.trochil.cn/ws 后拼接市场类型,如A股为ws://stream.trochil.cn/ws/cnstock
 
 ### 订阅主题
 
@@ -2031,7 +2031,7 @@ timestamp | String | 最新成交时间
 
 部分国家的宏观经济数据,包括日,月,季度,年份周期的各类经济指标
 
-经济数据接口base url: api.trochil.com
+经济数据接口base url: api.trochil.cn
 
 ## 单个国家的所有指标
 
@@ -2040,7 +2040,7 @@ timestamp | String | 最新成交时间
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/indicator/country', params={'country': '美国'})
+info = requests.get('http://api.trochil.cn/v1/indicator/country', params={'country': '美国'})
 ```
 
 > 返回结果：查询单个国家的所有指标
@@ -2114,7 +2114,7 @@ last_time | String | 指标最新时间
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/indicator/single',
+info = requests.get('http://api.trochil.cn/v1/indicator/single',
                     params={'series_code': '548b08363354c0c2d9d0540dcda2173c'})
 ```
 
@@ -2189,7 +2189,7 @@ transform | String | 指标计算方式
 
 支持获取美股,A股,港股,期货,数字货币,外汇市场内所有交易对的ticker价格快照数据
 
-经济数据接口base url: api.trochil.com
+经济数据接口base url: api.trochil.cn
 
 ## 单个市场类型全部交易对价格快照
 
@@ -2198,7 +2198,7 @@ transform | String | 指标计算方式
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/snapshot/market', params={'market': 'usstock'})
+info = requests.get('http://api.trochil.cn/v1/snapshot/market', params={'market': 'usstock'})
 ```
 
 > 返回结果：查询单个市场类型全部交易对价格快照
@@ -2271,7 +2271,7 @@ exchange | String | 交易所
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/snapshot/top', params={'market': 'usstock', 'lenth': 10})
+info = requests.get('http://api.trochil.cn/v1/snapshot/top', params={'market': 'usstock', 'lenth': 10})
 ```
 
 > 查询单个市场类型涨跌幅榜单
@@ -2346,7 +2346,7 @@ exchange | String | 交易所
 
 支持获取全球股指实时数据以及全球股指历史日线级别数据,全球股指历史数据分钟级别待扩展
 
-经济数据接口base url: api.trochil.com
+经济数据接口base url: api.trochil.cn
 
 ## 全球股指实时数据
 
@@ -2355,7 +2355,7 @@ exchange | String | 交易所
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/index/tickers')
+info = requests.get('http://api.trochil.cn/v1/index/tickers')
 ```
 
 > 返回结果：查询全球股指实时价格快照
@@ -2414,7 +2414,7 @@ time | String | 时间
 ```python
 import requests
 
-info = requests.get('http://api.trochil.com/v1/index/daily',
+info = requests.get('http://api.trochil.cn/v1/index/daily',
                     params={'symbol': 'nas100', 'start_date': '2020-01-01', 'end_date': '2020-02-01'})
 ```
 
