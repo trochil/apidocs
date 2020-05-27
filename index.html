@@ -434,7 +434,7 @@
 
 <p><strong>http请求base url:</strong></p>
 
-<p>api.trochil.com</p>
+<p>api.trochil.cn</p>
 <h1 id='api'>API</h1>
 <p>所有接口均要求认证，注册成为我们的用户后可以在个人主页找到API key，请求数据时传递您的API key作为参数，详情看代码实例。</p>
 <h1 id='a'>A股</h1><h2 id='950b559860'>产品列表</h2>
@@ -443,7 +443,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/markets'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnstock/markets'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -510,7 +510,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/quote'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnstock/quote'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'SZ300564,SZ300820'</span><span class="p">,</span>
                             <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
@@ -782,7 +782,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/history'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnstock/history'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'SH600012'</span><span class="p">,</span>
                         <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-03-01'</span><span class="p">,</span>
@@ -935,7 +935,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/history_one_day'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnstock/history_one_day'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'SH600012,SH600015'</span><span class="p">,</span>
                         <span class="s">'date'</span><span class="p">:</span> <span class="s">'2011-09-29'</span><span class="p">,</span>
@@ -1069,7 +1069,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnstock/intraday'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnstock/intraday'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'SZ300817'</span><span class="p">,</span>
                         <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'60'</span><span class="p">,</span>
@@ -1214,7 +1214,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/hkstock/markets'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/hkstock/markets'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -1281,7 +1281,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/hkstock/quote'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/hkstock/quote'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'HK09938,HK09968'</span><span class="p">,</span>
                         <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
@@ -1445,7 +1445,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/hkstock/history'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/hkstock/history'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'HK09968'</span><span class="p">,</span>
                         <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">,</span>
@@ -1594,7 +1594,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/hkstock/history_one_day'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/hkstock/history_one_day'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'HK09938,HK09968'</span><span class="p">,</span>
                         <span class="s">'date'</span><span class="p">:</span> <span class="s">'2020-02-04'</span><span class="p">,</span>
@@ -1728,7 +1728,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/markets'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/usstock/markets'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -1795,7 +1795,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/quote'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/usstock/quote'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'AAPL,BABA,BF.B'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -1977,7 +1977,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/history'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/usstock/history'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'BABA'</span><span class="p">,</span>
                         <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">,</span>
@@ -2127,7 +2127,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/history_one_day'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/usstock/history_one_day'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'BABA,JD'</span><span class="p">,</span>
                         <span class="s">'date'</span><span class="p">:</span> <span class="s">'2020-02-04'</span><span class="p">,</span>
@@ -2261,7 +2261,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/usstock/intraday'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/usstock/intraday'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'BABA'</span><span class="p">,</span>
                         <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'60'</span><span class="p">,</span>
@@ -2408,7 +2408,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/markets'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnfuture/markets'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -2477,7 +2477,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/quote'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnfuture/quote'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'V0,V2007'</span><span class="p">,</span>
                         <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">}</span>
@@ -2656,7 +2656,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/history'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnfuture/history'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'V0'</span><span class="p">,</span>
                         <span class="s">'freq'</span><span class="p">:</span> <span class="s">'weekly'</span><span class="p">,</span>
@@ -2820,7 +2820,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/history_one_day'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnfuture/history_one_day'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'V0,V2002,V2003,V2004,V2005'</span><span class="p">,</span>
                         <span class="s">'date'</span><span class="p">:</span> <span class="s">'2019-12-25'</span><span class="p">,</span>
@@ -2958,7 +2958,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/cnfuture/intraday'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/cnfuture/intraday'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span>
                         <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'V0'</span><span class="p">,</span>
                         <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'30'</span><span class="p">,</span>
@@ -3104,7 +3104,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/markets'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/crypto/markets'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询数字货币产品列表</p>
@@ -3191,7 +3191,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/quote'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/crypto/quote'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'binance.algousdt,binance.btcusdt'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -3359,7 +3359,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/history'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/crypto/history'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'binance.btcusdt'</span><span class="p">,</span> <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-03-01'</span><span class="p">,</span> <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-03-04'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -3510,7 +3510,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/history_one_day'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/crypto/history_one_day'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'binance.btcusdt,binance.ethusdt'</span><span class="p">,</span> <span class="s">'date'</span><span class="p">:</span> <span class="s">'2019-09-29'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -3641,7 +3641,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/crypto/intraday'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/crypto/intraday'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'binance.btcusdt'</span><span class="p">,</span> <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'60'</span><span class="p">,</span> <span class="s">'range'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -3787,7 +3787,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/markets'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/forex/markets'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询外汇产品列表</p>
@@ -3884,7 +3884,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/quote'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/forex/quote'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'EURUSD,USDJPY,WTICOUSD'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -4038,7 +4038,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/history'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/forex/history'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'EURUSD'</span><span class="p">,</span> <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">,</span> <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-02-05'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -4185,7 +4185,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/history_one_day'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/forex/history_one_day'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'EURUSD,USDJPY'</span><span class="p">,</span> <span class="s">'date'</span><span class="p">:</span> <span class="s">'2020-03-12'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -4316,7 +4316,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/forex/intraday'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/forex/intraday'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'EURUSD'</span><span class="p">,</span> <span class="s">'timeframe'</span><span class="p">:</span> <span class="s">'5'</span><span class="p">,</span> <span class="s">'range'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -4454,7 +4454,7 @@
 <h1 id='websocket'>Websocket行情数据</h1><h2 id='5ea2e0cde2-2'>简介</h2><h3 id='url'>接入url</h3>
 <p>websocket接入地址</p>
 
-<p>ws://stream.trochil.com/ws 后拼接市场类型,如A股为ws://stream.trochil.com/ws/cnstock</p>
+<p>ws://stream.trochil.cn/ws 后拼接市场类型,如A股为ws://stream.trochil.cn/ws/cnstock</p>
 <h3 id='65cd7614bc'>订阅主题</h3>
 <p>成功建立与Websocket服务器的连接后，需要进行apikey认证,发送如下消息认证apikey:</p>
 
@@ -4689,14 +4689,14 @@
 <h1 id='3ffb439f4a'>经济数据接口</h1><h2 id='e6355e0106'>简要说明</h2>
 <p>部分国家的宏观经济数据,包括日,月,季度,年份周期的各类经济指标</p>
 
-<p>经济数据接口base url: api.trochil.com</p>
+<p>经济数据接口base url: api.trochil.cn</p>
 <h2 id='0490f22b48'>单个国家的所有指标</h2>
 <blockquote>
 <p>示例代码：查询单个国家的所有指标</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/indicator/country'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'country'</span><span class="p">:</span> <span class="s">'美国'</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/indicator/country'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'country'</span><span class="p">:</span> <span class="s">'美国'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询单个国家的所有指标</p>
@@ -4840,7 +4840,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/indicator/single'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/indicator/single'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'series_code'</span><span class="p">:</span> <span class="s">'548b08363354c0c2d9d0540dcda2173c'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
@@ -4998,14 +4998,14 @@
 <h1 id='8da3bea822'>全市场快照</h1><h2 id='e6355e0106-2'>简要说明</h2>
 <p>支持获取美股,A股,港股,期货,数字货币,外汇市场内所有交易对的ticker价格快照数据</p>
 
-<p>经济数据接口base url: api.trochil.com</p>
+<p>经济数据接口base url: api.trochil.cn</p>
 <h2 id='1601719226'>单个市场类型全部交易对价格快照</h2>
 <blockquote>
 <p>示例代码：查询单个市场类型全部交易对价格快照</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/snapshot/market'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/snapshot/market'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询单个市场类型全部交易对价格快照</p>
@@ -5152,7 +5152,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/snapshot/top'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">,</span> <span class="s">'lenth'</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/snapshot/top'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">,</span> <span class="s">'lenth'</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>查询单个市场类型涨跌幅榜单</p>
@@ -5310,14 +5310,14 @@
 <h1 id='57be07fc59'>股指数据</h1><h2 id='e6355e0106-3'>简要说明</h2>
 <p>支持获取全球股指实时数据以及全球股指历史日线级别数据,全球股指历史数据分钟级别待扩展</p>
 
-<p>经济数据接口base url: api.trochil.com</p>
+<p>经济数据接口base url: api.trochil.cn</p>
 <h2 id='1669ec607a'>全球股指实时数据</h2>
 <blockquote>
 <p>示例代码：查询全球股指实时价格快照</p>
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/index/tickers'</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/index/tickers'</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询全球股指实时价格快照</p>
@@ -5416,7 +5416,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.com/v1/index/daily'</span><span class="p">,</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/index/daily'</span><span class="p">,</span>
                     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'nas100'</span><span class="p">,</span> <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-01-01'</span><span class="p">,</span> <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
