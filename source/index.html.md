@@ -672,20 +672,28 @@ status | String | 请求结果状态
 import requests
 
 info = requests.get('http://api.trochil.com/v1/usstock/quote',
-                    params={
-                        'symbol': 'BABA,JD',
-                        'apikey': 'your apikey'}
-                    )
+                    params={'symbol': 'AAPL,BABA,BF.B', 'apikey': 'your apikey'})
 ```
 
 > 返回结果：查询美股实时报价
 
 ```json
 {
-    'timestamp': 1583478603847,
+    'timestamp': 1590559857542,
     'data': [
-        '{"symbol": "BABA", "name": "阿里巴巴", "last": "211.46", "timestamp": "1583476040000"}',
-        '{"symbol": "JD", "name": "京东", "last": "44.62", "timestamp": "1583477955000"}'],
+        {'symbol': 'BABA', 'bid': 201.71, 'ask': 201.82, 'bid_qty': 23, 'ask_qty': 51, 'timestamp': '1590523199990',
+         'datetime': '2020-05-27 03:59:59', 'name': '阿里巴巴', 'change': 2.02, 'percent_change': 1.01, 'pre_close': 199.7,
+         'open': 205.94, 'high': 206.8, 'low': 201.0, 'volume': 28683134.0, 'mktcap': 541279611116.0, 'pe': 21.5743308,
+         'exchange': 'NYSE'},
+        {'symbol': 'AAPL', 'bid': 316.72, 'ask': 316.84, 'bid_qty': 52, 'ask_qty': 19, 'timestamp': '1590523199964',
+         'datetime': '2020-05-27 03:59:59', 'name': '苹果公司', 'change': -2.16, 'percent_change': -0.68,
+         'pre_close': 318.89, 'open': 323.5, 'high': 324.24, 'low': 316.5, 'volume': 31380454.0,
+         'mktcap': 1373173460731.0, 'pe': 24.62908394, 'exchange': 'NASDAQ'},
+        {'symbol': 'BF.B', 'bid': 63.54, 'ask': 63.55, 'bid_qty': 61, 'ask_qty': 4, 'timestamp': '1590523199982',
+         'datetime': '2020-05-27 03:59:59', 'name': '布朗霍文集团', 'change': -1.24, 'percent_change': -1.91,
+         'pre_close': 64.78, 'open': 66.2, 'high': 66.2, 'low': 63.35, 'volume': 1582838.0, 'mktcap': 30513647377.0,
+         'pe': 35.30000144, 'exchange': 'NYSE'}
+    ],
     'status': 'ok'
 }
 ```
@@ -715,10 +723,24 @@ status | String | 请求结果状态
 
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
-symbol | String | 股票代码
-name | String | 股票中文名称
-last | String | 最新成交价
-timestamp | String | 实时价格时间
+symbol | String | 美股对应代码
+bid | float | 最新最优买价
+ask | float | 最新最优卖价
+bid_qty | float | 最新最优买价对应的挂单量
+ask_qty | float | 最新最优卖价对应的挂单量
+timestamp | String | 最新交易发生时间
+datetime | String | 最新交易发生北京时间
+name | String | 美股中文名称
+change | float | 价格变动数额
+percent_change | float | 价格变动百分比
+pre_close | float | 昨日收盘价
+open | float | 今日开盘价
+high | float | 今日最高价
+low | float | 今日最低价
+volume | float | 成交量
+mktcap | float | 市值
+pe | float | 市盈率
+exchange | String | 交易所
 
 ## 日图历史
 
