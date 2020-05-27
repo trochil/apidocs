@@ -28,8 +28,6 @@ search: true
 * 数字货币：币安(Binance), Okex, 火币(Huobi), Coinbase, Poloniex, Bitfinex
 * 外汇：80多个货币对，包含新兴市场国家的汇率
 
-**数字货币和外汇接口会在4月份开放**
-
 **http请求base url:**
 
 api.trochil.cn
@@ -1433,7 +1431,7 @@ info = requests.get('http://api.trochil.cn/v1/crypto/history',
 }
 ```
 
-获取数字货币的日图历史数据。
+获取数字货币的日图历史数据,目前仅支持binance交易所对应交易对
 
 ### HTTP请求
 
@@ -1494,7 +1492,7 @@ info = requests.get('http://api.trochil.cn/v1/crypto/history_one_day',
 }
 ```
 
-同时获取多个交易对单天的K线数据，最多同时查询25个。
+同时获取多个交易对单天的K线数据，最多同时查询25个,目前仅支持binance交易所对应交易对
 
 ### HTTP请求
 
@@ -1561,7 +1559,7 @@ info = requests.get('http://api.trochil.cn/v1/crypto/intraday',
 }
 ```
 
-获取数字货币的日内K线，支持1分钟，5分钟和60分钟K线。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据。
+获取数字货币的日内K线，支持1分钟，5分钟和60分钟K线。1分钟图最多返回过去7天的数据，5分钟图和60分钟图最多返回过去30天的数据,目前仅支持binance交易所对应交易对
 
 ### HTTP请求
 
@@ -1785,7 +1783,6 @@ open | Float | 开盘价
 high | Float | 最高价
 low | Float | 最低价
 close | Float | 收盘价
-volume | Float | 成交量
 symbol | String | 外汇代码
 
 ## 多外汇品种单日历史
@@ -1844,7 +1841,6 @@ open | Float | 开盘价
 high | Float | 最高价
 low | Float | 最低价
 close | Float | 收盘价
-volume | Float | 成交量
 symbol | String | 外汇品种代码
 
 ## 日内数据
@@ -1907,7 +1903,6 @@ open | Float | 开盘价
 high | Float | 最高价
 low | Float | 最低价
 close | Float | 收盘价
-volume | Float | 成交量
 symbol | String | 外汇品种代码
 
 
