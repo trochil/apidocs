@@ -1919,7 +1919,7 @@ symbol | String | 外汇品种代码
 
 websocket接入地址
 
-ws://stream.trochil.com/ws
+ws://stream.trochil.com/ws 后拼接市场类型,如A股为ws://stream.trochil.com/ws/cnstock
 
 ### 订阅主题
 
