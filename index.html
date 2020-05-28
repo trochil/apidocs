@@ -359,6 +359,9 @@
                   <li>
                     <a href="#2869a7a75a" class="toc-h2 toc-link" data-title="国内期货实时数据">国内期货实时数据</a>
                   </li>
+                  <li>
+                    <a href="#6c10407dda" class="toc-h2 toc-link" data-title="数字货币实时数据">数字货币实时数据</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -4447,6 +4450,9 @@
 
 <p>{&#39;op&#39;: &#39;sub&#39;, &#39;topic&#39;: topic to sub}</p>
 
+<p>topic为需要订阅的品种代码如股票代码SH600000,单个订阅可以传字符串 &quot;SH600000&quot;,也可以是列表[&quot;SH600000&quot;],多个品种以列表传送如[&quot;SH600000&quot;, &quot;SH600001&quot;],
+数字货币需要在交易对前加上交易所名称如[&quot;binance.btcusdt&quot;],具体各个市场类型的代码请通过http api请求markets接口获取</p>
+
 <p>成功订阅后，Websocket客户端将收到确认</p>
 
 <p>之后, 一旦所订阅的主题有更新，Websocket客户端将收到服务器推送的更新消息</p>
@@ -4662,6 +4668,103 @@
 <td>name</td>
 <td>String</td>
 <td>产品中文名</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>最新成交时间</td>
+</tr>
+</tbody></table>
+<h2 id='6c10407dda'>数字货币实时数据</h2><h3 id='a94c7743c5-5'>主题订阅</h3>
+<p>地址 /crypto
+一旦对应交易对数据产生，Websocket服务器将通过此订阅主题接口推送至客户端</p>
+<h3 id='aabb1d9e37'>数字货币实时数据更新字段列表</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ask</td>
+<td>String</td>
+<td>最优卖价</td>
+</tr>
+<tr>
+<td>ask_qty</td>
+<td>String</td>
+<td>最优卖价对应的挂单量</td>
+</tr>
+<tr>
+<td>base_volume</td>
+<td>String</td>
+<td>成交量基于交易币</td>
+</tr>
+<tr>
+<td>bid</td>
+<td>String</td>
+<td>最优买价</td>
+</tr>
+<tr>
+<td>bid_qty</td>
+<td>String</td>
+<td>最优买价对应的挂单量</td>
+</tr>
+<tr>
+<td>change</td>
+<td>String</td>
+<td>价格变动数额</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>交易所</td>
+</tr>
+<tr>
+<td>high</td>
+<td>String</td>
+<td>最高价</td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>交易对加上交易所对应的id</td>
+</tr>
+<tr>
+<td>last</td>
+<td>String</td>
+<td>最新价</td>
+</tr>
+<tr>
+<td>low</td>
+<td>String</td>
+<td>今日最低价</td>
+</tr>
+<tr>
+<td>open</td>
+<td>String</td>
+<td>今日开盘价</td>
+</tr>
+<tr>
+<td>percent_change</td>
+<td>String</td>
+<td>今日涨跌幅</td>
+</tr>
+<tr>
+<td>pre_close</td>
+<td>String</td>
+<td>昨日收盘价</td>
+</tr>
+<tr>
+<td>quote_volume</td>
+<td>String</td>
+<td>成交量基于基础币</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>交易对代码</td>
 </tr>
 <tr>
 <td>timestamp</td>
