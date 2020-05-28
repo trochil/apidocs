@@ -1926,6 +1926,9 @@ apikey认证通过后Websocket客户端发送如下请求以订阅特定主题,�
 
 {'op': 'sub', 'topic': topic to sub}
 
+topic为需要订阅的品种代码如股票代码SH600000,单个订阅可以传字符串 "SH600000",也可以是列表["SH600000"],多个品种以列表传送如["SH600000", "SH600001"],
+数字货币需要在交易对前加上交易所名称如["binance.btcusdt"],具体各个市场类型的代码请通过http api请求markets接口获取
+
 成功订阅后，Websocket客户端将收到确认
 
 之后, 一旦所订阅的主题有更新，Websocket客户端将收到服务器推送的更新消息
@@ -2017,6 +2020,35 @@ askQty | String | 最优卖价数量
 openInterest | String | 持仓量
 volume | String | 成交量
 name | String | 产品中文名
+timestamp | String | 最新成交时间
+
+## 数字货币实时数据
+
+### 主题订阅
+
+地址 /crypto
+一旦对应交易对数据产生，Websocket服务器将通过此订阅主题接口推送至客户端
+
+### 数字货币实时数据更新字段列表
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+ask | String | 最优卖价
+ask_qty | String | 最优卖价对应的挂单量
+base_volume | String | 成交量基于交易币
+bid | String | 最优买价
+bid_qty | String | 最优买价对应的挂单量
+change | String | 价格变动数额
+exchange | String | 交易所
+high | String | 最高价
+id | String | 交易对加上交易所对应的id
+last | String | 最新价
+low | String | 今日最低价
+open | String | 今日开盘价
+percent_change | String | 今日涨跌幅
+pre_close | String | 昨日收盘价
+quote_volume | String | 成交量基于基础币
+symbol | String | 交易对代码
 timestamp | String | 最新成交时间
 
 
