@@ -2083,6 +2083,23 @@ quote_volume | String | 成交量基于基础币
 symbol | String | 交易对代码
 timestamp | String | 最新成交时间
 
+## 外汇实时数据
+
+### 主题订阅
+
+地址 /forex
+一旦对应交易对数据产生，Websocket服务器将通过此订阅主题接口推送至客户端
+
+### 外汇实时数据更新字段列表
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+ask | String | 最优卖价
+bid | String | 最优买价
+id | String | 品种所对应的id
+symbol | String | 交易对代码
+timestamp | String | 最新成交时间
+
 
 # 经济数据接口
 
