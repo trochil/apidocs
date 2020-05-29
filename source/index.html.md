@@ -56,11 +56,11 @@ info = requests.get('http://api.trochil.cn/v1/cnstock/markets',
 ```json
 {
     'timestamp': 1583475638869,
-    'data': {
-        'SH600000': {'code': 'SH600000', 'name': '浦发银行', 'exchange': '上海证券交易所'},
-        'SH600004': {'code': 'SH600004', 'name': '白云机场', 'exchange': '上海证券交易所'},
+    'data': [
+        {'code': 'SH600000', 'name': '浦发银行', 'exchange': '上海证券交易所'},
+        {'code': 'SH600004', 'name': '白云机场', 'exchange': '上海证券交易所'},
         ...
-    },
+    ],
     'status': 'ok'
 }
 ```
@@ -82,7 +82,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | dict | 对应A股的名称和隶属交易所信息
+data | list | 对应A股的名称和隶属交易所信息
 status | String | 请求结果状态
 
 ## 实时报价
@@ -101,10 +101,27 @@ info = requests.get('http://api.trochil.cn/v1/cnstock/quote',
 
 ```json
 {
-    'timestamp': 1590039680244,
-    'data': [
-        '{"symbol": "SZ300564", "name": "筑博设计", "last": "27.35", "pre_close": "28.1", "open": "28.18", "volume": "1275300.0", "volume_lot": "12753.0", "volume_cny": "35290000.0", "bid1": "27.35", "bid1_qty": "3", "bid2": "27.34", "bid2_qty": "24", "bid3": "27.33", "bid3_qty": "47", "bid4": "27.32", "bid4_qty": "24", "bid5": "27.31", "bid5_qty": "63", "ask1": "27.36", "ask1_qty": "15", "ask2": "27.4", "ask2_qty": "2", "ask3": "27.43", "ask3_qty": "2", "ask4": "27.44", "ask4_qty": "12", "ask5": "27.47", "ask5_qty": "10", "change": "-0.75", "percent_change": "-2.67", "high": "28.36", "low": "27.3", "pe": "23.5", "pb": "2.66", "trade_market_value": "6.84", "total_market_value": "27.35", "datetime": "2020-05-21 13:41:18", "timestamp": "1590039678000"}',
-        '{"symbol": "SZ300820", "name": "英杰电气", "last": "82.4", "pre_close": "86.35", "open": "86.0", "volume": "1621700.0", "volume_lot": "16217.0", "volume_cny": "136290000.0", "bid1": "82.4", "bid1_qty": "23", "bid2": "82.39", "bid2_qty": "15", "bid3": "82.38", "bid3_qty": "2", "bid4": "82.32", "bid4_qty": "1", "bid5": "82.31", "bid5_qty": "5", "ask1": "82.43", "ask1_qty": "3", "ask2": "82.45", "ask2_qty": "3", "ask3": "82.49", "ask3_qty": "5", "ask4": "82.5", "ask4_qty": "27", "ask5": "82.51", "ask5_qty": "9", "change": "-3.95", "percent_change": "-4.57", "high": "86.49", "low": "82.11", "pe": "49.69", "pb": "5.18", "trade_market_value": "13.05", "total_market_value": "52.19", "datetime": "2020-05-21 13:41:15", "timestamp": "1590039675000"}'],
+    'timestamp': 1590752105706,
+    'data': {
+        'SH600004': {'symbol': 'SH600004', 'name': '白云机场', 'last': '16.35', 'pre_close': '15.6', 'open': '15.45',
+                     'volume': '27333100.0', 'volume_lot': '273331.0', 'volume_cny': '444270000.0', 'bid1': '16.34',
+                     'bid1_qty': '434', 'bid2': '16.33', 'bid2_qty': '2814', 'bid3': '16.32', 'bid3_qty': '88',
+                     'bid4': '16.31', 'bid4_qty': '323', 'bid5': '16.3', 'bid5_qty': '882', 'ask1': '16.35',
+                     'ask1_qty': '98', 'ask2': '16.36', 'ask2_qty': '599', 'ask3': '16.37', 'ask3_qty': '164',
+                     'ask4': '16.38', 'ask4_qty': '378', 'ask5': '16.39', 'ask5_qty': '153', 'change': '0.75',
+                     'percent_change': '4.81', 'high': '16.59', 'low': '15.42', 'pe': '48.79', 'pb': '2.04',
+                     'trade_market_value': '338.33', 'total_market_value': '338.33', 'datetime': '2020-05-29 15:40:50',
+                     'timestamp': '1590738050000'},
+        'SH600000': {'symbol': 'SH600000', 'name': '浦发银行', 'last': '10.57', 'pre_close': '10.53', 'open': '10.45',
+                     'volume': '30659200.0', 'volume_lot': '306592.0', 'volume_cny': '322830000.0', 'bid1': '10.55',
+                     'bid1_qty': '51', 'bid2': '10.54', 'bid2_qty': '186', 'bid3': '10.53', 'bid3_qty': '2587',
+                     'bid4': '10.52', 'bid4_qty': '4044', 'bid5': '10.51', 'bid5_qty': '4766', 'ask1': '10.57',
+                     'ask1_qty': '1494', 'ask2': '10.58', 'ask2_qty': '5354', 'ask3': '10.59', 'ask3_qty': '3282',
+                     'ask4': '10.6', 'ask4_qty': '4682', 'ask5': '10.61', 'ask5_qty': '1300', 'change': '0.04',
+                     'percent_change': '0.38', 'high': '10.57', 'low': '10.45', 'pe': '5.19', 'pb': '0.61',
+                     'trade_market_value': '2970.57', 'total_market_value': '3102.51',
+                     'datetime': '2020-05-29 15:40:39',
+                     'timestamp': '1590738039000'}},
     'status': 'ok'
 }
 ```
@@ -127,7 +144,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | list | 对应个股品种的报价信息
+data | dict | 对应个股品种的报价信息
 status | String | 请求结果状态
 
 ### data说明
@@ -390,11 +407,11 @@ info = requests.get('http://api.trochil.cn/v1/hkstock/markets',
 ```json
 {
     'timestamp': 1583478480228,
-    'data': {
-        'HK00001': {'code': 'HK00001', 'name': '长和', 'exchange': '香港证券交易所'},
-        'HK00002': {'code': 'HK00002', 'name': '中电控股', 'exchange': '香港证券交易所'},
+    'data': [
+        {'code': 'HK00001', 'name': '长和', 'exchange': '香港证券交易所'},
+        {'code': 'HK00002', 'name': '中电控股', 'exchange': '香港证券交易所'},
         ...
-    },
+    ],
     'status': 'ok'
 }
 ```
@@ -416,7 +433,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | dict | 对应港股的名称和隶属交易所信息
+data | list | 对应港股的名称和隶属交易所信息
 status | String | 请求结果状态
 
 ## 实时报价
@@ -438,9 +455,15 @@ info = requests.get('http://api.trochil.cn/v1/hkstock/quote',
 ```json
 {
     'timestamp': 1590041611265,
-    'data': [
-        '{"symbol": "HK09938", "name": "华和控股", "last": "0.245", "change": "0.012", "percent_change": "5.15", "high": "0.255", "low": "0.223", "open": "0.233", "pre_close": "0.233", "pe": "7.38", "52week_high": "2.79", "52week_low": "0.2", "volume": "11770000.0", "volume_hkd": "2876975.0", "datetime": "2020-05-21 14:10:07", "timestamp": "1590041407000"}',
-        '{"symbol": "HK09968", "name": "汇景控股", "last": "2.07", "change": "0.02", "percent_change": "0.98", "high": "2.09", "low": "2.03", "open": "2.03", "pre_close": "2.05", "pe": "16.11", "52week_high": "2.2", "52week_low": "1.73", "volume": "2040000.0", "volume_hkd": "4208520.0", "datetime": "2020-05-21 14:12:47", "timestamp": "1590041567000"}'],
+    'data': {
+        'HK09938': {"symbol": "HK09938", "name": "华和控股", "last": "0.245", "change": "0.012", "percent_change": "5.15",
+                    "high": "0.255", "low": "0.223", "open": "0.233", "pre_close": "0.233", "pe": "7.38",
+                    "52week_high": "2.79", "52week_low": "0.2", "volume": "11770000.0", "volume_hkd": "2876975.0",
+                    "datetime": "2020-05-21 14:10:07", "timestamp": "1590041407000"},
+        'HK09968': {"symbol": "HK09968", "name": "汇景控股", "last": "2.07", "change": "0.02", "percent_change": "0.98",
+                    "high": "2.09", "low": "2.03", "open": "2.03", "pre_close": "2.05", "pe": "16.11",
+                    "52week_high": "2.2", "52week_low": "1.73", "volume": "2040000.0", "volume_hkd": "4208520.0",
+                    "datetime": "2020-05-21 14:12:47", "timestamp": "1590041567000"}},
     'status': 'ok'
 }
 ```
@@ -463,7 +486,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | list | 对应个股品种的报价信息
+data | dict | 对应个股品种的报价信息
 status | String | 请求结果状态
 
 ### data说明
@@ -633,11 +656,11 @@ info = requests.get('http://api.trochil.cn/v1/usstock/markets',
 ```json
 {
     'timestamp': 1583480134214,
-    'data': {
-        'AAPL': {'code': 'AAPL', 'name': '苹果公司', 'exchange': '纳斯达克交易所'},
-        'MSFT': {'code': 'MSFT', 'name': '微软公司', 'exchange': '纳斯达克交易所'},
+    'data': [
+        {'code': 'AAPL', 'name': '苹果公司', 'exchange': '纳斯达克交易所'},
+        {'code': 'MSFT', 'name': '微软公司', 'exchange': '纳斯达克交易所'},
         ...
-    },
+    ],
     'status': 'ok'
 }
 ```
@@ -659,7 +682,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | dict | 对应美股的名称和隶属交易所信息
+data | list | 对应美股的名称和隶属交易所信息
 status | String | 请求结果状态
 
 ## 实时报价
@@ -678,22 +701,23 @@ info = requests.get('http://api.trochil.cn/v1/usstock/quote',
 ```json
 {
     'timestamp': 1590559857542,
-    'data': [
-        {'symbol': 'BABA', 'bid': 201.71, 'ask': 201.82, 'bid_qty': 23, 'ask_qty': 51, 'timestamp': '1590523199990',
-         'datetime': '2020-05-27 03:59:59', 'name': '阿里巴巴', 'change': 2.02, 'percent_change': 1.01, 'pre_close': 199.7,
-         'open': 205.94, 'high': 206.8, 'low': 201.0, 'volume': 28683134.0, 'mktcap': 541279611116.0, 'pe': 21.5743308,
-         'exchange': 'NYSE'},
-        {'symbol': 'AAPL', 'bid': 316.72, 'ask': 316.84, 'bid_qty': 52, 'ask_qty': 19, 'timestamp': '1590523199964',
-         'datetime': '2020-05-27 03:59:59', 'name': '苹果公司', 'change': -2.16, 'percent_change': -0.68,
-         'pre_close': 318.89, 'open': 323.5, 'high': 324.24, 'low': 316.5, 'volume': 31380454.0,
-         'mktcap': 1373173460731.0, 'pe': 24.62908394, 'exchange': 'NASDAQ'},
-        {'symbol': 'BF.B', 'bid': 63.54, 'ask': 63.55, 'bid_qty': 61, 'ask_qty': 4, 'timestamp': '1590523199982',
-         'datetime': '2020-05-27 03:59:59', 'name': '布朗霍文集团', 'change': -1.24, 'percent_change': -1.91,
-         'pre_close': 64.78, 'open': 66.2, 'high': 66.2, 'low': 63.35, 'volume': 1582838.0, 'mktcap': 30513647377.0,
-         'pe': 35.30000144, 'exchange': 'NYSE'}
-    ],
+    'data': {
+        'BABA': {'symbol': 'BABA', 'bid': 201.71, 'ask': 201.82, 'bid_qty': 23, 'ask_qty': 51,
+                 'timestamp': '1590523199990', 'datetime': '2020-05-27 03:59:59', 'name': '阿里巴巴', 'change': 2.02,
+                 'percent_change': 1.01, 'pre_close': 199.7, 'open': 205.94, 'high': 206.8, 'low': 201.0,
+                 'volume': 28683134.0, 'mktcap': 541279611116.0, 'pe': 21.5743308, 'exchange': 'NYSE'},
+        'AAPL': {'symbol': 'AAPL', 'bid': 316.72, 'ask': 316.84, 'bid_qty': 52, 'ask_qty': 19,
+                 'timestamp': '1590523199964', 'datetime': '2020-05-27 03:59:59', 'name': '苹果公司', 'change': -2.16,
+                 'percent_change': -0.68, 'pre_close': 318.89, 'open': 323.5, 'high': 324.24, 'low': 316.5,
+                 'volume': 31380454.0, 'mktcap': 1373173460731.0, 'pe': 24.62908394, 'exchange': 'NASDAQ'},
+        'BF.B': {'symbol': 'BF.B', 'bid': 63.54, 'ask': 63.55, 'bid_qty': 61, 'ask_qty': 4,
+                 'timestamp': '1590523199982', 'datetime': '2020-05-27 03:59:59', 'name': '布朗霍文集团', 'change': -1.24,
+                 'percent_change': -1.91, 'pre_close': 64.78, 'open': 66.2, 'high': 66.2, 'low': 63.35,
+                 'volume': 1582838.0, 'mktcap': 30513647377.0, 'pe': 35.30000144, 'exchange': 'NYSE'}
+    },
     'status': 'ok'
 }
+
 ```
 
 查询美股的实时报价(level1)，每次最多查询25个产品。
@@ -714,7 +738,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | list | 对应个股品种的报价信息
+data | dict | 对应个股品种的报价信息
 status | String | 请求结果状态
 
 ### data说明
@@ -956,13 +980,13 @@ info = requests.get('http://api.trochil.cn/v1/cnfuture/markets',
 ```json
 {
     'timestamp': 1584587390538,
-    'data': {
-        'IC2004': {'code': 'IC2004', 'name': '中证500指数2004', 'exchange': '中国金融期货交易所'},
-        'IC2006': {'code': 'IC2006', 'name': '中证500指数2006', 'exchange': '中国金融期货交易所'},
-        'IC2009': {'code': 'IC2009', 'name': '中证500指数2009', 'exchange': '中国金融期货交易所'},
-        'IC0': {'code': 'IC0', 'name': '中证500指数连续', 'exchange': '中国金融期货交易所'},
-        'IC2003': {'code': 'IC2003', 'name': '中证500指数2003', 'exchange': '中国金融期货交易所'},
-        'IF2004': {'code': 'IF2004', 'name': '沪深300指数2004', 'exchange': '中国金融期货交易所'}},
+    'data': [
+        {'code': 'IC2004', 'name': '中证500指数2004', 'exchange': '中国金融期货交易所'},
+        {'code': 'IC2006', 'name': '中证500指数2006', 'exchange': '中国金融期货交易所'},
+        {'code': 'IC2009', 'name': '中证500指数2009', 'exchange': '中国金融期货交易所'},
+        {'code': 'IC0', 'name': '中证500指数连续', 'exchange': '中国金融期货交易所'},
+        {'code': 'IC2003', 'name': '中证500指数2003', 'exchange': '中国金融期货交易所'},
+        {'code': 'IF2004', 'name': '沪深300指数2004', 'exchange': '中国金融期货交易所'}],
     'status': 'ok'
 }
 ```
@@ -984,7 +1008,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | dict | 对应合约品种的名称和隶属交易所信息
+data | list | 对应合约品种的名称和隶属交易所信息
 status | String | 请求结果状态
 
 ## 实时报价
@@ -1005,12 +1029,21 @@ info = requests.get('http://api.trochil.cn/v1/cnfuture/quote',
 
 ```json
 {
-    'timestamp': 1590042141600,
-    'data': [
-        '{"name": "PVC连续", "open": "5975.0", "high": "6040.0", "low": "5970.0", "pre_close": "0.0", "bid": "6010.0", "ask": "6015.0", "last": "6010.0", "settle": "0.0", "pre_settle": "5930.0", "bid_qty": "304.0", "ask_qty": "514.0", "open_interest": "210894.0", "volume": "135077.0", "datetime": "2020-05-21 14:22:20", "timestamp": "1590042140000", "symbol": "V0", "change": "80.0", "percent_change": "1.35"}',
-        '{"name": "PVC2007", "open": "5970.0", "high": "6055.0", "low": "5970.0", "pre_close": "0.0", "bid": "6035.0", "ask": "6040.0", "last": "6045.0", "settle": "0.0", "pre_settle": "5955.0", "bid_qty": "60.0", "ask_qty": "10.0", "open_interest": "2190.0", "volume": "2867.0", "datetime": "2020-05-21 14:20:35", "timestamp": "1590042035000", "symbol": "V2007", "change": "90.0", "percent_change": "1.51"}'],
+    'timestamp': 1590752847016,
+    'data': {
+        'V0': {'name': 'PVC连续', 'open': '6035.0', 'high': '6085.0', 'low': '5995.0', 'pre_close': '6040.0',
+               'bid': '6040.0', 'ask': '6050.0', 'last': '6040.0', 'settle': '0.0', 'pre_settle': '6020.0',
+               'bid_qty': '102.0', 'ask_qty': '257.0', 'open_interest': '198264.0', 'volume': '146221.0',
+               'datetime': '2020-05-29 15:00:00', 'timestamp': '1590735600000', 'symbol': 'V0', 'change': '20.0',
+               'percent_change': '0.33'},
+        'V2007': {'name': 'PVC2007', 'open': '6045.0', 'high': '6145.0', 'low': '6040.0', 'pre_close': '6125.0',
+                  'bid': '6070.0', 'ask': '6120.0', 'last': '6125.0', 'settle': '0.0', 'pre_settle': '6040.0',
+                  'bid_qty': '2.0', 'ask_qty': '1.0', 'open_interest': '2065.0', 'volume': '4912.0',
+                  'datetime': '2020-05-29 15:00:00', 'timestamp': '1590735600000', 'symbol': 'V2007', 'change': '85.0',
+                  'percent_change': '1.41'}},
     'status': 'ok'
 }
+
 ```
 
 查询期货合约的实时报价(level1)，郑商所，大商所，上期所返回实时行情；中金所行情延迟15分钟，不包含bid,ask数据。
@@ -1031,7 +1064,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | list | 对应合约品种的报价信息
+data | dict | 对应合约品种的报价信息
 status | String | 请求结果状态
 
 ### data说明
@@ -1344,19 +1377,21 @@ info = requests.get('http://api.trochil.cn/v1/crypto/quote',
 
 ```json
 {
-    'timestamp': 1590483848552,
-    'data': [
-        {'exchange': 'BINANCE', 'symbol': 'ALGOUSDT', 'last': '0.2139', 'bid': '0.2138', 'bid_qty': '7632.55',
-         'ask': '0.2139', 'ask_qty': '0.07', 'open': '0.2057', 'high': '0.2227', 'low': '0.2011', 'pre_close': '0.2057',
-         'base_volume': '18203022.48', 'quote_volume': '3865933.615077', 'change': '0.0082', 'percent_change': '3.986',
-         'timestamp': '1590483847475'},
-        {'exchange': 'BINANCE', 'symbol': 'BTCUSDT', 'last': '8958.55', 'bid': '8958.54', 'bid_qty': '0.116653',
-         'ask': '8958.55', 'ask_qty': '0.556076', 'open': '8831.27', 'high': '9017.67', 'low': '8668.29',
-         'pre_close': '8830.96', 'base_volume': '60422.982544', 'quote_volume': '535031205.9594333', 'change': '127.28',
-         'percent_change': '1.441', 'timestamp': '1590483848139'}
-    ],
+    'timestamp': 1590753183765,
+    'data': {
+        'BINANCE.BTCUSDT': {'exchange': 'BINANCE', 'symbol': 'BTCUSDT', 'last': '9385.2', 'bid': '9385.19',
+                            'bid_qty': '3.351073', 'ask': '9386.26', 'ask_qty': '0.230002', 'open': '9264.99',
+                            'high': '9625.47', 'low': '9251.65', 'pre_close': '9264.99', 'base_volume': '86081.880102',
+                            'quote_volume': '814481628.0267937', 'change': '120.21', 'percent_change': '1.297',
+                            'timestamp': '1590753183523'},
+        'HUOBI.BTCUSDT': {'exchange': 'HUOBI', 'symbol': 'BTCUSDT', 'bid': '9387.0', 'bid_qty': '0.008430004400940485',
+                          'ask': '9387.01', 'ask_qty': '3.6117433271904473', 'timestamp': '1590753183315',
+                          'last': '9387.01', 'open': '9260.24', 'high': '9620.0', 'low': '9250.0',
+                          'pre_close': '9260.24', 'change': '126.77', 'percent_change': '1.37',
+                          'base_volume': '53793.03817115715', 'quote_volume': '508953040.5793978'}},
     'status': 'ok'
 }
+
 ```
 
 查询数字货币的实时报价(level1)，每次最多查询25个产品。
@@ -1377,7 +1412,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | list | 对应数字货币品种的报价信息
+data | dict | 对应数字货币品种的报价信息
 status | String | 请求结果状态
 
 ### data说明
@@ -1613,13 +1648,13 @@ info = requests.get('http://api.trochil.cn/v1/forex/markets', params={'apikey': 
 ```json
 {
     'timestamp': 1590487034346,
-    'data': {
-        'EURUSD': {'code': 'EURUSD', 'name': '欧元/美元', 'market_type': 'currency', 'exchange': 'OTC'},
-        'GBPUSD': {'code': 'GBPUSD', 'name': '英镑/美元', 'market_type': 'currency', 'exchange': 'OTC'},
-        'USDJPY': {'code': 'USDJPY', 'name': '美元/日元', 'market_type': 'currency', 'exchange': 'OTC'},
+    'data': [
+        {'code': 'EURUSD', 'name': '欧元/美元', 'market_type': 'currency', 'exchange': 'OTC'},
+        {'code': 'GBPUSD', 'name': '英镑/美元', 'market_type': 'currency', 'exchange': 'OTC'},
+        {'code': 'USDJPY', 'name': '美元/日元', 'market_type': 'currency', 'exchange': 'OTC'},
         ...
-        'USDCAD': {'code': 'USDCAD', 'name': '美元/加元', 'market_type': 'currency', 'exchange': 'OTC'},
-    },
+        {'code': 'USDCAD', 'name': '美元/加元', 'market_type': 'currency', 'exchange': 'OTC'},
+    ],
     'status': 'ok'
 }
 ```
@@ -1668,20 +1703,17 @@ info = requests.get('http://api.trochil.cn/v1/forex/quote',
 
 ```json
 {
-    'timestamp': 1590487416037,
-    'data': [
-        {'open': 28.002, 'high': 28.306, 'low': 27.696, 'pre_close': 27.553, 'change': -26.45692,
-         'percent_change': -96.02, 'name': 'WTI原油/美元', 'symbol': 'EURUSD', 'bid': 1.09608, 'ask': 1.09615,
-         'timestamp': '1590487415000', 'datetime': '2020-05-26 18:03:35', 'last': 1.09608},
-        {'open': 1.09178, 'high': 1.09731, 'low': 1.0914, 'pre_close': 1.08947, 'change': 26.87553,
-         'percent_change': 2466.84, 'name': '欧元/美元', 'symbol': 'WTICOUSD', 'bid': 27.946, 'ask': 27.976,
-         'timestamp': '1590487415507', 'datetime': '2020-05-26 18:03:35', 'last': 27.965},
-        {'open': 107.824, 'high': 107.896, 'low': 107.64, 'pre_close': 107.724, 'change': -0.043,
-         'percent_change': -0.04, 'name': '美元/日元', 'symbol': 'USDJPY', 'bid': 107.68, 'ask': 107.681,
-         'timestamp': '1590487414000', 'datetime': '2020-05-26 18:03:34', 'last': 107.681}
-    ],
+    'timestamp': 1590753304210,
+    'data': {
+        'EURUSD': {'symbol': 'EURUSD', 'bid': 1.11375, 'ask': 1.11376, 'timestamp': '1590753303000',
+                   'datetime': '2020-05-29 19:55:03', 'last': 1.11375, 'open': 1.10894, 'high': 1.11136, 'low': 1.1088,
+                   'pre_close': 1.10896, 'change': 0.00479, 'percent_change': 0.43, 'name': '欧元/美元'},
+        'USDJPY': {'symbol': 'USDJPY', 'bid': 107.146, 'ask': 107.147, 'timestamp': '1590753302000',
+                   'datetime': '2020-05-29 19:55:02', 'last': 107.146, 'open': 107.393, 'high': 107.393, 'low': 107.044,
+                   'pre_close': 107.389, 'change': -0.243, 'percent_change': -0.23, 'name': '美元/日元'}},
     'status': 'ok'
 }
+
 ```
 
 查询外汇品种的实时报价(level1)，每次最多查询25个产品。
@@ -1702,7 +1734,7 @@ apikey | String | True | NA | 用户申请的apikey
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
 timestamp | int | 请求响应时间戳
-data | list | 对应外汇品种的报价信息
+data | dict | 对应外汇品种的报价信息
 status | String | 请求结果状态
 
 ### data说明
