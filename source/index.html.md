@@ -57,8 +57,8 @@ info = requests.get('http://api.trochil.cn/v1/cnstock/markets',
 {
     'timestamp': 1583475638869,
     'data': [
-        {'code': 'SH600000', 'name': '浦发银行', 'exchange': '上海证券交易所'},
-        {'code': 'SH600004', 'name': '白云机场', 'exchange': '上海证券交易所'},
+        {'symbol': 'SH600000', 'name': '浦发银行', 'exchange': '上海证券交易所'},
+        {'symbol': 'SH600004', 'name': '白云机场', 'exchange': '上海证券交易所'},
         ...
     ],
     'status': 'ok'
@@ -408,8 +408,8 @@ info = requests.get('http://api.trochil.cn/v1/hkstock/markets',
 {
     'timestamp': 1583478480228,
     'data': [
-        {'code': 'HK00001', 'name': '长和', 'exchange': '香港证券交易所'},
-        {'code': 'HK00002', 'name': '中电控股', 'exchange': '香港证券交易所'},
+        {'symbol': 'HK00001', 'name': '长和', 'exchange': '香港证券交易所'},
+        {'symbol': 'HK00002', 'name': '中电控股', 'exchange': '香港证券交易所'},
         ...
     ],
     'status': 'ok'
@@ -657,8 +657,8 @@ info = requests.get('http://api.trochil.cn/v1/usstock/markets',
 {
     'timestamp': 1583480134214,
     'data': [
-        {'code': 'AAPL', 'name': '苹果公司', 'exchange': '纳斯达克交易所'},
-        {'code': 'MSFT', 'name': '微软公司', 'exchange': '纳斯达克交易所'},
+        {'symbol': 'AAPL', 'name': '苹果公司', 'exchange': '纳斯达克交易所'},
+        {'symbol': 'MSFT', 'name': '微软公司', 'exchange': '纳斯达克交易所'},
         ...
     ],
     'status': 'ok'
@@ -981,12 +981,12 @@ info = requests.get('http://api.trochil.cn/v1/cnfuture/markets',
 {
     'timestamp': 1584587390538,
     'data': [
-        {'code': 'IC2004', 'name': '中证500指数2004', 'exchange': '中国金融期货交易所'},
-        {'code': 'IC2006', 'name': '中证500指数2006', 'exchange': '中国金融期货交易所'},
-        {'code': 'IC2009', 'name': '中证500指数2009', 'exchange': '中国金融期货交易所'},
-        {'code': 'IC0', 'name': '中证500指数连续', 'exchange': '中国金融期货交易所'},
-        {'code': 'IC2003', 'name': '中证500指数2003', 'exchange': '中国金融期货交易所'},
-        {'code': 'IF2004', 'name': '沪深300指数2004', 'exchange': '中国金融期货交易所'}],
+        {'symbol': 'IC2004', 'name': '中证500指数2004', 'exchange': '中国金融期货交易所'},
+        {'symbol': 'IC2006', 'name': '中证500指数2006', 'exchange': '中国金融期货交易所'},
+        {'symbol': 'IC2009', 'name': '中证500指数2009', 'exchange': '中国金融期货交易所'},
+        {'symbol': 'IC0', 'name': '中证500指数连续', 'exchange': '中国金融期货交易所'},
+        {'symbol': 'IC2003', 'name': '中证500指数2003', 'exchange': '中国金融期货交易所'},
+        {'symbol': 'IF2004', 'name': '沪深300指数2004', 'exchange': '中国金融期货交易所'}],
     'status': 'ok'
 }
 ```
@@ -1649,11 +1649,11 @@ info = requests.get('http://api.trochil.cn/v1/forex/markets', params={'apikey': 
 {
     'timestamp': 1590487034346,
     'data': [
-        {'code': 'EURUSD', 'name': '欧元/美元', 'market_type': 'currency', 'exchange': 'OTC'},
-        {'code': 'GBPUSD', 'name': '英镑/美元', 'market_type': 'currency', 'exchange': 'OTC'},
-        {'code': 'USDJPY', 'name': '美元/日元', 'market_type': 'currency', 'exchange': 'OTC'},
+        {'symbol': 'EURUSD', 'name': '欧元/美元', 'market_type': 'currency', 'exchange': 'OTC'},
+        {'symbol': 'GBPUSD', 'name': '英镑/美元', 'market_type': 'currency', 'exchange': 'OTC'},
+        {'symbol': 'USDJPY', 'name': '美元/日元', 'market_type': 'currency', 'exchange': 'OTC'},
         ...
-        {'code': 'USDCAD', 'name': '美元/加元', 'market_type': 'currency', 'exchange': 'OTC'},
+        {'symbol': 'USDCAD', 'name': '美元/加元', 'market_type': 'currency', 'exchange': 'OTC'},
     ],
     'status': 'ok'
 }
@@ -1683,7 +1683,7 @@ status | String | 请求结果状态
 
 字段名称 | 数据类型 | 描述
 --------- | ------- | -----------
-code | String | 交易对代码
+symbol | String | 交易对代码
 name | String | 外汇中文名称
 market_type | String | 产品类型
 exchange | String | 交易所
