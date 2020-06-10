@@ -2543,3 +2543,76 @@ high | Float | 最高价
 low | Float | 最低价
 close | Float | 收盘价
 volume | Float | 交易量
+
+
+# 快讯新闻流
+
+## 简要说明
+
+覆盖A股,港股,美股,期货,数字货币,外汇,宏观经济实时新闻,包括A股,港股和美股的大部分个股新闻
+各市场类型对应的代码为:    
+
+A股: cnstock, 港股: hkstock,  期货: cnfuture, 美股: usstock, 数字货币: crypto, 外汇: forex, 宏观经济: economics
+
+经济数据接口base url: api.trochil.cn
+
+## 实时新闻讯息
+
+> 示例代码：查询实时新闻讯息
+
+```python
+import requests
+
+info = requests.get('http://api.trochil.cn/v1/news')
+```
+
+> 返回结果：查询实时新闻讯息
+
+```json
+{
+    'code': 200,
+    'data':
+        [
+            {'title': 'XXX',
+             'authors': None,
+             'published': '2020-06-10 06:30:50',
+             'content': 'XXX',
+             'content_html': 'XXX', 'category': 'news', 'url': 'XXX', 'source': '东方财富网', 'subcat': 'cnstock',
+             'individual': 'SH600000'
+             }
+        ]
+}
+```
+
+获取各市场类型新闻快讯讯息。
+
+### HTTP请求
+
+`GET /v1/news`
+
+### 请求参数
+
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+limit | int | False | 10 | 获取新闻条数,最大为10条
+subcat | String | False | 全市场类型 | 市场类型如cnstock,cnfuture,crypto等
+category | String | False | NA | 快讯或者深度文章,news为快讯,article为深度文章
+individual | String | False | NA | 个股代码,目前仅支持A股,港股,美股,如SH600000
+
+### 响应数据
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+data | list | 对应新闻的描述
+code | int | 请求结果对应的状态码
+
+### data说明
+
+字段名称 | 数据类型 | 描述
+--------- | ------- | -----------
+title | String | 新闻标题
+authors | String | 新闻作者
+published | Float | 新闻发布时间
+content | Float | 纯文本新闻
+content_html | Float | 带标签新闻
+individual | Float | 个股标签
