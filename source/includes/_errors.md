@@ -46,3 +46,7 @@ Error Code | Meaning
 40011 | 需要传递symbol参数 -- parameter symbols is required
 40012 | 时间参数格式错误 -- time not format like xxxx-xx-xx
 40013 | 开始时间不能大于结束时间 -- start_date is greater than end_date
+50010 | 获取新闻条数参数为正整数 -- The parameter limit should be a positive integer
+50011 | 传递的subcat参数不存在 -- xx is not available
+50012 | 传递的category参数不存在 -- xx is not available
+50013 | 获取新闻条数不能超过指定条数 -- The parameter limit should be less than xx

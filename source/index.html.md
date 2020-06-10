@@ -2554,7 +2554,7 @@ volume | Float | 交易量
 
 A股: cnstock, 港股: hkstock,  期货: cnfuture, 美股: usstock, 数字货币: crypto, 外汇: forex, 宏观经济: economics
 
-经济数据接口base url: api.trochil.cn
+新闻接口base url: api.trochil.cn
 
 ## 实时新闻讯息
 
