@@ -1,4 +1,4 @@
-# Errors
+# 错误码
 
 The trochil API uses the following error codes:
 
