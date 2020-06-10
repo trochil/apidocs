@@ -2556,7 +2556,7 @@ A股: cnstock, 港股: hkstock,  期货: cnfuture, 美股: usstock, 数字货币
 
 新闻接口base url: api.trochil.cn
 
-## 实时新闻讯息
+## 各市场实时新闻讯息
 
 > 示例代码：查询实时新闻讯息
 
