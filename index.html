@@ -410,6 +410,17 @@
               </ul>
           </li>
           <li>
+            <a href="#223e87603e" class="toc-h1 toc-link" data-title="快讯新闻流">快讯新闻流</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#e6355e0106-4" class="toc-h2 toc-link" data-title="简要说明">简要说明</a>
+                  </li>
+                  <li>
+                    <a href="#7e25520a9d" class="toc-h2 toc-link" data-title="实时新闻讯息">实时新闻讯息</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -5684,6 +5695,138 @@
 <td>volume</td>
 <td>Float</td>
 <td>交易量</td>
+</tr>
+</tbody></table>
+<h1 id='223e87603e'>快讯新闻流</h1><h2 id='e6355e0106-4'>简要说明</h2>
+<p>覆盖A股,港股,美股,期货,数字货币,外汇,宏观经济实时新闻,包括A股,港股和美股的大部分个股新闻
+各市场类型对应的代码为:    </p>
+
+<p>A股: cnstock, 港股: hkstock,  期货: cnfuture, 美股: usstock, 数字货币: crypto, 外汇: forex, 宏观经济: economics</p>
+
+<p>经济数据接口base url: api.trochil.cn</p>
+<h2 id='7e25520a9d'>实时新闻讯息</h2>
+<blockquote>
+<p>示例代码：查询实时新闻讯息</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.trochil.cn/v1/news'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>返回结果：查询实时新闻讯息</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">'code'</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="err">'data'</span><span class="p">:</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="err">'title'</span><span class="p">:</span><span class="w"> </span><span class="err">'XXX'</span><span class="p">,</span><span class="w">
+             </span><span class="err">'authors'</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+             </span><span class="err">'published'</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">2020-06-10</span><span class="w"> </span><span class="mi">06</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">50</span><span class="err">'</span><span class="p">,</span><span class="w">
+             </span><span class="err">'content'</span><span class="p">:</span><span class="w"> </span><span class="err">'XXX'</span><span class="p">,</span><span class="w">
+             </span><span class="err">'content_html'</span><span class="p">:</span><span class="w"> </span><span class="err">'XXX'</span><span class="p">,</span><span class="w"> </span><span class="err">'category'</span><span class="p">:</span><span class="w"> </span><span class="err">'news'</span><span class="p">,</span><span class="w"> </span><span class="err">'url'</span><span class="p">:</span><span class="w"> </span><span class="err">'XXX'</span><span class="p">,</span><span class="w"> </span><span class="err">'source'</span><span class="p">:</span><span class="w"> </span><span class="err">'东方财富网'</span><span class="p">,</span><span class="w"> </span><span class="err">'subcat'</span><span class="p">:</span><span class="w"> </span><span class="err">'cnstock'</span><span class="p">,</span><span class="w">
+             </span><span class="err">'individual'</span><span class="p">:</span><span class="w"> </span><span class="err">'SH</span><span class="mi">600000</span><span class="err">'</span><span class="w">
+             </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>获取各市场类型新闻快讯讯息。</p>
+<h3 id='http-36'>HTTP请求</h3>
+<p><code>GET /v1/news</code></p>
+<h3 id='1f9ac54b15-36'>请求参数</h3>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>int</td>
+<td>False</td>
+<td>10</td>
+<td>获取新闻条数,最大为10条</td>
+</tr>
+<tr>
+<td>subcat</td>
+<td>String</td>
+<td>False</td>
+<td>全市场类型</td>
+<td>市场类型如cnstock,cnfuture,crypto等</td>
+</tr>
+<tr>
+<td>category</td>
+<td>String</td>
+<td>False</td>
+<td>NA</td>
+<td>快讯或者深度文章,news为快讯,article为深度文章</td>
+</tr>
+<tr>
+<td>individual</td>
+<td>String</td>
+<td>False</td>
+<td>NA</td>
+<td>个股代码,目前仅支持A股,港股,美股,如SH600000</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-36'>响应数据</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>list</td>
+<td>对应新闻的描述</td>
+</tr>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>请求结果对应的状态码</td>
+</tr>
+</tbody></table>
+<h3 id='data-32'>data说明</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>新闻标题</td>
+</tr>
+<tr>
+<td>authors</td>
+<td>String</td>
+<td>新闻作者</td>
+</tr>
+<tr>
+<td>published</td>
+<td>Float</td>
+<td>新闻发布时间</td>
+</tr>
+<tr>
+<td>content</td>
+<td>Float</td>
+<td>纯文本新闻</td>
+</tr>
+<tr>
+<td>content_html</td>
+<td>Float</td>
+<td>带标签新闻</td>
+</tr>
+<tr>
+<td>individual</td>
+<td>Float</td>
+<td>个股标签</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
