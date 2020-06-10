@@ -246,22 +246,19 @@
                     <a href="#a590791811" class="toc-h2 toc-link" data-title="外汇">外汇</a>
                   </li>
                   <li>
-                    <a href="#websocket" class="toc-h2 toc-link" data-title="Websocket行情数据">Websocket行情数据</a>
+                    <a href="#websocket" class="toc-h2 toc-link" data-title="Websocket">Websocket</a>
                   </li>
                   <li>
-                    <a href="#8da3bea822" class="toc-h2 toc-link" data-title="全市场快照">全市场快照</a>
+                    <a href="#f99f2b9b53" class="toc-h2 toc-link" data-title="市场快照">市场快照</a>
                   </li>
                   <li>
-                    <a href="#57be07fc59" class="toc-h2 toc-link" data-title="股指数据">股指数据</a>
+                    <a href="#4dbf51936b" class="toc-h2 toc-link" data-title="全球股指">全球股指</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#3ffb439f4a" class="toc-h1 toc-link" data-title="经济数据接口">经济数据接口</a>
+            <a href="#0cad7078be" class="toc-h1 toc-link" data-title="经济数据">经济数据</a>
               <ul class="toc-list-h2">
-                  <li>
-                    <a href="#e6355e0106-3" class="toc-h2 toc-link" data-title="简要说明">简要说明</a>
-                  </li>
                   <li>
                     <a href="#0490f22b48" class="toc-h2 toc-link" data-title="单个国家的所有指标">单个国家的所有指标</a>
                   </li>
@@ -271,11 +268,8 @@
               </ul>
           </li>
           <li>
-            <a href="#223e87603e" class="toc-h1 toc-link" data-title="快讯新闻流">快讯新闻流</a>
+            <a href="#866eaa8c45" class="toc-h1 toc-link" data-title="新闻流">新闻流</a>
               <ul class="toc-list-h2">
-                  <li>
-                    <a href="#e6355e0106-4" class="toc-h2 toc-link" data-title="简要说明">简要说明</a>
-                  </li>
                   <li>
                     <a href="#92649efc20" class="toc-h2 toc-link" data-title="各市场实时新闻讯息">各市场实时新闻讯息</a>
                   </li>
@@ -4344,7 +4338,7 @@
 <td>外汇品种代码</td>
 </tr>
 </tbody></table>
-<h2 id='websocket'>Websocket行情数据</h2><h3 id='5ea2e0cde2-2'>简介</h3><h4 id='url'>接入url</h4>
+<h2 id='websocket'>Websocket</h2><h3 id='5ea2e0cde2-2'>简介</h3><h4 id='url'>接入url</h4>
 <p>websocket接入地址</p>
 
 <p>ws://stream.trochil.cn/ws 后拼接市场类型,如A股为ws://stream.trochil.cn/ws/cnstock</p>
@@ -4716,10 +4710,8 @@
 <td>最新成交时间</td>
 </tr>
 </tbody></table>
-<h2 id='8da3bea822'>全市场快照</h2><h3 id='e6355e0106'>简要说明</h3>
+<h2 id='f99f2b9b53'>市场快照</h2>
 <p>支持获取美股,A股,港股,期货,数字货币,外汇市场内所有交易对的ticker价格快照数据</p>
-
-<p>经济数据接口base url: api.trochil.cn</p>
 <h3 id='1601719226'>单个市场类型全部交易对价格快照</h3>
 <blockquote>
 <p>示例代码：查询单个市场类型全部交易对价格快照</p>
@@ -5028,10 +5020,8 @@
 <td>交易所</td>
 </tr>
 </tbody></table>
-<h2 id='57be07fc59'>股指数据</h2><h3 id='e6355e0106-2'>简要说明</h3>
+<h2 id='4dbf51936b'>全球股指</h2>
 <p>支持获取全球股指实时数据以及全球股指历史日线级别数据,全球股指历史数据分钟级别待扩展</p>
-
-<p>经济数据接口base url: api.trochil.cn</p>
 <h3 id='1669ec607a'>全球股指实时数据</h3>
 <blockquote>
 <p>示例代码：查询全球股指实时价格快照</p>
@@ -5249,10 +5239,8 @@
 <td>交易量</td>
 </tr>
 </tbody></table>
-<h1 id='3ffb439f4a'>经济数据接口</h1><h2 id='e6355e0106-3'>简要说明</h2>
+<h1 id='0cad7078be'>经济数据</h1>
 <p>部分国家的宏观经济数据,包括日,月,季度,年份周期的各类经济指标</p>
-
-<p>经济数据接口base url: api.trochil.cn</p>
 <h2 id='0490f22b48'>单个国家的所有指标</h2>
 <blockquote>
 <p>示例代码：查询单个国家的所有指标</p>
@@ -5558,13 +5546,11 @@
 <td>指标计算方式</td>
 </tr>
 </tbody></table>
-<h1 id='223e87603e'>快讯新闻流</h1><h2 id='e6355e0106-4'>简要说明</h2>
+<h1 id='866eaa8c45'>新闻流</h1>
 <p>覆盖A股,港股,美股,期货,数字货币,外汇,宏观经济实时新闻,包括A股,港股和美股的大部分个股新闻
 各市场类型对应的代码为:    </p>
 
 <p>A股: cnstock, 港股: hkstock,  期货: cnfuture, 美股: usstock, 数字货币: crypto, 外汇: forex, 宏观经济: economics</p>
-
-<p>新闻接口base url: api.trochil.cn</p>
 <h2 id='92649efc20'>各市场实时新闻讯息</h2>
 <blockquote>
 <p>示例代码：查询实时新闻讯息</p>
