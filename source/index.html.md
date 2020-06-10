@@ -1939,7 +1939,7 @@ close | Float | 收盘价
 symbol | String | 外汇品种代码
 
 
-## Websocket行情数据
+## Websocket
 
 ### 简介
 
@@ -2101,13 +2101,9 @@ id | String | 品种所对应的id
 symbol | String | 交易对代码
 timestamp | String | 最新成交时间
 
-## 全市场快照
-
-### 简要说明
+## 市场快照
 
 支持获取美股,A股,港股,期货,数字货币,外汇市场内所有交易对的ticker价格快照数据
-
-经济数据接口base url: api.trochil.cn
 
 ### 单个市场类型全部交易对价格快照
 
@@ -2258,13 +2254,9 @@ pe | String | 市盈率
 exchange | String | 交易所
 
 
-## 股指数据
-
-### 简要说明
+## 全球股指
 
 支持获取全球股指实时数据以及全球股指历史日线级别数据,全球股指历史数据分钟级别待扩展
-
-经济数据接口base url: api.trochil.cn
 
 ### 全球股指实时数据
 
@@ -2386,13 +2378,9 @@ low | Float | 最低价
 close | Float | 收盘价
 volume | Float | 交易量
 
-# 经济数据接口
-
-## 简要说明
+# 经济数据
 
 部分国家的宏观经济数据,包括日,月,季度,年份周期的各类经济指标
-
-经济数据接口base url: api.trochil.cn
 
 ## 单个国家的所有指标
 
@@ -2543,16 +2531,13 @@ source | String | 指标数据来源
 values | list | 请求时间内对应时间的指标数据
 transform | String | 指标计算方式
 
-# 快讯新闻流
-
-## 简要说明
+# 新闻流
 
 覆盖A股,港股,美股,期货,数字货币,外汇,宏观经济实时新闻,包括A股,港股和美股的大部分个股新闻
 各市场类型对应的代码为:    
 
 A股: cnstock, 港股: hkstock,  期货: cnfuture, 美股: usstock, 数字货币: crypto, 外汇: forex, 宏观经济: economics
 
-新闻接口base url: api.trochil.cn
 
 ## 各市场实时新闻讯息
 
