@@ -416,7 +416,7 @@
                     <a href="#e6355e0106-4" class="toc-h2 toc-link" data-title="简要说明">简要说明</a>
                   </li>
                   <li>
-                    <a href="#7e25520a9d" class="toc-h2 toc-link" data-title="实时新闻讯息">实时新闻讯息</a>
+                    <a href="#92649efc20" class="toc-h2 toc-link" data-title="各市场实时新闻讯息">各市场实时新闻讯息</a>
                   </li>
               </ul>
           </li>
@@ -5703,8 +5703,8 @@
 
 <p>A股: cnstock, 港股: hkstock,  期货: cnfuture, 美股: usstock, 数字货币: crypto, 外汇: forex, 宏观经济: economics</p>
 
-<p>经济数据接口base url: api.trochil.cn</p>
-<h2 id='7e25520a9d'>实时新闻讯息</h2>
+<p>新闻接口base url: api.trochil.cn</p>
+<h2 id='92649efc20'>各市场实时新闻讯息</h2>
 <blockquote>
 <p>示例代码：查询实时新闻讯息</p>
 </blockquote>
@@ -6001,6 +6001,22 @@
 <tr>
 <td>40013</td>
 <td>开始时间不能大于结束时间 -- start_date is greater than end_date</td>
+</tr>
+<tr>
+<td>50010</td>
+<td>获取新闻条数参数为正整数 -- The parameter limit should be a positive integer</td>
+</tr>
+<tr>
+<td>50011</td>
+<td>传递的subcat参数不存在 -- xx is not available</td>
+</tr>
+<tr>
+<td>50012</td>
+<td>传递的category参数不存在 -- xx is not available</td>
+</tr>
+<tr>
+<td>50013</td>
+<td>获取新闻条数不能超过指定条数 -- The parameter limit should be less than xx</td>
 </tr>
 </tbody></table>
 
