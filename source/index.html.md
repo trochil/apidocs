@@ -2565,7 +2565,9 @@ info = requests.get('http://api.trochil.cn/v1/news')
              'url': 'XXX',
              'source': '东方财富网',
              'subcat': 'cnstock',
-             'individual': 'SH600000'
+             'individual': 'SH600000',
+             'id': 'XXX',
+             'top_image': 'XXX'
              }
         ]
 }
@@ -2607,3 +2609,5 @@ source | Float | 新闻来源
 subcat | Float | 新闻分类
 content_html | Float | 带标签新闻
 individual | Float | 个股标签
+id | String | 新闻唯一id标识
+top_image | List | 顶部图片
