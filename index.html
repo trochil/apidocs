@@ -4450,7 +4450,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/snapshot/market'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/snapshot/market'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询单个市场类型全部交易对价格快照</p>
@@ -4493,6 +4493,13 @@
 <td>True</td>
 <td>NA</td>
 <td>市场类型目前可选(usstock,hkstock,cnstock,crypto,futures,forex)</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
 </tr>
 </tbody></table>
 <h4 id='2213f4c32f-28'>响应数据</h4>
@@ -4597,7 +4604,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/snapshot/top'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">,</span> <span class="s">'lenth'</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/snapshot/top'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'market'</span><span class="p">:</span> <span class="s">'usstock'</span><span class="p">,</span> <span class="s">'lenth'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>查询单个市场类型涨跌幅榜单</p>
@@ -4654,6 +4661,13 @@
 <td>No</td>
 <td>全部数据</td>
 <td>榜单前x名</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
 </tr>
 </tbody></table>
 <h4 id='2213f4c32f-29'>响应数据</h4>
@@ -4760,7 +4774,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/index/tickers'</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/index/tickers'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询全球股指实时价格快照</p>
@@ -4784,7 +4798,23 @@
 <h4 id='http-30'>HTTP请求</h4>
 <p><code>GET /v1/index/tickers</code></p>
 <h4 id='1f9ac54b15-30'>请求参数</h4>
-<p>无</p>
+<table><thead>
+<tr>
+<th>参数名称</th>
+<th>数据类型</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
+</tr>
+</tbody></table>
 <h4 id='2213f4c32f-30'>响应数据</h4>
 <table><thead>
 <tr>
@@ -4860,7 +4890,7 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/index/daily'</span><span class="p">,</span>
-                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'nas100'</span><span class="p">,</span> <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-01-01'</span><span class="p">,</span> <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">})</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'symbol'</span><span class="p">:</span> <span class="s">'nas100'</span><span class="p">,</span> <span class="s">'start_date'</span><span class="p">:</span> <span class="s">'2020-01-01'</span><span class="p">,</span> <span class="s">'end_date'</span><span class="p">:</span> <span class="s">'2020-02-01'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询全球股指历史数据</p>
@@ -4911,6 +4941,13 @@
 <td>False</td>
 <td>最近更新时间</td>
 <td>样本结束时间,如2019-09-09</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
 </tr>
 </tbody></table>
 <h4 id='2213f4c32f-31'>响应数据</h4>
@@ -4979,7 +5016,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/indicator/country'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'country'</span><span class="p">:</span> <span class="s">'美国'</span><span class="p">})</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/indicator/country'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'country'</span><span class="p">:</span> <span class="s">'美国'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询单个国家的所有指标</p>
@@ -5027,6 +5064,13 @@
 <td>True</td>
 <td>NA</td>
 <td>国家名称如美国</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
 </tr>
 </tbody></table>
 <h3 id='2213f4c32f-32'>响应数据</h3>
@@ -5124,7 +5168,7 @@
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/indicator/single'</span><span class="p">,</span>
-                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'series_code'</span><span class="p">:</span> <span class="s">'548b08363354c0c2d9d0540dcda2173c'</span><span class="p">})</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'series_code'</span><span class="p">:</span> <span class="s">'548b08363354c0c2d9d0540dcda2173c'</span><span class="p">,</span> <span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询单个指标</p>
@@ -5198,6 +5242,13 @@
 <td>No</td>
 <td>当前日期</td>
 <td>结束日期</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
 </tr>
 </tbody></table>
 <h3 id='2213f4c32f-33'>响应数据</h3>
@@ -5289,7 +5340,7 @@
 </blockquote>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/news'</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.trochil.cn/v1/news'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">'apikey'</span><span class="p">:</span> <span class="s">'your apikey'</span><span class="p">})</span>
 </code></pre>
 <blockquote>
 <p>返回结果：查询实时新闻讯息</p>
@@ -5354,6 +5405,13 @@
 <td>False</td>
 <td>NA</td>
 <td>个股代码,目前仅支持A股,港股,美股,如SH600000</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>String</td>
+<td>True</td>
+<td>NA</td>
+<td>用户申请的apikey</td>
 </tr>
 </tbody></table>
 <h3 id='2213f4c32f-34'>响应数据</h3>
