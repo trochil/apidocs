@@ -1988,7 +1988,7 @@ timestamp | String | 最新成交时间
 ```python
 import requests
 
-info = requests.get('https://api.trochil.cn/v1/snapshot/market', params={'market': 'usstock'})
+info = requests.get('https://api.trochil.cn/v1/snapshot/market', params={'market': 'usstock', 'apikey': 'your apikey'})
 ```
 
 > 返回结果：查询单个市场类型全部交易对价格快照
@@ -2025,6 +2025,7 @@ info = requests.get('https://api.trochil.cn/v1/snapshot/market', params={'market
 参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
 --------- | ------- | ----------- | ----------- | -----------
 market | String | True | NA | 市场类型目前可选(usstock,hkstock,cnstock,crypto,futures,forex)
+apikey | String | True | NA | 用户申请的apikey
 
 #### 响应数据
 
@@ -2061,7 +2062,7 @@ exchange | String | 交易所
 ```python
 import requests
 
-info = requests.get('https://api.trochil.cn/v1/snapshot/top', params={'market': 'usstock', 'lenth': 10})
+info = requests.get('https://api.trochil.cn/v1/snapshot/top', params={'market': 'usstock', 'lenth': 10, 'apikey': 'your apikey'})
 ```
 
 > 查询单个市场类型涨跌幅榜单
@@ -2100,6 +2101,7 @@ info = requests.get('https://api.trochil.cn/v1/snapshot/top', params={'market': 
 market | String | True | NA | 市场类型目前可选(usstock,hkstock,cnstock,crypto,futures,forex)
 top | String | No | gainers | 涨跌幅排行榜,涨-gainers,跌-losers
 lenth | int | No | 全部数据 | 榜单前x名
+apikey | String | True | NA | 用户申请的apikey
 
 #### 响应数据
 
@@ -2141,7 +2143,7 @@ exchange | String | 交易所
 ```python
 import requests
 
-info = requests.get('https://api.trochil.cn/v1/index/tickers')
+info = requests.get('https://api.trochil.cn/v1/index/tickers', params={'apikey': 'your apikey'})
 ```
 
 > 返回结果：查询全球股指实时价格快照
@@ -2171,7 +2173,9 @@ info = requests.get('https://api.trochil.cn/v1/index/tickers')
 
 #### 请求参数
 
-无
+参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
+--------- | ------- | ----------- | ----------- | -----------
+apikey | String | True | NA | 用户申请的apikey
 
 #### 响应数据
 
@@ -2201,7 +2205,7 @@ time | String | 时间
 import requests
 
 info = requests.get('https://api.trochil.cn/v1/index/daily',
-                    params={'symbol': 'nas100', 'start_date': '2020-01-01', 'end_date': '2020-02-01'})
+                    params={'symbol': 'nas100', 'start_date': '2020-01-01', 'end_date': '2020-02-01', 'apikey': 'your apikey'})
 ```
 
 > 返回结果：查询全球股指历史数据
@@ -2234,6 +2238,7 @@ info = requests.get('https://api.trochil.cn/v1/index/daily',
 symbol | String | True | NA | 股指代码,如nas100
 start_date | String | False | 数据起始时间 | 样本起始时间,如2019-01-01
 end_date | String | False | 最近更新时间 | 样本结束时间,如2019-09-09
+apikey | String | True | NA | 用户申请的apikey
 
 
 #### 响应数据
@@ -2265,7 +2270,7 @@ volume | Float | 交易量
 ```python
 import requests
 
-info = requests.get('https://api.trochil.cn/v1/indicator/country', params={'country': '美国'})
+info = requests.get('https://api.trochil.cn/v1/indicator/country', params={'country': '美国', 'apikey': 'your apikey'})
 ```
 
 > 返回结果：查询单个国家的所有指标
@@ -2307,6 +2312,7 @@ info = requests.get('https://api.trochil.cn/v1/indicator/country', params={'coun
 参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
 --------- | ------- | ----------- | ----------- | -----------
 country | String | True | NA | 国家名称如美国
+apikey | String | True | NA | 用户申请的apikey
 
 ### 响应数据
 
@@ -2340,7 +2346,7 @@ last_time | String | 指标最新时间
 import requests
 
 info = requests.get('https://api.trochil.cn/v1/indicator/single',
-                    params={'series_code': '548b08363354c0c2d9d0540dcda2173c'})
+                    params={'series_code': '548b08363354c0c2d9d0540dcda2173c', 'apikey': 'your apikey'})
 ```
 
 > 返回结果：查询单个指标
@@ -2384,6 +2390,7 @@ freq | String | No | 原始频率 | 指标对应的时间频率,freq与公布数
 transform | String | No | lin | 计算方式,lin-原始值,chg-环比增长,ch1-同比增长<br>,pch-环比增长率,pc1-同比增长率,pca-复合年增长率,<br>cch-连续复合增长率,cca-连续复合年增长率,log-自然对数
 start_date | String | No | 最早时间 | 开始日期
 end_date | String | No | 当前日期 | 结束日期
+apikey | String | True | NA | 用户申请的apikey
 
 ### 响应数据
 
@@ -2422,7 +2429,7 @@ A股: cnstock, 港股: hkstock,  期货: cnfuture, 美股: usstock, 数字货币
 ```python
 import requests
 
-info = requests.get('https://api.trochil.cn/v1/news')
+info = requests.get('https://api.trochil.cn/v1/news', params={'apikey': 'your apikey'})
 ```
 
 > 返回结果：查询实时新闻讯息
@@ -2463,6 +2470,7 @@ limit | int | False | 10 | 获取新闻条数,最大为10条
 subcat | String | False | 全市场类型 | 市场类型如cnstock,cnfuture,crypto等
 category | String | False | NA | 快讯或者深度文章,news为快讯,article为深度文章
 individual | String | False | NA | 个股代码,目前仅支持A股,港股,美股,如SH600000
+apikey | String | True | NA | 用户申请的apikey
 
 ### 响应数据
 
