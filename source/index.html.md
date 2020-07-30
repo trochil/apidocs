@@ -577,68 +577,6 @@ close | Float | 收盘价
 volume | Float | 成交量
 symbol | String | 股票代码
 
-### 多产品单日历史
-
-> 代码示例：查询港股多股票的单日数据
-
-```python
-import requests
-
-info = requests.get('https://api.trochil.cn/v1/hkstock/history_one_day',
-                    params={
-                        'symbol': 'HK09938,HK09968',
-                        'date': '2020-02-04',
-                        'apikey': 'your apikey'}
-                    )
-```
-
-> 代码示例：查询港股多股票单日数据
-
-```json
-{
-    'timestamp': 1583479171828,
-    'data': [
-        {'datetime': '2020-02-04', 'open': 0.69, 'high': 0.69, 'low': 0.66, 'close': 0.67, 'volume': 680000.0, 'symbol': 'HK09938'},
-        {'datetime': '2020-02-04', 'open': 1.94, 'high': 2.12, 'low': 1.94, 'close': 1.97, 'volume': 2790000.0, 'symbol': 'HK09968'}],
-    'status': 'ok'
-}
-```
-
-同时获取多个股票单天的K线数据，最多同时查询25个。
-
-#### HTTP请求
-
-`GET v1/hkstock/history_one_day`
-
-#### 请求参数
-
-参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
---------- | ------- | ----------- | ----------- | -----------
-symbol | String | True | NA | 股票代码,如HK09938,多个股票品种以逗号分隔,逗号之间不要有空格
-date | String | True | NA | 数据获取时间,如2019-01-01
-sort | String | False | asc | 按股票代码的字符顺序排序，asc(升序)，desc(降序)
-apikey | String | True | NA | 用户申请的apikey
-
-#### 响应数据
-
-字段名称 | 数据类型 | 描述
---------- | ------- | -----------
-timestamp | int | 请求响应时间戳
-data | list | 对应股票品种的报价信息
-status | String | 请求结果状态
-
-#### data说明
-
-字段名称 | 数据类型 | 描述
---------- | ------- | -----------
-datetime | String | k线时间
-open | Float | 开盘价
-high | Float | 最高价
-low | Float | 最低价
-close | Float | 收盘价
-volume | Float | 成交量
-symbol | String | 个股品种代码
-
 ## 美股
 
 ### 产品列表
