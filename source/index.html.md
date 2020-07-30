@@ -831,68 +831,6 @@ close | Float | 收盘价
 volume | Float | 成交量
 symbol | String | 股票代码
 
-### 多产品单日历史
-
-> 示例代码：查询美股多股票单日数据
-
-```python
-import requests
-
-info = requests.get('https://api.trochil.cn/v1/usstock/history_one_day',
-                    params={
-                        'symbol': 'BABA,JD',
-                        'date': '2020-02-04',
-                        'apikey': 'your apikey'}
-                    )
-```
-
-> 返回结果：查询美股多股票单日数据
-
-```json
-{
-    'timestamp': 1583481081616,
-    'data': [
-        {'datetime': '2020-02-04', 'open': 221.35, 'high': 224.38, 'low': 220.49, 'close': 222.88, 'volume': 16695141.0, 'symbol': 'BABA'},
-        {'datetime': '2020-02-04', 'open': 40.31, 'high': 41.28, 'low': 40.07, 'close': 40.35, 'volume': 16286551.0, 'symbol': 'JD'}],
-    'status': 'ok'
-}
-```
-
-同时获取多个股票单天的K线数据，最多同时查询25个。
-
-#### HTTP请求
-
-`GET v1/usstock/history_one_day`
-
-#### 请求参数
-
-参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
---------- | ------- | ----------- | ----------- | -----------
-symbol | String | True | NA | 股票代码,如BABA,多个股票品种以逗号分隔,逗号之间不要有空格
-date | String | True | NA | 数据获取时间,如2019-01-01
-sort | String | False | asc | 按股票代码的字符顺序排序，asc(升序)，desc(降序)
-apikey | String | True | NA | 用户申请的apikey
-
-#### 响应数据
-
-字段名称 | 数据类型 | 描述
---------- | ------- | -----------
-timestamp | int | 请求响应时间戳
-data | list | 对应美股品种的报价信息
-status | String | 请求结果状态
-
-#### data说明
-
-字段名称 | 数据类型 | 描述
---------- | ------- | -----------
-datetime | String | k线时间
-open | Float | 开盘价
-high | Float | 最高价
-low | Float | 最低价
-close | Float | 收盘价
-volume | Float | 成交量
-symbol | String | 美股品种代码
-
 ### 日内数据
 
 > 代码示例：查询美股日内数据
