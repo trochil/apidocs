@@ -261,68 +261,6 @@ close | Float | 收盘价
 volume | Float | 成交量
 symbol | String | 股票代码
 
-### 多产品单日历史
-
-> 示例代码：查询A股多股票单日数据
-
-```python
-import requests
-
-info = requests.get('https://api.trochil.cn/v1/cnstock/history_one_day',
-                    params={
-                        'symbol': 'SH600012,SH600015',
-                        'date': '2011-09-29',
-                        'apikey': 'your apikey'}
-                    )
-```
-
-> 返回结果：查询A股多股票单日数据
-
-```json
-{
-    'timestamp': 1583477976901,
-    'data': [
-        {'datetime': '2011-09-29', 'open': 3.413, 'high': 3.421, 'low': 3.351, 'close': 3.366, 'volume': 17783.0, 'symbol': 'SH600012'},
-        {'datetime': '2011-09-29', 'open': 4.144, 'high': 4.254, 'low': 4.139, 'close': 4.207, 'volume': 195176.0, 'symbol': 'SH600015'}],
-    'status': 'ok'
-}
-```
-
-同时获取多个股票单天的K线数据，最多同时查询25个。
-
-#### HTTP请求
-
-`GET v1/cnstock/history_one_day`
-
-#### 请求参数
-
-参数名称 | 数据类型 | 是否必须 | 默认值 | 描述
---------- | ------- | ----------- | ----------- | -----------
-symbol | String | True | NA | 股票代码,如SH600012,多个股票品种以逗号分隔,逗号之间不要有空格
-date | String | True | NA | 数据获取时间,如2019-01-01
-sort | String | False | asc | 按股票代码的字符顺序排序，asc(升序)，desc(降序)
-apikey | String | True | NA | 用户申请的apikey
-
-#### 响应数据
-
-字段名称 | 数据类型 | 描述
---------- | ------- | -----------
-timestamp | int | 请求响应时间戳
-data | list | 对应股票品种的报价信息
-status | String | 请求结果状态
-
-#### data说明
-
-字段名称 | 数据类型 | 描述
---------- | ------- | -----------
-datetime | String | k线时间
-open | Float | 开盘价
-high | Float | 最高价
-low | Float | 最低价
-close | Float | 收盘价
-volume | Float | 成交量
-symbol | String | 个股品种代码
-
 ### 日内数据
 
 > 示例代码：查询A股日内数据
